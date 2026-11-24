@@ -8,3 +8,4 @@ HACKFORLAB/HACKFORLAB_NBAD_PCAP_Analyzer
 towermac/github-copilot-wireshark-analysis
 dishastack/Packet_pilot-ai
 0xKoda/WireMCP
+netwho/PacketCircle

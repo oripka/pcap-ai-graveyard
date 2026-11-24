@@ -19,12 +19,12 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**557** repositories and **15** hosted or commercial tools, as of **2026-11-24**.
+**558** repositories and **15** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
 | 🫀 Alive | 139 | 25% |
-| 🤒 Coughing | 222 | 40% |
+| 🤒 Coughing | 223 | 40% |
 | 📉 Flatlined | 135 | 24% |
 | 🪦 Buried | 60 | 11% |
 | 🏺 Embalmed | 1 | 0% |
@@ -32,9 +32,9 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 - **253** (45%) were created and last pushed on the same date.
 - **351** (63%) were worked on for a week or less.
 - Median time between creation and last push: **1 day**.
-- **376** (68%) have no stars at all. The author did not star it either.
+- **376** (67%) have no stars at all. The author did not star it either.
 - **111** (20%) are MCP servers.
-- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 455.
+- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 456.
 <!-- stats:end -->
 
 ## Hosted and commercial plots
@@ -87,17 +87,17 @@ Sorted by [pulse score](#how-this-is-measured). The complete register is in [GRA
 | 17 | [zombat/sonic](https://github.com/zombat/sonic) | 🫀 Alive | 58 | 1 | 2026-03-04 | 2026-11-19 | 260 d | Pulse present. No flowers yet. |
 | 18 | [CyberHorizon-be/sleuthline](https://github.com/CyberHorizon-be/sleuthline) | 🫀 Alive | 57 | 15 | 2026-10-18 | 2026-11-18 | 31 d | Still breathing. We check again next week. |
 | 19 | [Gurjas2112/Wireshark_PCAP_Anomaly_Detection](https://github.com/Gurjas2112/Wireshark_PCAP_Anomaly_Detection) | 🫀 Alive | 57 | 0 | 2025-05-29 | 2026-10-31 | 520 d | Still maintained after a year. Visiting, not residing. |
-| 20 | [ClementG91/MCP-FlowSentinel](https://github.com/ClementG91/MCP-FlowSentinel) | 🫀 Alive | 56 | 1 | 2026-04-11 | 2026-11-23 | 226 d | Still breathing. We check again next week. |
-| 21 | [SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab](https://github.com/SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab) | 🫀 Alive | 56 | 1 | 2025-12-29 | 2026-10-19 | 294 d | Pulse present. No flowers yet. |
-| 22 | [sergsrgsg/rock-star-skills](https://github.com/sergsrgsg/rock-star-skills) | 🫀 Alive | 55 | 0 | 2025-02-20 | 2026-10-13 | 600 d | More than a year of commits. Does not belong here and knows it. |
-| 23 | [bhat-shubham/NetNerve_V0_Demo](https://github.com/bhat-shubham/NetNerve_V0_Demo) | 🤒 Coughing | 53 | 6 | 2025-05-15 | 2026-06-14 | 395 d | Last seen pushing in June 2026. Faint pulse. |
-| 24 | [daniissac/framecite](https://github.com/daniissac/framecite) | 🤒 Coughing | 52 | 0 | 2025-02-28 | 2026-09-10 | 559 d | Quiet since September 2026. Could still be a long holiday. |
-| 25 | [Kaichera/sniff](https://github.com/Kaichera/sniff) | 🫀 Alive | 52 | 0 | 2025-12-09 | 2026-10-14 | 309 d | Alive at the time of writing, which is all anyone can say. |
-| 26 | [nlink-jp/cybersecurity-series](https://github.com/nlink-jp/cybersecurity-series) | 🫀 Alive | 52 | 0 | 2026-03-27 | 2026-11-14 | 232 d | Pulse present. No flowers yet. |
-| 27 | [Veer-Parikh/fyp](https://github.com/Veer-Parikh/fyp) | 🤒 Coughing | 52 | 0 | 2025-11-30 | 2026-10-09 | 313 d | Quiet since October 2026. Could still be a long holiday. |
-| 28 | [dngames/wirebuddy](https://github.com/dngames/wirebuddy) | 🫀 Alive | 51 | 5 | 2026-10-26 | 2026-11-17 | 22 d | Alive at the time of writing, which is all anyone can say. |
-| 29 | [Garasimba/WireMCP-rs](https://github.com/Garasimba/WireMCP-rs) | 🫀 Alive | 51 | 1 | 2026-03-17 | 2026-10-13 | 210 d | Pulse present. No flowers yet. |
-| 30 | [w-index-m/syslog-analyzer](https://github.com/w-index-m/syslog-analyzer) | 🫀 Alive | 51 | 1 | 2026-06-30 | 2026-11-19 | 142 d | Still breathing. We check again next week. |
+| 20 | [netwho/PacketCircle](https://github.com/netwho/PacketCircle) | 🤒 Coughing | 56 | 30 | 2026-02-13 | 2026-07-28 | 165 d | Quiet since July 2026. Could still be a long holiday. |
+| 21 | [ClementG91/MCP-FlowSentinel](https://github.com/ClementG91/MCP-FlowSentinel) | 🫀 Alive | 56 | 1 | 2026-04-11 | 2026-11-23 | 226 d | Still breathing. We check again next week. |
+| 22 | [SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab](https://github.com/SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab) | 🫀 Alive | 56 | 1 | 2025-12-29 | 2026-10-19 | 294 d | Pulse present. No flowers yet. |
+| 23 | [sergsrgsg/rock-star-skills](https://github.com/sergsrgsg/rock-star-skills) | 🫀 Alive | 55 | 0 | 2025-02-20 | 2026-10-13 | 600 d | More than a year of commits. Does not belong here and knows it. |
+| 24 | [bhat-shubham/NetNerve_V0_Demo](https://github.com/bhat-shubham/NetNerve_V0_Demo) | 🤒 Coughing | 53 | 6 | 2025-05-15 | 2026-06-14 | 395 d | Last seen pushing in June 2026. Faint pulse. |
+| 25 | [daniissac/framecite](https://github.com/daniissac/framecite) | 🤒 Coughing | 52 | 0 | 2025-02-28 | 2026-09-10 | 559 d | Quiet since September 2026. Could still be a long holiday. |
+| 26 | [Kaichera/sniff](https://github.com/Kaichera/sniff) | 🫀 Alive | 52 | 0 | 2025-12-09 | 2026-10-14 | 309 d | Alive at the time of writing, which is all anyone can say. |
+| 27 | [nlink-jp/cybersecurity-series](https://github.com/nlink-jp/cybersecurity-series) | 🫀 Alive | 52 | 0 | 2026-03-27 | 2026-11-14 | 232 d | Pulse present. No flowers yet. |
+| 28 | [Veer-Parikh/fyp](https://github.com/Veer-Parikh/fyp) | 🤒 Coughing | 52 | 0 | 2025-11-30 | 2026-10-09 | 313 d | Quiet since October 2026. Could still be a long holiday. |
+| 29 | [dngames/wirebuddy](https://github.com/dngames/wirebuddy) | 🫀 Alive | 51 | 5 | 2026-10-26 | 2026-11-17 | 22 d | Alive at the time of writing, which is all anyone can say. |
+| 30 | [Garasimba/WireMCP-rs](https://github.com/Garasimba/WireMCP-rs) | 🫀 Alive | 51 | 1 | 2026-03-17 | 2026-10-13 | 210 d | Pulse present. No flowers yet. |
 <!-- top:end -->
 
 ## One-day wonders

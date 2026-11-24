@@ -101,25 +101,101 @@ tr:last-child td { border-bottom: 0; }
 code { font: 13px var(--mono); background: rgba(255, 255, 255, .06); padding: 1px 5px; border-radius: 4px; }
 footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; }
 @media (max-width: 560px) { .moon { width: 54px; height: 54px; top: 14px; } header { padding-top: 56px; } .yard { grid-template-columns: 1fr 1fr; gap: 20px 10px; } .tomb { padding: 24px 10px 14px; min-height: 0; border-radius: 70px 70px 6px 6px / 50px 50px 6px 6px; } .tomb .pitch { display: none; } }
+
+/* ---- motion ---- */
+.stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.stars i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #fff; animation: twinkle 4s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
+.shooting { position: fixed; top: 12%; left: -10%; width: 120px; height: 2px; background: linear-gradient(90deg, transparent, #fff); border-radius: 2px; opacity: 0; z-index: -1; animation: shoot 11s linear infinite 3s; }
+@keyframes shoot { 0% { transform: translate(0, 0) rotate(14deg); opacity: 0; } 2% { opacity: .9; } 9% { transform: translate(120vw, 30vh) rotate(14deg); opacity: 0; } 100% { opacity: 0; transform: translate(120vw, 30vh) rotate(14deg); } }
+.fog { position: absolute; left: -50%; width: 200%; height: 240px; bottom: -60px; pointer-events: none;
+  background: radial-gradient(ellipse at 20% 50%, rgba(200, 215, 235, .11), transparent 60%), radial-gradient(ellipse at 55% 60%, rgba(200, 215, 235, .07), transparent 50%), radial-gradient(ellipse at 80% 40%, rgba(200, 215, 235, .10), transparent 55%);
+  animation: drift 36s ease-in-out infinite alternate; }
+.fog.f2 { bottom: 40px; opacity: .6; animation-duration: 52s; animation-direction: alternate-reverse; }
+@keyframes drift { from { transform: translateX(-14%); } to { transform: translateX(14%); } }
+.moon { animation: glow 6s ease-in-out infinite; cursor: pointer; transition: transform .4s cubic-bezier(.2, .9, .3, 1.4); z-index: 2; }
+.moon:hover { transform: scale(1.08) rotate(-8deg); }
+@keyframes glow { 50% { box-shadow: 0 0 90px 30px rgba(243, 236, 210, .28); } }
+.howl { position: absolute; right: max(16px, calc(50% - 560px)); top: 132px; font: italic 600 16px var(--serif); color: var(--moon); pointer-events: none; animation: howl 2.4s ease-out forwards; white-space: nowrap; z-index: 3; }
+@keyframes howl { 0% { opacity: 0; transform: translateY(8px) scale(.8); } 15% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translate(-30px, -26px) scale(1.25); } }
+.bat { position: absolute; top: 70px; left: -60px; font-size: 24px; pointer-events: none; animation: fly 19s linear infinite; }
+.bat.b2 { top: 150px; font-size: 16px; animation-duration: 27s; animation-delay: -9s; }
+.bat.b3 { top: 30px; font-size: 13px; animation-duration: 33s; animation-delay: -21s; }
+.bat span { display: inline-block; animation: flap .32s ease-in-out infinite alternate; }
+@keyframes fly { 0% { transform: translate(0, 0); } 25% { transform: translate(30vw, 60px); } 50% { transform: translate(60vw, -10px); } 75% { transform: translate(85vw, 70px); } 100% { transform: translate(118vw, 10px); } }
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(.45); } }
+h1 .w { display: inline-block; opacity: 0; transform: translateY(26px) rotate(3deg); animation: rise .8s cubic-bezier(.2, .9, .3, 1.2) forwards; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+
+/* heart monitor */
+.ecg { margin: 26px 0 0; display: flex; align-items: center; gap: 12px; }
+.ecg svg { flex: 1; height: 44px; min-width: 0; }
+.ecg path { fill: none; stroke: var(--moss); stroke-width: 2; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: trace 7s linear infinite; filter: drop-shadow(0 0 4px rgba(111, 191, 139, .7)); }
+@keyframes trace { 0% { stroke-dashoffset: 1; stroke: var(--moss); } 55% { stroke: var(--moss); } 70% { stroke: var(--rust); } 80%, 100% { stroke-dashoffset: 0; stroke: var(--rust); } }
+.ecg small { font: 600 11px var(--mono); letter-spacing: .12em; color: var(--dim); white-space: nowrap; }
+.ecg small b { color: var(--rust); animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* the reel */
+.reel { overflow: hidden; border-block: 1px solid var(--line); background: rgba(6, 9, 18, .7); margin-top: 6px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.reel-track { display: flex; gap: 44px; width: max-content; padding: 11px 0; animation: reel 150s linear infinite; }
+.reel:hover .reel-track { animation-play-state: paused; }
+.reel-track span { font: 13px var(--mono); color: var(--dim); white-space: nowrap; }
+.reel-track b { color: var(--ink); font-weight: 600; } .reel-track em { color: var(--moon); font: italic 14px var(--serif); }
+@keyframes reel { to { transform: translateX(-50%); } }
+
+/* stones that move */
+.tomb { transition: transform .35s cubic-bezier(.2, .9, .3, 1.4), box-shadow .35s; transform-origin: 50% 100%; }
+.tomb.rise { opacity: 0; transform: translateY(70px) rotate(var(--tilt, -3deg)) scale(.92); }
+.tomb.in { opacity: 1; transform: none; transition: opacity .6s, transform .9s cubic-bezier(.2, .9, .3, 1.25); }
+.tomb.in:hover { transform: rotate(var(--lean, -2deg)) translateY(-3px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 22px 30px -14px rgba(0, 0, 0, .85); }
+.tomb .ghost { position: absolute; left: 50%; top: 4px; font-size: 34px; opacity: 0; transform: translate(-50%, 10px) scale(.6); transition: opacity .35s, transform .9s cubic-bezier(.2, .9, .3, 1.3); pointer-events: none; z-index: 2; }
+.tomb:hover .ghost { opacity: 1; transform: translate(-50%, -52px) scale(1); animation: bob 1.6s ease-in-out .9s infinite alternate; }
+@keyframes bob { from { margin-top: 0; margin-left: -4px; } to { margin-top: -8px; margin-left: 4px; } }
+.tomb.t-alive .ghost { animation: beat 1s ease-in-out infinite; }
+@keyframes beat { 0%, 100% { scale: 1; } 15% { scale: 1.25; } 30% { scale: 1; } 45% { scale: 1.18; } }
+.pill.alive::before { animation: ping 1.6s ease-out infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(111, 191, 139, .7); } 100% { box-shadow: 0 0 0 7px rgba(111, 191, 139, 0); } }
+tbody tr { transition: background .2s; } tbody tr:hover { background: rgba(255, 255, 255, .035); }
+
+/* press F */
+.respect { position: fixed; right: 16px; bottom: 16px; z-index: 20; background: #0e1426; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 10px 14px; font: 600 13px var(--mono); cursor: pointer; box-shadow: 0 8px 24px rgba(0, 0, 0, .5); transition: transform .15s; }
+.respect:hover { border-color: var(--dim); } .respect:active { transform: scale(.94); }
+.respect kbd { display: inline-block; border: 1px solid var(--dim); border-bottom-width: 3px; border-radius: 5px; padding: 0 6px; margin-right: 6px; font: inherit; }
+.drop { position: fixed; top: -40px; z-index: 19; font-size: 26px; pointer-events: none; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(112vh) rotate(var(--spin, 200deg)); opacity: .2; } }
+@media (max-width: 560px) { .bat.b2, .bat.b3 { display: none; } .ecg small { display: none; } .respect { padding: 8px 12px; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .tomb.rise, h1 .w { opacity: 1; transform: none; } .ecg path { stroke-dashoffset: 0; } .shooting, .bat { display: none; }
+}
 </style>
 </head>
 <body>
+<div class="stars" id="stars" aria-hidden="true"></div><div class="shooting" aria-hidden="true"></div>
 <header>
-  <div class="moon" aria-hidden="true"></div>
+  <div class="moon" id="moon" title="Do not click the moon"></div>
+  <div class="bat" aria-hidden="true"><span>🦇</span></div><div class="bat b2" aria-hidden="true"><span>🦇</span></div><div class="bat b3" aria-hidden="true"><span>🦇</span></div>
+  <div class="fog" aria-hidden="true"></div><div class="fog f2" aria-hidden="true"></div>
   <div class="wrap">
     <div class="kicker">Est. 2026 · updated <span id="built">weekly</span></div>
-    <h1>The PCAP AI Graveyard</h1>
+    <h1 aria-label="The PCAP AI Graveyard"><span class="w" style="animation-delay:.05s">The</span> <span class="w" style="animation-delay:.2s">PCAP</span> <span class="w" style="animation-delay:.35s">AI</span> <span class="w" style="animation-delay:.55s">Graveyard</span></h1>
     <p class="lede">Every AI packet analysis tool we could find, ranked by how alive it still is. Each one was going to <em>replace Wireshark</em>. Wireshark has not noticed.</p>
     <div class="links">
       <a class="btn primary" href="#register">Walk the rows</a>
       <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard">GitHub</a>
       <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard/issues/new">Report a resurrection</a>
     </div>
+    <div class="ecg" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path pathLength="1" d="M0 30 H70 l8 -6 l8 6 h14 l8 -26 l12 50 l9 -24 H240 l8 -6 l8 6 h14 l8 -26 l12 50 l9 -24 H410 l8 -5 l8 5 h14 l7 -18 l10 34 l8 -16 H580 l6 -3 l6 3 h12 l5 -9 l8 16 l5 -7 H720 l4 -3 l4 3 H1200"/></svg>
+      <small>WEEKEND PROJECT · <b>NO PULSE</b></small>
+    </div>
     <div class="stats" id="stats"></div>
     <div class="bar" id="bar" role="img" aria-label="Share of repositories per status"></div>
     <div class="legend" id="legend"></div>
   </div>
 </header>
+<div class="reel" aria-hidden="true"><div class="reel-track" id="reel"></div></div>
 
 <main class="wrap">
   <h2>Hosted and commercial plots</h2>
@@ -165,6 +241,7 @@ footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--lin
 
 <footer><div class="wrap">Data from the GitHub search API and plain HTTP checks. Epitaphs are generated from dates, or written by hand where a tool earned it. No tools were harmed; most were already like this when we found them.</div></footer>
 
+<button class="respect" id="respect" type="button"><kbd>F</kbd>pay respects · <span id="rcount">0</span></button>
 <script src="data.js?v=2026-11-24"></script>
 <script>
 (() => {
@@ -193,7 +270,9 @@ footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--lin
 
   // tombstones
   const tomb = (o) => {
-    const t = el('article', 'tomb t-' + o.status)
+    const t = el('article', 'tomb rise t-' + o.status)
+    const g = el('span', 'ghost', o.status === 'alive' ? '🫀' : o.status === 'coughing' ? '🤧' : o.status === 'unknown' ? '🔦' : '👻'); g.setAttribute('aria-hidden', 'true'); t.append(g)
+    t.style.setProperty('--tilt', ((t.dataset.n = Math.random()) * 8 - 4).toFixed(1) + 'deg'); t.style.setProperty('--lean', (Math.random() * 5 - 2.5).toFixed(1) + 'deg')
     t.append(el('div', 'rip', o.status === 'alive' ? 'NOT YET' : o.status === 'unknown' ? 'MISSING' : 'R.I.P.'))
     const h = el('h3'); h.append(link(o.href, o.title)); t.append(h)
     if (o.dates) t.append(el('div', 'dates', o.dates))
@@ -248,6 +327,44 @@ footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--lin
   $('q').oninput = () => { limit = 100; draw() }
   $('more').onclick = () => { limit += 200; draw() }
   draw()
+
+  // ---- motion ----
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches
+  // stars
+  for (let i = 0; i < 110; i++) { const st = el('i'); st.style.cssText = `left:${Math.random() * 100}%;top:${Math.random() * 70}%;animation-delay:${(-Math.random() * 4).toFixed(2)}s;animation-duration:${(2.5 + Math.random() * 4).toFixed(2)}s;transform:scale(${(.5 + Math.random()).toFixed(2)})`; $('stars').append(st) }
+  // stones rise out of the ground as they scroll into view
+  const stones = document.querySelectorAll('.tomb.rise')
+  if (calm || !('IntersectionObserver' in window)) stones.forEach((t) => t.classList.add('in'))
+  else {
+    const io = new IntersectionObserver((es) => es.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), 70 * i); io.unobserve(e.target) } }), { rootMargin: '0px 0px -40px 0px' })
+    stones.forEach((t) => io.observe(t))
+  }
+  // numbers count up
+  if (!calm) document.querySelectorAll('.stat b').forEach((b) => {
+    const m = /^(\d+)(.*)$/.exec(b.textContent); if (!m) return
+    const end = +m[1], t0 = performance.now()
+    const tick = (now) => { const p = Math.min(1, (now - t0) / 1400), v = Math.round(end * (1 - Math.pow(1 - p, 3))); b.textContent = v + m[2]; if (p < 1) requestAnimationFrame(tick) }
+    b.textContent = '0' + m[2]; requestAnimationFrame(tick)
+  })
+  // the reel: the departed scroll past
+  const gone = G.repos.filter((r) => r.status !== 'alive' && r.lifespan_days <= 7).sort(() => Math.random() - .5).slice(0, 40)
+  const strip = () => gone.map((r) => { const sp = el('span'); sp.append('🪦 ', el('b', '', r.repo.split('/')[1]), ` ${r.created} – ${r.last_push} · `, el('em', '', r.epitaph)); return sp })
+  $('reel').append(...strip(), ...strip())
+  // the moon
+  const HOWLS = ['awoooo', 'still no pulse', 'have you tried tshark?', 'it worked on my pcap', 'v2 coming soon™', 'awooo (production-grade)', '🐺']
+  let howls = 0
+  $('moon').onclick = () => { const h = el('div', 'howl', HOWLS[howls++ % HOWLS.length]); document.querySelector('header').append(h); setTimeout(() => h.remove(), 2500) }
+  // press F to pay respects
+  const FLOWERS = ['🌹', '🕯️', '💐', '🥀', '🪦', '🌷']
+  let paid = 0; try { paid = +localStorage.getItem('respects') || 0 } catch {}
+  $('rcount').textContent = paid
+  const respects = () => {
+    paid++; $('rcount').textContent = paid; try { localStorage.setItem('respects', paid) } catch {}
+    if (calm) return
+    for (let i = 0; i < 14; i++) { const d = el('span', 'drop', FLOWERS[Math.floor(Math.random() * FLOWERS.length)]); d.style.left = Math.random() * 96 + 'vw'; d.style.animationDuration = (2.2 + Math.random() * 2.4) + 's'; d.style.animationDelay = (Math.random() * .5) + 's'; d.style.setProperty('--spin', (Math.random() * 500 - 250) + 'deg'); document.body.append(d); setTimeout(() => d.remove(), 5400) }
+  }
+  $('respect').onclick = respects
+  addEventListener('keydown', (e) => { if ((e.key === 'f' || e.key === 'F') && !e.metaKey && !e.ctrlKey && !e.altKey && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) respects() })
 })()
 </script>
 </body>
