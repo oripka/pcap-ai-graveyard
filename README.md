@@ -19,22 +19,22 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**558** repositories and **15** hosted or commercial tools, as of **2026-11-24**.
+**560** repositories and **20** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
-| 🫀 Alive | 139 | 25% |
+| 🫀 Alive | 141 | 25% |
 | 🤒 Coughing | 223 | 40% |
 | 📉 Flatlined | 135 | 24% |
 | 🪦 Buried | 60 | 11% |
 | 🏺 Embalmed | 1 | 0% |
 
-- **253** (45%) were created and last pushed on the same date.
-- **351** (63%) were worked on for a week or less.
+- **254** (45%) were created and last pushed on the same date.
+- **353** (63%) were worked on for a week or less.
 - Median time between creation and last push: **1 day**.
-- **376** (67%) have no stars at all. The author did not star it either.
-- **111** (20%) are MCP servers.
-- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 456.
+- **377** (67%) have no stars at all. The author did not star it either.
+- **112** (20%) are MCP servers.
+- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 458.
 <!-- stats:end -->
 
 ## Hosted and commercial plots
@@ -44,21 +44,26 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 <!-- hosted:start -->
 | Tool | Kind | Status | Last sign of life | Epitaph |
 |---|---|---|---|---|
-| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up, shipping daily | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
-| [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | 2026-11-24 · site up, upload form live | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
-| [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up | A log analysis company that noticed packets are also logs, if you squint. |
-| [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | 2026-11-24 · netnerve.vercel.app redirects to netnerve.online, site up | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
-| [PcapAnalyzer](https://pcap-analyzer-seven.vercel.app) | self-hosted | 🫀 Alive | 2026-11-24 · demo up | The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake. |
-| [Selector Packet Copilot](https://packetcopilot.selector.ai/) | hosted | 🤒 Coughing (HTTP 503) | 2026-11-24 · HTTP 503 on the day we checked | Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner. |
-| [A-Packets](https://apackets.com) | hosted | 🫀 Alive | 2026-11-24 · site up | Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper. |
-| [PacketSnitch](https://packetsnitch.com) | desktop | 🫀 Alive | 2026-11-21 · date printed on the site | The page says 'Last updated: November 21, 2026'. A site that states its own date of last activity. We could retire. |
+| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
+| [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
+| [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | A log analysis company that noticed packets are also logs, if you squint. |
+| [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
+| [PcapAnalyzer](https://pcap-analyzer-seven.vercel.app) | self-hosted | 🫀 Alive | page last edited 2026-11-21 (last push to its repository) | The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake. |
+| [Selector Packet Copilot](https://packetcopilot.selector.ai/) | hosted | 🤒 Coughing (HTTP 503) | site answered on 2026-11-24, edit date not published | Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner. |
+| [A-Packets](https://apackets.com) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper. |
+| [PacketSnitch](https://packetsnitch.com/ai-pcap-analysis/) | desktop | 🫀 Alive | page last edited 2026-11-21 (printed on the page) | The page says 'Last updated: November 21, 2026'. A site that states its own date of last activity. We could retire. |
 | [PCAP Analyser (cloudssfdc)](https://www.producthunt.com/products/pcap-analyser) | hosted | ❔ No site of its own | Product Hunt listing only | Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending. |
 | [AuraSniff](https://www.producthunt.com/posts/aurasniff) | cli | ❔ No site of its own | Product Hunt listing only | aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here. |
-| [VisualEther](https://www.visualether.com) | desktop | 🫀 Alive | 2026-11-24 · site up | An elder that learned MCP. Not vibe-coded, just adapting to the climate. |
-| [Cisco Meraki AI PCAP Analyzer](https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer) | vendor | 🫀 Alive | 2026-07-30 · documentation date | Will not die. Will be renamed. |
-| [GNS3 AI packet analysis](https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis) | vendor | 🫀 Alive | 2026-11-24 · documentation reachable | Every product gets an AI tab eventually. This is the lab simulator's. |
-| [PacketPilot AI](https://packetpilotai.com) | prompt pack | 🫀 Alive | 2026-11-24 · site up | Skipped building the tool and sells the prompts. Possibly the only one here that read the room. |
-| [Fraunhofer NetCapVis](https://netcapvis.igd.fraunhofer.de/) | hosted | 🫀 Alive | 2026-11-24 · site up | Publicly funded, therefore immortal. |
+| [VisualEther](https://www.visualether.com) | desktop | 🫀 Alive | site answered on 2026-11-24, edit date not published | An elder that learned MCP. Not vibe-coded, just adapting to the climate. |
+| [Cisco Meraki AI PCAP Analyzer](https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer) | vendor | 🤒 Coughing | page last edited 2026-07-30 (documentation date) | Will not die. Will be renamed. |
+| [GNS3 AI packet analysis](https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis) | vendor | 🫀 Alive | site answered on 2026-11-24, edit date not published | Every product gets an AI tab eventually. This is the lab simulator's. |
+| [PacketPilot AI](https://packetpilotai.com) | prompt pack | 🫀 Alive | site answered on 2026-11-24, edit date not published | Skipped building the tool and sells the prompts. Possibly the only one here that read the room. |
+| [Fraunhofer NetCapVis](https://netcapvis.igd.fraunhofer.de/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Publicly funded, therefore immortal. |
+| [ChatTCP](https://chattcp.com/en) | hosted | ❔ No site of its own | site up | Turns a three-way handshake into a group chat. SYN left on read. |
+| [LLM-Shark](https://www.telecomhall.net/t/llm-shark-an-ai-tool-to-analyze-signaling-in-pcap-format/36312) | desktop | ❔ No site of its own | forum announcement, one post | Announced in one forum post, which is also the whole thread. The signalling was one-way. |
+| [PCAP-LM](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/) | research | 🫀 Alive | page last edited 2026-11-06 (publication date) | Research, so it cannot die. It can only stop being cited. |
+| [cPacket AI](https://www.cpacket.com) | vendor | ❔ No site of its own | announced October 2025 | Has hardware, customers and a price list. Wandered in by mistake and is asking the way out. |
+| [Riverbed IQ (NPM 360)](https://www.riverbed.com/products/appresponse/) | vendor | ❔ No site of its own | launched 2026-09-17 | Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse
@@ -87,7 +92,7 @@ Sorted by [pulse score](#how-this-is-measured). The complete register is in [GRA
 | 17 | [zombat/sonic](https://github.com/zombat/sonic) | 🫀 Alive | 58 | 1 | 2026-03-04 | 2026-11-19 | 260 d | Pulse present. No flowers yet. |
 | 18 | [CyberHorizon-be/sleuthline](https://github.com/CyberHorizon-be/sleuthline) | 🫀 Alive | 57 | 15 | 2026-10-18 | 2026-11-18 | 31 d | Still breathing. We check again next week. |
 | 19 | [Gurjas2112/Wireshark_PCAP_Anomaly_Detection](https://github.com/Gurjas2112/Wireshark_PCAP_Anomaly_Detection) | 🫀 Alive | 57 | 0 | 2025-05-29 | 2026-10-31 | 520 d | Still maintained after a year. Visiting, not residing. |
-| 20 | [netwho/PacketCircle](https://github.com/netwho/PacketCircle) | 🤒 Coughing | 56 | 30 | 2026-02-13 | 2026-07-28 | 165 d | Quiet since July 2026. Could still be a long holiday. |
+| 20 | [netwho/PacketCircle](https://github.com/netwho/PacketCircle) | 🤒 Coughing | 56 | 30 | 2026-02-13 | 2026-07-28 | 165 d | A Wireshark plugin that draws traffic as a circle. No AI in the description, which makes it the most honest entry in the yard. |
 | 21 | [ClementG91/MCP-FlowSentinel](https://github.com/ClementG91/MCP-FlowSentinel) | 🫀 Alive | 56 | 1 | 2026-04-11 | 2026-11-23 | 226 d | Still breathing. We check again next week. |
 | 22 | [SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab](https://github.com/SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab) | 🫀 Alive | 56 | 1 | 2025-12-29 | 2026-10-19 | 294 d | Pulse present. No flowers yet. |
 | 23 | [sergsrgsg/rock-star-skills](https://github.com/sergsrgsg/rock-star-skills) | 🫀 Alive | 55 | 0 | 2025-02-20 | 2026-10-13 | 600 d | More than a year of commits. Does not belong here and knows it. |

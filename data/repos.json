@@ -813,6 +813,18 @@
     "first_seen": "2026-11-24"
   },
   {
+    "archived": false,
+    "created": "2026-10-24",
+    "description": "MCP Server for Packet Tracer",
+    "first_seen": "2026-11-24",
+    "homepage": "",
+    "language": "Python",
+    "last_push": "2026-10-25",
+    "repo": "kiskander/pt-mcp-server",
+    "stars": 3,
+    "topics": []
+  },
+  {
     "repo": "maureille/agentic-pcap",
     "description": "Benchmark code and interactive results for autonomous network-attack detection by tool-using LLM agents investigating raw PCAPs.",
     "stars": 3,
@@ -3588,6 +3600,18 @@
     "last_push": "2026-04-16",
     "archived": false,
     "first_seen": "2026-11-24"
+  },
+  {
+    "archived": false,
+    "created": "2026-11-22",
+    "description": "A basic Python network packet sniffer built with Scapy to capture and analyze IP traffic in real-time. Created for the CodeAlpha Cyber Security Internship.",
+    "first_seen": "2026-11-24",
+    "homepage": "",
+    "language": "Python",
+    "last_push": "2026-11-22",
+    "repo": "Deenxnation1/ColdAlpha_NetworkSniffer",
+    "stars": 0,
+    "topics": []
   },
   {
     "repo": "DeepakNarayananS/Wireshark_MCP",

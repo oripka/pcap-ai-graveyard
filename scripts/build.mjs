@@ -77,15 +77,26 @@ const list = repos.map((r) => {
 list.forEach((e, i) => { e.rank = i + 1 })
 
 // ---- hosted and commercial tools ---------------------------------------------
+// A site that is down is buried (or coughing on a 5xx). A site that is up is judged
+// like a repository: by the days since its page was last edited, when the page says.
+// 401, 403 and 429 mean a server answered and turned a robot away: the site is up.
+const up = (c) => (c >= 200 && c < 400) || [401, 403, 429].includes(c)
 const hosted = curated.hosted.map((h) => {
   const site = sites[h.url]
   const repo = h.repo && list.find((r) => r.repo.toLowerCase() === h.repo.toLowerCase())
+  // The newest date we have: what the page reports, what a person read on it, or the repository's last push.
+  const dates = [site && site.modified, h.last_edit, repo && repo.last_push].filter(Boolean).sort()
+  const edited = dates.length ? dates[dates.length - 1] : null
+  const source = !edited ? null : edited === (site && site.modified) ? site.modified_source : edited === h.last_edit ? (h.last_edit_note || 'read on the page') : 'last push to its repository'
   let status = 'unknown'
-  // 401, 403 and 429 mean a server answered and turned a robot away: the site is up.
-  const up = (c) => (c >= 200 && c < 400) || [401, 403, 429].includes(c)
   if (h.no_site) status = 'unknown'
-  else if (site) status = up(site.status) ? 'alive' : site.status >= 500 ? 'coughing' : 'buried'
-  return { ...h, status, site_status: site && status !== 'alive' && status !== 'unknown' ? site.status : null, checked: site ? site.checked : null,
+  else if (site && !up(site.status)) status = site.status >= 500 ? 'coughing' : 'buried'
+  else if (edited) status = STATUS.find((x) => Math.max(0, days(edited, today)) <= x.max).key
+  else if (site) status = 'alive'
+  const sign = h.no_site ? h.last_sign_note
+    : edited ? `page last edited ${edited} (${source})`
+    : site ? `site answered on ${site.checked}, edit date not published` : h.last_sign_note
+  return { ...h, status, edited, sign, site_status: site && !up(site.status) ? site.status : null, checked: site ? site.checked : null,
     stars: repo ? repo.stars : null, last_push: repo ? repo.last_push : null }
 })
 
@@ -124,8 +135,7 @@ const repoRow = (r) => `| ${r.rank} | [${cell(r.repo)}](https://github.com/${r.r
 const repoHead = '| # | Repository | Status | Pulse | ★ | Born | Last push | Worked on | Epitaph |\n|--:|---|---|--:|--:|---|---|--:|---|'
 const hostedRow = (h) => {
   const st = h.status === 'unknown' ? '❔ No site of its own' : `${icon(h.status).icon} ${icon(h.status).label}${h.site_status ? ` (HTTP ${h.site_status})` : ''}`
-  const sign = h.last_sign ? `${h.last_sign} · ${h.last_sign_note}` : h.last_sign_note
-  return `| [${cell(h.name)}](${h.url}) | ${h.kind} | ${st} | ${cell(sign)} | ${cell(h.epitaph)} |`
+  return `| [${cell(h.name)}](${h.url}) | ${h.kind} | ${st} | ${cell(h.sign)} | ${cell(h.epitaph)} |`
 }
 const statsBlock = [
   `**${stats.total}** repositories and **${stats.hosted}** hosted or commercial tools, as of **${today}**.`,

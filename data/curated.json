@@ -6,7 +6,6 @@
       "kind": "hosted",
       "pitch": "AI-assisted packet investigation with exact packet evidence: ranks the important signals, shows the flows and frames, and lets you verify every conclusion. In daily development.",
       "epitaph": "Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up, shipping daily",
       "disclosure": true
     },
@@ -14,9 +13,8 @@
       "name": "PcapAI",
       "url": "https://pcapai.com",
       "kind": "hosted",
-      "pitch": "Upload a capture, get a free summary in about two minutes and a client-ready PDF for $9. No account.",
+      "pitch": "Upload a capture, get a free summary in about two minutes and a client-ready PDF for $9. No account. Sample report online.",
       "epitaph": "Alive, and charging nine dollars. That is more business model than most of this cemetery ever had.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up, upload form live"
     },
     {
@@ -25,7 +23,6 @@
       "kind": "hosted",
       "pitch": "AI analysis of .pcap and .pcapng with 802.11 issues, retransmissions, scans and beaconing, each finding cited to a frame.",
       "epitaph": "A log analysis company that noticed packets are also logs, if you squint.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up"
     },
     {
@@ -35,7 +32,6 @@
       "kind": "hosted",
       "pitch": "Turns .pcap analysis 'from hours into seconds' with LLaMA 3 on Groq. Made headlines a day after launch, according to its author.",
       "epitaph": "Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "netnerve.vercel.app redirects to netnerve.online, site up"
     },
     {
@@ -45,7 +41,6 @@
       "kind": "self-hosted",
       "pitch": "27 detectors with a severity and a next step, runs locally in Docker, optional AI with your own key. Apache 2.0, beta.",
       "epitaph": "The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "demo up"
     },
     {
@@ -54,7 +49,6 @@
       "kind": "hosted",
       "pitch": "Upload a capture of about 5 MB, it is converted to JSON and indexed into Gemini File Search for chat. Heir to Packet Buddy.",
       "epitaph": "Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "HTTP 503 on the day we checked"
     },
     {
@@ -63,17 +57,17 @@
       "kind": "hosted",
       "pitch": "Online PCAP analyzer from before the gold rush, now with AI-assisted reports. Free tier reports are public.",
       "epitaph": "Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up"
     },
     {
       "name": "PacketSnitch",
-      "url": "https://packetsnitch.com",
+      "url": "https://packetsnitch.com/ai-pcap-analysis/",
       "kind": "desktop",
-      "pitch": "Desktop PCAP analyzer with protocol decoding, credential and file extraction, GeoIP, threat intel and AI.",
+      "pitch": "Desktop PCAP analyzer; a language model reads the structured output the analyzer already produced, not the raw capture. Can run fully local.",
       "epitaph": "The page says 'Last updated: November 21, 2026'. A site that states its own date of last activity. We could retire.",
-      "last_sign": "2026-11-21",
-      "last_sign_note": "date printed on the site"
+      "last_sign_note": "date printed on the site",
+      "last_edit": "2026-11-21",
+      "last_edit_note": "printed on the page"
     },
     {
       "name": "PCAP Analyser (cloudssfdc)",
@@ -81,7 +75,6 @@
       "kind": "hosted",
       "pitch": "Upload .pcap, .pcapng or .har and get a plain-English report with root cause and fix in under 60 seconds.",
       "epitaph": "Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending.",
-      "last_sign": "",
       "last_sign_note": "Product Hunt listing only",
       "no_site": true
     },
@@ -91,7 +84,6 @@
       "kind": "cli",
       "pitch": "Terminal PCAP analyzer powered by Gemini and Claude. Six followers on Product Hunt.",
       "epitaph": "aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here.",
-      "last_sign": "",
       "last_sign_note": "Product Hunt listing only",
       "no_site": true
     },
@@ -101,7 +93,6 @@
       "kind": "desktop",
       "pitch": "Sequence diagrams from Wireshark captures since long before LLMs; now ships an MCP server so Claude Code can explain failures.",
       "epitaph": "An elder that learned MCP. Not vibe-coded, just adapting to the climate.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up"
     },
     {
@@ -110,8 +101,9 @@
       "kind": "vendor",
       "pitch": "Turns Meraki wireless captures into plain-language diagnostics inside the Dashboard. Needs the right licence.",
       "epitaph": "Will not die. Will be renamed.",
-      "last_sign": "2026-07-30",
-      "last_sign_note": "documentation date"
+      "last_sign_note": "documentation date",
+      "last_edit": "2026-07-30",
+      "last_edit_note": "documentation date"
     },
     {
       "name": "GNS3 AI packet analysis",
@@ -119,7 +111,6 @@
       "kind": "vendor",
       "pitch": "AI packet analysis inside the GNS3 3.1 lab tool.",
       "epitaph": "Every product gets an AI tab eventually. This is the lab simulator's.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "documentation reachable"
     },
     {
@@ -128,7 +119,6 @@
       "kind": "prompt pack",
       "pitch": "Not an analyzer: a guide, a prompt pack for network admins and a weekly pcap puzzle.",
       "epitaph": "Skipped building the tool and sells the prompts. Possibly the only one here that read the room.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up"
     },
     {
@@ -137,8 +127,50 @@
       "kind": "hosted",
       "pitch": "Research visualisation for captures, drag a file in. Now has an AI analysis page.",
       "epitaph": "Publicly funded, therefore immortal.",
-      "last_sign": "2026-11-24",
       "last_sign_note": "site up"
+    },
+    {
+      "name": "ChatTCP",
+      "url": "https://chattcp.com/en",
+      "kind": "hosted",
+      "pitch": "Read TCP and UDP packets like a chat log, with commentary on every packet, automatic retransmission and handshake checks, and an AI assistant. Online or as a download.",
+      "epitaph": "Turns a three-way handshake into a group chat. SYN left on read.",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "LLM-Shark",
+      "url": "https://www.telecomhall.net/t/llm-shark-an-ai-tool-to-analyze-signaling-in-pcap-format/36312",
+      "kind": "desktop",
+      "pitch": "Windows Store app for 4G, 5G and IMS signalling: ask in natural language, get diagnostics and sequence diagrams. Three captures a day free, bring your own LLM API.",
+      "epitaph": "Announced in one forum post, which is also the whole thread. The signalling was one-way.",
+      "last_sign_note": "forum announcement, one post",
+      "no_site": true
+    },
+    {
+      "name": "PCAP-LM",
+      "url": "https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/",
+      "kind": "research",
+      "pitch": "A method for rewriting a capture so an assistant can read it in one pass, after noticing that a few megabytes of traffic become nearly 20 million tokens as text.",
+      "epitaph": "Research, so it cannot die. It can only stop being cited.",
+      "last_edit": "2026-11-06",
+      "last_edit_note": "publication date",
+      "last_sign_note": "blog post"
+    },
+    {
+      "name": "cPacket AI",
+      "url": "https://www.cpacket.com",
+      "kind": "vendor",
+      "pitch": "AI-driven insights on top of a packet capture and observability platform: baselines, anomaly detection, MCP support for your own models. Sold as an uplift on capture pricing.",
+      "epitaph": "Has hardware, customers and a price list. Wandered in by mistake and is asking the way out.",
+      "last_sign_note": "announced October 2025"
+    },
+    {
+      "name": "Riverbed IQ (NPM 360)",
+      "url": "https://www.riverbed.com/products/appresponse/",
+      "kind": "vendor",
+      "pitch": "Agentic AI wired into AppResponse and NetProfiler: correlates the evidence, recommends next steps, lets you drill down to the packets. Launched September 2026.",
+      "epitaph": "Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum.",
+      "last_sign_note": "launched 2026-09-17"
     }
   ],
   "epitaphs": {
@@ -150,6 +182,8 @@
     "krantikumara/-kranti-sip-pcap-analyzer": "Created and last pushed on the same day, 133 stars. The leading dash in the name is original.",
     "tuliperis/SharkMCP": "One of at least two SharkMCPs. This one lived for a day.",
     "weirdmachine64/SharkMCP": "The other SharkMCP. Lived a day longer than its namesake.",
-    "bx33661/Wireshark-MCP": "'Production-grade', says PyPI. Still pushing, so no flowers yet."
+    "bx33661/Wireshark-MCP": "'Production-grade', says PyPI. Still pushing, so no flowers yet.",
+    "netwho/PacketCircle": "A Wireshark plugin that draws traffic as a circle. No AI in the description, which makes it the most honest entry in the yard.",
+    "kiskander/pt-mcp-server": "Not packets, Packet Tracer: an MCP server that builds CCNA labs for you and refuses to reveal the graded answers. Admitted on the undertaker's personal invitation."
   }
 }

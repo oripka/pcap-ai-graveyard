@@ -9,3 +9,5 @@ towermac/github-copilot-wireshark-analysis
 dishastack/Packet_pilot-ai
 0xKoda/WireMCP
 netwho/PacketCircle
+kiskander/pt-mcp-server
+Deenxnation1/ColdAlpha_NetworkSniffer

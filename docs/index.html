@@ -199,7 +199,7 @@ tbody tr { transition: background .2s; } tbody tr:hover { background: rgba(255, 
 
 <main class="wrap">
   <h2>Hosted and commercial plots</h2>
-  <p class="sub">Tools with a website instead of, or next to, a repository. No stars to count here, so status is whether the site still answers and the last sign of life we could find.</p>
+  <p class="sub">Tools with a website instead of, or next to, a repository. No stars to count here, so a site that answers is judged by the day its page was last edited, and a site that does not answer is buried.</p>
   <div class="yard" id="hosted"></div>
 
   <h2>Still warm</h2>
@@ -284,7 +284,7 @@ tbody tr { transition: background .2s; } tbody tr:hover { background: rgba(255, 
   }
   const clip = (t, n) => t && t.length > n ? t.slice(0, n - 1).trimEnd() + '…' : t
   for (const h of G.hosted) $('hosted').append(tomb({ status: h.status, href: h.url, title: h.name, pitch: h.pitch, epitaph: h.epitaph,
-    dates: h.last_sign ? `last sign ${h.last_sign}` : h.last_sign_note,
+    dates: h.edited ? `last edited ${h.edited}` : h.no_site ? h.last_sign_note : 'edit date not published',
     pills: [h.kind, ...(h.site_status ? ['HTTP ' + h.site_status] : []), ...(h.stars != null ? [h.stars + ' ★'] : [])] }))
   const repoTomb = (r) => tomb({ status: r.status, href: 'https://github.com/' + r.repo, title: r.repo.split('/')[1],
     dates: `${r.created} – ${r.last_push}`, pitch: clip(r.description, 120), epitaph: r.epitaph, pills: [r.stars + ' ★', 'pulse ' + r.pulse] })
