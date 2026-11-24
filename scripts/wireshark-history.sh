@@ -6,6 +6,7 @@ SRC="${1:?path to a Wireshark clone}"; REF="${2:-origin/master}"
 OUT="$(cd "$(dirname "$0")/.." && pwd)/data/wireshark.json"
 cd "$SRC"
 AS_OF=$(git log -1 --format=%ad --date=short "$REF")
+WORK=$(git log --format=%ad --date=format:%Y-%m "$REF" | sort | uniq -c | awk '$1>=5' | wc -l | tr -d " ")
 MONTHS=$(git log --format=%ad --date=format:%Y-%m "$REF" | sort -u | wc -l | tr -d " ")
 YEARS=$(git log --format=%ad --date=format:%Y "$REF" | sort | uniq -c | awk '{printf "%s\"%s\": %s", (NR>1?", ":""), $2, $1}')
 cat > "$OUT" <<JSON
@@ -13,6 +14,7 @@ cat > "$OUT" <<JSON
   "source": "git log of the Wireshark repository (gitlab.com/wireshark/wireshark), commits on master by author date",
   "as_of": "$AS_OF",
   "active_months": $MONTHS,
+  "working_months": $WORK,
   "commits": { $YEARS },
   "milestones": [
     { "date": "1998-09-16", "label": "First commit, as Ethereal" },

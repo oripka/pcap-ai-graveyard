@@ -425,7 +425,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   <div class="chart" id="tl-ws"></div>
   <p class="sub" id="tl-wsnote" style="margin-top:6px"></p>
 
-  <h3 class="charttitle">Staying power: months in which anyone committed anything</h3>
+  <h3 class="charttitle">Staying power: months with at least five commits</h3>
   <div class="life" id="tl-life"></div>
 
   <details class="tablewrap"><summary>The same numbers as a table</summary><div class="scroll"><table id="tl-table"><thead><tr><th>Month</th><th class="n">Created</th><th class="n">Went silent</th><th class="n">Ever created</th><th class="n">Still worked on</th></tr></thead><tbody></tbody></table></div></details>
@@ -738,13 +738,13 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
       const tot = Object.values(WS.commits).reduce((a, b) => a + b, 0)
       $('tl-wsnote').textContent = `${tot.toLocaleString('en')} commits over ${y1 - y0 + 1} years, never fewer than ${Math.min(...yrs.slice(1, -1).map((y) => WS.commits[y])).toLocaleString('en')} in a full year. Counted from the Wireshark repository up to ${WS.as_of}, so ${y1} is a partial year.`
       // staying power on one scale: months in which anything was committed
-      const host = $('tl-life'), A = G.activity; if (host.childElementCount || !A || !WS.active_months) return
-      const best = Object.entries(A.repos).sort((a, b) => b[1].active_months - a[1].active_months || b[1].commits - a[1].commits)[0]
-      const row = (label, sub, n, color) => { const r = el('div', 'row'), sp = el('span', '', label); if (sub) sp.append(el('small', '', sub)); const tr = el('div', 'track'), bar = document.createElement('i'); bar.style.width = (100 * n / WS.active_months) + '%'; bar.style.background = color; tr.append(bar); r.append(sp, tr, el('b', '', n + (n === 1 ? ' month' : ' months'))); return r }
+      const host = $('tl-life'), A = G.activity; if (host.childElementCount || !A || !WS.working_months) return
+      const best = Object.entries(A.repos).sort((a, b) => (b[1].working_months || 0) - (a[1].working_months || 0) || b[1].commits - a[1].commits)[0]
+      const row = (label, sub, n, color, txt) => { const r = el('div', 'row'), sp = el('span', '', label); if (sub) sp.append(el('small', '', sub)); const tr = el('div', 'track'), bar = document.createElement('i'); bar.style.width = (100 * n / WS.working_months) + '%'; bar.style.background = color; tr.append(bar); r.append(sp, tr, el('b', '', txt || n + (n === 1 ? ' month' : ' months'))); return r }
       host.append(
-        row('Wireshark', 'months with at least one commit, since 1998', WS.active_months, EVER),
-        row('Most persistent AI tool', `${best[0]}, ${best[1].commits} commits`, best[1].active_months, BORN),
-        row('Median AI tool', 'created and last pushed in the same month', 1, DIED))
+        row('Wireshark', 'since 1998', WS.working_months, EVER),
+        row('Most persistent AI tool', `${best[0]}, ${best[1].commits} commits`, best[1].working_months, BORN),
+        row('Median AI tool', 'everything happened in one calendar month', 1, DIED, '≤ 1 month'))
     }
     drawTimeline = () => { bars(); lines(); ws() }
     // redraw whenever the chart's own width changes (tab shown, window resized, pane opened)
