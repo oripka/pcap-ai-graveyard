@@ -112,12 +112,10 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .plot.rise { opacity: 0; transform: translateY(70px) scale(.92); }
 .plot.in { opacity: 1; transform: none; transition: opacity .6s, transform .9s cubic-bezier(.2, .9, .3, 1.25); }
 .tomb { position: relative; width: 100%; min-height: 318px; padding: 40px 18px 16px; text-align: center; color: var(--carve);
-  display: flex; flex-direction: column; transform: rotate(var(--lean, 0deg)); transform-origin: 50% 100%;
+  display: flex; flex-direction: column; transform: translateY(calc(var(--n, 0) * 14px)) rotate(var(--lean, 0deg)); transform-origin: 50% 100%;
   transition: transform .45s cubic-bezier(.2, .9, .3, 1.5), filter .3s;
+  filter: brightness(calc(1 - var(--n, 0) * .3)) saturate(calc(1 - var(--n, 0) * .35));
   background:
-    radial-gradient(60px 26px at 12% 100%, rgba(70, 120, 70, .55), transparent 70%),
-    radial-gradient(80px 30px at 92% 100%, rgba(60, 110, 70, .5), transparent 70%),
-    radial-gradient(40px 60px at 100% 55%, rgba(70, 110, 80, .18), transparent 70%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 -.12'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"),
     linear-gradient(168deg, #aab1c0 0%, #8e96a8 30%, #6f778a 68%, #555d70 100%);
   border-radius: 118px 118px 5px 5px / 86px 86px 5px 5px;
@@ -128,6 +126,41 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .plot.shape-3 .tomb::before { content: ""; position: absolute; left: 50%; top: -44px; width: 20px; height: 46px; transform: translateX(-50%); background: linear-gradient(168deg, #aab1c0, #6f778a); border-radius: 3px 3px 0 0; box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .22); }
 .plot.shape-3 .tomb::after { content: ""; position: absolute; left: 50%; top: -32px; width: 52px; height: 16px; transform: translateX(-50%); background: linear-gradient(168deg, #aab1c0, #7b8396); border-radius: 3px; box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .22); }
 .plot:hover .tomb { transform: rotate(0deg) translateY(-4px); filter: brightness(1.07); }
+/* neglect: --n runs from 0 (tended) to 1 (nobody has been here for years) */
+.grime { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: var(--n, 0);
+  background:
+    radial-gradient(90px 60px at 8% 100%, rgba(58, 112, 62, .95), transparent 72%),
+    radial-gradient(120px 70px at 94% 100%, rgba(50, 100, 60, .9), transparent 72%),
+    radial-gradient(70px 110px at 100% 48%, rgba(62, 108, 70, .7), transparent 70%),
+    radial-gradient(60px 80px at 0% 30%, rgba(58, 100, 66, .6), transparent 70%),
+    radial-gradient(90px 40px at 40% 0%, rgba(30, 34, 44, .55), transparent 70%),
+    linear-gradient(180deg, transparent 40%, rgba(24, 44, 30, .55) 100%); }
+.plot.n3 .tomb .epi, .plot.n4 .tomb .epi, .plot.n3 .tomb h3, .plot.n4 .tomb h3 { text-shadow: none; }
+.plot.n4 .tomb .rip, .plot.n4 .tomb .dates, .plot.n4 .tomb .cause { opacity: .7; }
+.plot.n3 .plinth { opacity: .55; } .plot.n4 .plinth { visibility: hidden; }
+.plot.n2 .mound { height: 50px; } .plot.n3 .mound { height: 62px; left: -12%; right: -12%; } .plot.n4 .mound { height: 76px; left: -14%; right: -14%; }
+.plot.n3 .mound::before, .plot.n4 .mound::before { height: 26px; inset: 4px 4% auto; }
+.deco.web2 { left: 8px; top: 40%; right: auto; font-size: 18px; opacity: .55; z-index: 1; transform: scaleX(-1); }
+.deco.m { left: 42%; bottom: 16px; font-size: 18px; }
+/* the living get no stone: a timber notice board on two posts */
+.plot.living .tomb { min-height: 250px; padding: 22px 18px 14px; border-radius: 8px; filter: none; color: #2a1a0c;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 82px, rgba(40, 22, 8, .16) 82px 83px),
+    repeating-linear-gradient(92deg, rgba(255, 255, 255, .03) 0 3px, rgba(0, 0, 0, .04) 3px 7px),
+    linear-gradient(170deg, #c99a62 0%, #b07f48 45%, #8f6234 100%);
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .25), inset -3px -3px 0 rgba(0, 0, 0, .25), 0 0 34px -6px rgba(240, 180, 90, .45), 8px 14px 22px -10px rgba(0, 0, 0, .8); }
+.plot.living .tomb::before, .plot.living .tomb::after { content: ""; position: absolute; top: 9px; width: 7px; height: 7px; border-radius: 50%; background: #4a2f16; box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .3); }
+.plot.living .tomb::before { left: 10px; } .plot.living .tomb::after { right: 10px; }
+.plot.living .tomb .rip { color: #1f5d33; text-shadow: 0 1px 0 rgba(255, 255, 255, .25); }
+.plot.living .tomb .rule { background: rgba(60, 35, 12, .45); }
+.plot.living .tomb .pitch, .plot.living .tomb .dates, .plot.living .tomb .cause { color: rgba(42, 26, 12, .82); }
+.plot.living .tomb .epi { color: #1d1108; }
+.plot.living .plinth { width: 74%; height: 46px; margin-top: 0; border-radius: 0; box-shadow: none;
+  background: linear-gradient(90deg, #7a5230 0 13px, transparent 13px calc(100% - 13px), #6b4526 calc(100% - 13px)); }
+.pulse { display: block; width: 78px; height: 16px; margin: 8px auto 0; }
+.pulse path { fill: none; stroke: #1f6d3a; stroke-width: 2; stroke-linejoin: round; stroke-dasharray: 120; animation: pulse 1.8s linear infinite; }
+@keyframes pulse { from { stroke-dashoffset: 120; } to { stroke-dashoffset: -120; } }
+.deco.lamp { animation: flicker 2.2s steps(3) infinite; }
 .plinth { width: 102%; height: 16px; margin-top: -1px; border-radius: 4px; background: linear-gradient(180deg, #7b8396, #4b5265); box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .16), 0 12px 18px -8px rgba(0, 0, 0, .8); position: relative; z-index: 1; }
 .mound { position: absolute; left: -9%; right: -9%; bottom: -22px; height: 44px; z-index: 2; pointer-events: none;
   background: radial-gradient(ellipse at 50% 100%, #1d3a26 0, #142a1b 45%, transparent 72%); }
@@ -136,7 +169,7 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
   -webkit-mask-image: linear-gradient(180deg, transparent, #000 70%); mask-image: linear-gradient(180deg, transparent, #000 70%); animation: sway 5s ease-in-out infinite alternate; transform-origin: 50% 100%; }
 @keyframes sway { from { transform: skewX(-7deg); } to { transform: skewX(7deg); } }
 .deco { position: absolute; z-index: 3; font-size: 22px; pointer-events: none; }
-.deco.l { left: -4px; bottom: -4px; } .deco.r { right: -2px; bottom: -2px; font-size: 20px; }
+.deco.l { left: 7%; bottom: 14px; } .deco.r { right: 7%; bottom: 14px; font-size: 20px; }
 .deco.web { right: 10px; top: 14px; font-size: 22px; opacity: .65; z-index: 1; }
 .plot.shape-1 .deco.web, .plot.shape-3 .deco.web { right: 4px; top: 4px; }
 .deco.candle { animation: flicker 1.3s steps(3) infinite; }
@@ -258,7 +291,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 
 <main class="wrap">
   <h2>Hosted and commercial plots</h2>
-  <p class="sub">Tools with a website. No stars to count here, so a site that answers is judged by the day its page was last edited, and a site that does not answer is buried.</p>
+  <p class="sub">Tools with a website. No stars to count here, so a site that answers is judged by the day its page was last edited, and a site that does not answer is buried. The living get a notice board, not a stone. Stones are tended less the longer nobody has touched the project.</p>
   <div class="yardwrap"><div class="wanderer" aria-hidden="true">👻</div><div class="yard" id="hosted"></div></div>
 
   <h2>Still warm</h2>
@@ -371,19 +404,34 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   const CAUSES = ['context window exceeded', 'ran out of API credits', 'the free tier ended', 'tshark -T json on a 2 GB capture', 'rate limited, never retried', 'author got a job', 'hallucinated a TCP flag in front of a customer', 'demo day was yesterday', 'pip install failed on a newer Python', 'superseded by the next weekend project', 'the model was deprecated', 'README finished, project not', 'asked Reddit for feedback, got it', 'token budget spent on the logo', 'works on sample.pcap only']
   const PROGNOSIS = ['guarded', 'stable, for a weekend project', 'one refactor away from either outcome', 'depends on the API bill', 'good, annoyingly', 'better than ours on some days']
   const GHOST = { alive: '🫀', coughing: '🤧', unknown: '🔦', embalmed: '🏺' }
-  const RIP = { alive: 'NOT YET', coughing: 'ANY DAY NOW', unknown: 'MISSING', flatlined: 'R . I . P', buried: 'R . I . P', embalmed: 'PRESERVED' }
+  const RIP = { alive: 'STILL BREATHING', coughing: 'ANY DAY NOW', unknown: 'MISSING', flatlined: 'R . I . P', buried: 'R . I . P', embalmed: 'PRESERVED' }
   const CRACK = '<svg class="crack" viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true"><path d="M70 0 l-6 16 l8 12 l-10 18 l5 9 l-7 14" fill="none" stroke="#1b1f2b" stroke-width=".8"/><path d="M62 46 l-9 6" fill="none" stroke="#1b1f2b" stroke-width=".6"/></svg>'
+  const CRACK2 = '<svg class="crack" viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true"><path d="M0 52 l12 5 l7 -4 l11 10 l-3 9 l9 8" fill="none" stroke="#1b1f2b" stroke-width=".8"/><path d="M30 63 l8 -3" fill="none" stroke="#1b1f2b" stroke-width=".6"/></svg>'
+  const CRACK3 = '<svg class="crack" viewBox="0 0 100 140" preserveAspectRatio="none" aria-hidden="true"><path d="M100 96 l-13 4 l-6 11 l-14 3 l-5 12 l-9 14" fill="none" stroke="#1b1f2b" stroke-width="1"/><path d="M30 0 l4 11 l-6 9 l5 8" fill="none" stroke="#1b1f2b" stroke-width=".7"/></svg>'
+  const daysSince = (d) => d ? Math.max(0, Math.round((Date.now() - Date.parse(d)) / 864e5)) : null
   const tomb = (o) => {
     const h = hash(o.key)
-    const plot = el('article', `plot rise t-${o.status} shape-${h % 4}`)
-    plot.style.setProperty('--lean', (((h >> 3) % 70) / 10 - 3.5).toFixed(1) + 'deg')
+    const living = o.status === 'alive'
+    // upkeep follows the days of silence: 1 tended, 2 wilting, 3 overgrown, 4 forgotten
+    const floor = ({ coughing: 60, flatlined: 200, buried: 400, embalmed: 200 })[o.status] || 0
+    const days = Math.max(o.days != null ? o.days : 0, floor) // a dead site is never tidier than its status
+    const lvl = living || o.status === 'unknown' ? 0 : days > 730 ? 4 : days > 365 ? 3 : days > 180 ? 2 : 1
+    const n = lvl ? Math.max(.08, Math.min(1, (days - 45) / 700)) : 0
+    const plot = el('article', `plot rise t-${o.status} ${living ? 'living' : 'shape-' + (h % 4)} n${lvl}`)
+    plot.style.setProperty('--n', n.toFixed(2))
+    plot.style.setProperty('--lean', ((((h >> 3) % 70) / 10 - 3.5) * (living ? .35 : 1 + n * 1.3)).toFixed(1) + 'deg')
     const g = el('span', 'ghost', GHOST[o.status] || '👻'); g.setAttribute('aria-hidden', 'true')
     const t = el('div', 'tomb')
-    if (o.status === 'buried' || o.status === 'flatlined') { t.insertAdjacentHTML('beforeend', CRACK); if (h % 2) { const w = el('span', 'deco web', '🕸️'); w.setAttribute('aria-hidden', 'true'); t.append(w) } }
+    const on = (cls, ch) => { const w = el('span', 'deco ' + cls, ch); w.setAttribute('aria-hidden', 'true'); t.append(w) }
+    if (lvl) t.append(el('i', 'grime'))
+    if (lvl >= 2) t.insertAdjacentHTML('beforeend', CRACK)
+    if (lvl >= 3) { t.insertAdjacentHTML('beforeend', CRACK2); on('web', '🕸️') }
+    if (lvl >= 4) { t.insertAdjacentHTML('beforeend', CRACK3); on('web2', '🕸️') }
     t.append(el('div', 'rip', RIP[o.status] || 'R . I . P'))
     const h3 = el('h3'); h3.append(link(o.href, o.title)); t.append(h3)
     if (o.dates) t.append(el('div', 'dates', o.dates))
-    t.append(el('div', 'rule'))
+    if (living) t.insertAdjacentHTML('beforeend', '<svg class="pulse" viewBox="0 0 78 16" aria-hidden="true"><path d="M0 9 h22 l4 -7 l5 13 l5 -11 l3 5 h39"/></svg>')
+    else t.append(el('div', 'rule'))
     if (o.pitch) t.append(el('p', 'pitch', o.pitch))
     t.append(el('p', 'epi', o.epitaph))
     if (o.cause) t.append(el('p', 'cause', o.cause))
@@ -392,15 +440,17 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     t.append(f)
     const mound = el('div', 'mound')
     const deco = (cls, ch) => { const d = el('span', 'deco ' + cls, ch); d.setAttribute('aria-hidden', 'true'); mound.append(d) }
-    if (o.status === 'alive') { deco('l', ['🌷', '💐', '🌼'][h % 3]); if (h % 2) deco('r', '🌱') }
-    else if (o.status === 'coughing') deco('r candle', '🕯️')
+    if (living) { deco('l lamp', '🏮'); deco('r', ['🌱', '🌷', '🌼'][h % 3]) }
     else if (o.status === 'unknown') deco('l', '🪧')
-    else { if (h % 3 === 0) deco('l', '🥀'); if (h % 5 === 0) deco('r', '🍄'); else if (h % 7 === 0) deco('r', '🐀') }
+    else if (lvl === 1) { deco('l', ['🌷', '💐', '🌼'][h % 3]); deco('r candle', '🕯️') }
+    else if (lvl === 2) { deco('l', '🥀'); if (h % 2) deco('r', '🍂') }
+    else if (lvl === 3) { deco('l', '🌿'); deco('r', h % 2 ? '🍄' : '🍂') }
+    else { deco('l', '🌿'); deco('m', '🌾'); deco('r', h % 2 ? '🐀' : '🍄') }
     plot.append(g, t, el('div', 'plinth'), mound)
     return plot
   }
   const clip = (t, n) => t && t.length > n ? t.slice(0, n - 1).trimEnd() + '…' : t
-  for (const h of G.hosted) $('hosted').append(tomb({ key: h.name, status: h.status, href: h.url, title: h.name, pitch: h.pitch, epitaph: h.epitaph,
+  for (const h of G.hosted) $('hosted').append(tomb({ key: h.name, status: h.status, href: h.url, title: h.name, pitch: h.pitch, epitaph: h.epitaph, days: daysSince(h.died || h.edited),
     dates: h.died ? `† ${h.died}` : h.edited ? `last edited ${h.edited}` : h.no_site ? h.last_sign_note : 'edit date not published',
     pills: [h.kind, ...(h.site_status ? ['HTTP ' + h.site_status] : []), ...(h.stars != null ? [h.stars + ' ★'] : [])] }))
   // a free plot at the end of the row
@@ -410,7 +460,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   vacant.append(vt); $('hosted').append(vacant)
 
   const repoTomb = (r) => tomb({ key: r.repo, status: r.status, href: 'https://github.com/' + r.repo, title: r.repo.split('/')[1],
-    dates: `${r.created} – ${r.last_push}`, pitch: clip(r.description, 110), epitaph: r.epitaph,
+    dates: `${r.created} – ${r.last_push}`, pitch: clip(r.description, 110), epitaph: r.epitaph, days: r.silent_days,
     cause: r.status === 'alive' ? 'Prognosis: ' + PROGNOSIS[hash(r.repo) % PROGNOSIS.length] : 'Cause: ' + CAUSES[hash(r.repo) % CAUSES.length],
     pills: [r.stars + ' ★', 'pulse ' + r.pulse] })
   for (const r of G.repos.slice(0, 12)) $('warm').append(repoTomb(r))

@@ -188,6 +188,12 @@ This list is kept by the maker of [PacketSafari](https://www.packetsafari.com/),
 - Robin Hayer, [The tool said it wrote 48 packets. Only 44 were there](https://robinhayer.dev/pcapsplitter-file-collision-tcp-session-reuse). Not AI at all: an honest bug hunt in a PCAP splitter, with a merged fix. Included as a reminder of what finished work looks like.
 - Y. Rooseleer, [AI-Powered Cisco Packet Tracer with MCP](https://docs.google.com/document/d/e/2PACX-1vR7AoY15txmtDNbr-Mj1GlSVsFMls85LEyIV0ySw7bfMY3pMo6Ad0aFinnyCMGPQwZipozI6k4XlEG7/pub). November 2026. A write-up of pt-mcp-server.
 - Chris Greer, [Can AI Analyze Pcaps? The Results Surprised Me!](https://www.youtube.com/@ChrisGreer). October 2025, on his channel.
+- PacketSafari (keeper of this register), [Can ChatGPT Analyze PCAP Files?](https://www.packetsafari.com/blog/2026/08/14/can-chatgpt-analyze-pcap-files/). August 2026. The keeper's answer: it can read the evidence, it cannot be the decoder.
+- PacketSafari (keeper of this register), [AI Agents for Packet Analysis: PCAP Workflow](https://www.packetsafari.com/blog/2026/08/14/ai-agents-for-packet-analysis/). August 2026. What an agent needs besides a prompt: a decoder, bounded tools and exact frames.
+- PacketSafari (keeper of this register), [Can Wireshark Use AI for Packet Analysis?](https://www.packetsafari.com/blog/2026/09/23/can-wireshark-use-ai-for-packet-analysis/). September 2026. tshark exports, plugins and MCP tools, which is to say most of this yard.
+- PacketSafari (keeper of this register), [Packet Evidence Verification: A Practical Standard](https://www.packetsafari.com/blog/2026/09/02/packet-evidence-verification/). September 2026. How to check a conclusion against the packets, whoever wrote it.
+- PacketSafari (keeper of this register), [PCAP Prompt Compression](https://www.packetsafari.com/blog/2025/prompt-compression-pcap/). 2025. Fitting a capture into a context window, the problem on half the stones here.
+- PacketSafari (keeper of this register), [Model Quality Index for Packet Investigation](https://www.packetsafari.com/model-quality-index/). Which language models hold up on packet work, rated.
 <!-- reading:end -->
 
 ## License
