@@ -744,8 +744,8 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
       const row = (label, sub, days, text, color) => { const r = el('div', 'row'), sp = el('span', '', label); if (sub) sp.append(el('small', '', sub)); const tr = el('div', 'track'), bar = document.createElement('i'); bar.style.width = (100 * days / wsDays) + '%'; bar.style.background = color; tr.append(bar); r.append(sp, tr, el('b', '', text)); return r }
       host.append(
         row('Wireshark', 'first commit to today', wsDays, Math.floor(wsDays / 365.25) + ' years', EVER),
-        row('Longest-lived AI tool', oldest.repo, oldest.lifespan_days, (oldest.lifespan_days / 365.25).toFixed(1) + ' years', BORN),
-        row('Median AI tool', 'first to last push', s.median_lifespan, s.median_lifespan + (s.median_lifespan === 1 ? ' day' : ' days'), DIED))
+        row('Longest span of any AI tool', oldest.repo + ', created to last push, pauses included', oldest.lifespan_days, (oldest.lifespan_days / 365.25).toFixed(1) + ' years', BORN),
+        row('Median AI tool', 'created to last push', s.median_lifespan, s.median_lifespan + (s.median_lifespan === 1 ? ' day' : ' days'), DIED))
     }
     drawTimeline = () => { bars(); lines(); ws() }
     // redraw whenever the chart's own width changes (tab shown, window resized, pane opened)
