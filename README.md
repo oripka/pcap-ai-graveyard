@@ -19,7 +19,7 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**563** repositories and **28** hosted or commercial tools, as of **2026-11-24**.
+**563** repositories and **29** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
@@ -72,6 +72,7 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [Anonymize-pcap](https://gitlab.com/ipv6muppen/anonymize-pcap) | gitlab | 🫀 Alive | page last edited 2026-11-18 (last activity on GitLab) | Lives on GitLab, where our weekly sweep does not look. Zero stars, one week old, and solving the problem every upload-your-capture tool here ignores. |
 | [Frame Bench (Netomize)](https://netomize.ca/) | desktop | 🫀 Alive | AI assistant announced November 2026, not released | The model drafts, the app builds, and the app shows what it sends before sending it. Here as a visitor: the AI part cannot die before it is born. |
 | [CryptoPosture](https://cryptoposture.duckdns.org/) | hosted | 🤒 Coughing | page last edited 2026-09-18 (last push to its repository) | Checks whether your mail is encrypted in transit. Hosted on a free dynamic DNS name, so we check on it weekly. |
+| [Pcaptix (Sevana)](https://sevana.biz/our-products-pcaptix/) | desktop | ❔ No site of its own | freeware announced November 2026 | Wireshark tells you a packet was lost; this one says the call sounded bad, and plays it back. Free, offline and no account, which leaves the cemetery very little to bill. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse

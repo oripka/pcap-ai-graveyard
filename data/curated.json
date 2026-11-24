@@ -245,6 +245,14 @@
       "pitch": "AI-assisted forensics for email encryption: reads a capture, inspects STARTTLS and certificates, reports the weak spots.",
       "epitaph": "Checks whether your mail is encrypted in transit. Hosted on a free dynamic DNS name, so we check on it weekly.",
       "last_sign_note": "announced early November 2026"
+    },
+    {
+      "name": "Pcaptix (Sevana)",
+      "url": "https://sevana.biz/our-products-pcaptix/",
+      "kind": "desktop",
+      "pitch": "Free desktop analyzer for voice captures on Linux and Windows. Rebuilds SIP and VoLTE calls and RTP streams, decodes the audio, scores how each stream sounded, and has an AI tab that explains a score. Runs offline, by the maker's post.",
+      "epitaph": "Wireshark tells you a packet was lost; this one says the call sounded bad, and plays it back. Free, offline and no account, which leaves the cemetery very little to bill.",
+      "last_sign_note": "freeware announced November 2026"
     }
   ],
   "epitaphs": {
