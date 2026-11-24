@@ -19,22 +19,22 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**563** repositories and **24** hosted or commercial tools, as of **2026-11-24**.
+**565** repositories and **28** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
-| 🫀 Alive | 143 | 25% |
-| 🤒 Coughing | 224 | 40% |
-| 📉 Flatlined | 135 | 24% |
+| 🫀 Alive | 145 | 26% |
+| 🤒 Coughing | 225 | 40% |
+| 📉 Flatlined | 134 | 24% |
 | 🪦 Buried | 60 | 11% |
 | 🏺 Embalmed | 1 | 0% |
 
-- **254** (45%) were created and last pushed on the same date.
-- **353** (63%) were worked on for a week or less.
+- **256** (45%) were created and last pushed on the same date.
+- **355** (63%) were worked on for a week or less.
 - Median time between creation and last push: **1 day**.
-- **377** (67%) have no stars at all. The author did not star it either.
+- **379** (67%) have no stars at all. The author did not star it either.
 - **112** (20%) are MCP servers.
-- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 461.
+- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 463.
 <!-- stats:end -->
 
 ## Hosted and commercial plots
@@ -68,6 +68,10 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [DynamiteLab (formerly PacketTotal)](https://dynamitelab.com/) | hosted | 🪦 Buried | shut down 2026-06-06, by its own announcement | 2017 – June 6, 2026. The only resident with a proper obituary on its own front page. Not vibe-coded, not a weekend project, and still gone. Rest well. |
 | [Red Hand Analytics](https://redhand.io/analyzer) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Caught red-handed being useful. Under observation. |
 | [pcapanalyzer.com](https://pcapanalyzer.com/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Says 'PCAP' and 'analysis' more often per paragraph than any capture contains SYNs. The search engines have been notified. |
+| [CloudShark Enterprise](https://www.cloudshark.io/) | vendor | 🫀 Alive | version 5.3 announced November 2026 | Was sharing captures in a browser before any of this yard was dug. Brings the packets and lets you bring the AI, which is one way to never be buried here. |
+| [Anonymize-pcap](https://gitlab.com/ipv6muppen/anonymize-pcap) | gitlab | 🫀 Alive | page last edited 2026-11-18 (last activity on GitLab) | Lives on GitLab, where our weekly sweep does not look. Zero stars, one week old, and solving the problem every upload-your-capture tool here ignores. |
+| [Frame Bench (Netomize)](https://netomize.ca/) | desktop | 🫀 Alive | AI assistant announced November 2026, not released | The model drafts, the app builds, and the app shows what it sends before sending it. Here as a visitor: the AI part cannot die before it is born. |
+| [CryptoPosture](https://cryptoposture.duckdns.org/) | hosted | 🤒 Coughing | page last edited 2026-09-18 (last push to its repository) | Checks whether your mail is encrypted in transit. Hosted on a free dynamic DNS name, so we check on it weekly. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse
@@ -95,7 +99,7 @@ Sorted by [pulse score](#how-this-is-measured). The complete register is in [GRA
 | 16 | [Anthrasaxx/pcap-alert-pipeline](https://github.com/Anthrasaxx/pcap-alert-pipeline) | 🫀 Alive | 59 | 0 | 2025-06-25 | 2026-11-18 | 511 d | More than a year of commits. Does not belong here and knows it. |
 | 17 | [RomainRicord/WireMCP-rs](https://github.com/RomainRicord/WireMCP-rs) | 🫀 Alive | 58 | 3 | 2026-03-05 | 2026-10-26 | 235 d | Alive at the time of writing, which is all anyone can say. |
 | 18 | [zombat/sonic](https://github.com/zombat/sonic) | 🫀 Alive | 58 | 1 | 2026-03-04 | 2026-11-19 | 260 d | Pulse present. No flowers yet. |
-| 19 | [CyberHorizon-be/sleuthline](https://github.com/CyberHorizon-be/sleuthline) | 🫀 Alive | 57 | 15 | 2026-10-18 | 2026-11-18 | 31 d | Still breathing. We check again next week. |
+| 19 | [CyberHorizon-be/sleuthline](https://github.com/CyberHorizon-be/sleuthline) | 🫀 Alive | 57 | 15 | 2026-10-18 | 2026-11-18 | 31 d | Disk, memory and network in one investigation, with an agent that cites its records. Version 1.0 and still pushing. Came to identify the bodies, not to join them. |
 | 20 | [Gurjas2112/Wireshark_PCAP_Anomaly_Detection](https://github.com/Gurjas2112/Wireshark_PCAP_Anomaly_Detection) | 🫀 Alive | 57 | 0 | 2025-05-29 | 2026-10-31 | 520 d | Still maintained after a year. Visiting, not residing. |
 | 21 | [netwho/PacketCircle](https://github.com/netwho/PacketCircle) | 🤒 Coughing | 56 | 30 | 2026-02-13 | 2026-07-28 | 165 d | A Wireshark plugin that draws traffic as a circle. No AI in the description, which makes it the most honest entry in the yard. |
 | 22 | [ClementG91/MCP-FlowSentinel](https://github.com/ClementG91/MCP-FlowSentinel) | 🫀 Alive | 56 | 1 | 2026-04-11 | 2026-11-23 | 226 d | Still breathing. We check again next week. |

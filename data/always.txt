@@ -16,3 +16,6 @@ ZeroVectorLabs/capsight
 ProxymanApp/TCPViewer
 lyatanski/webshark
 mostlygino/Kagami
+FzRsLLaSheR/NetLens
+anvin483/NEXTGUARD-AI
+epsilonstar-02/CryptoPosture

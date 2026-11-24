@@ -2,7 +2,7 @@
  {
   "repo": "0xKoda/WireMCP",
   "description": "An MCP for WireShark (tshark). Empower LLM's with realtime network traffic analysis capability",
-  "stars": 608,
+  "stars": 607,
   "topics": [
    "llm",
    "mcp",
@@ -761,6 +761,18 @@
   "homepage": "",
   "created": "2025-10-02",
   "last_push": "2025-10-02",
+  "archived": false,
+  "first_seen": "2026-11-24"
+ },
+ {
+  "repo": "FzRsLLaSheR/NetLens",
+  "description": "Malware triage on Windows: fake network with per-process attribution (WinDivert + ETW), TLS decryption, memory inspection, YAML rules with score and IOCs. Also analyses pcaps.",
+  "stars": 3,
+  "topics": [],
+  "language": "Python",
+  "homepage": "",
+  "created": "2026-11-19",
+  "last_push": "2026-11-19",
   "archived": false,
   "first_seen": "2026-11-24"
  },
@@ -2978,18 +2990,6 @@
   "first_seen": "2026-11-24"
  },
  {
-  "repo": "theshloksschauhan/AI-Deep-Packet-Analyzer",
-  "description": "",
-  "stars": 1,
-  "topics": [],
-  "language": "C++",
-  "homepage": "",
-  "created": "2026-03-26",
-  "last_push": "2026-04-04",
-  "archived": false,
-  "first_seen": "2026-11-24"
- },
- {
   "repo": "towermac/github-copilot-wireshark-analysis",
   "description": "",
   "stars": 1,
@@ -3772,6 +3772,18 @@
   "homepage": "",
   "created": "2026-11-12",
   "last_push": "2026-11-12",
+  "archived": false,
+  "first_seen": "2026-11-24"
+ },
+ {
+  "repo": "anvin483/NEXTGUARD-AI",
+  "description": "",
+  "stars": 0,
+  "topics": [],
+  "language": "JavaScript",
+  "homepage": "",
+  "created": "2026-11-09",
+  "last_push": "2026-11-09",
   "archived": false,
   "first_seen": "2026-11-24"
  },
@@ -4763,6 +4775,18 @@
   "first_seen": "2026-11-24"
  },
  {
+  "repo": "epsilonstar-02/CryptoPosture",
+  "description": "",
+  "stars": 0,
+  "topics": [],
+  "language": "Python",
+  "homepage": "",
+  "created": "2026-09-03",
+  "last_push": "2026-09-18",
+  "archived": false,
+  "first_seen": "2026-11-24"
+ },
+ {
   "repo": "eventhelix/visualether",
   "description": "VisualEther — Wireshark PCAP analysis for humans and AI. Public home for sample captures, FXT templates, MCP setup, and issues (not the source).",
   "stars": 0,
@@ -5013,7 +5037,7 @@
   "language": "Python",
   "homepage": "",
   "created": "2026-11-01",
-  "last_push": "2026-11-23",
+  "last_push": "2026-11-24",
   "archived": false,
   "first_seen": "2026-11-24"
  },

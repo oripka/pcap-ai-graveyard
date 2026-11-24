@@ -208,6 +208,43 @@
       "pitch": "'Advanced PCAP Analyzer for Network Professionals', 'the ultimate PCAP analysis tool', with AI-powered PCAP analysis.",
       "epitaph": "Says 'PCAP' and 'analysis' more often per paragraph than any capture contains SYNs. The search engines have been notified.",
       "last_sign_note": "site up"
+    },
+    {
+      "name": "CloudShark Enterprise",
+      "url": "https://www.cloudshark.io/",
+      "kind": "vendor",
+      "pitch": "Packet capture repository in the browser. Version 5.3 adds an MCP server so your own AI agent can search, decode, follow streams and annotate packets, plus Zeek and Suricata APIs.",
+      "epitaph": "Was sharing captures in a browser before any of this yard was dug. Brings the packets and lets you bring the AI, which is one way to never be buried here.",
+      "last_sign_note": "version 5.3 announced November 2026",
+      "force_status": "alive"
+    },
+    {
+      "name": "Anonymize-pcap",
+      "url": "https://gitlab.com/ipv6muppen/anonymize-pcap",
+      "kind": "gitlab",
+      "pitch": "A capture anonymizer on GitLab by Torbjörn Eklöv. No description yet.",
+      "epitaph": "Lives on GitLab, where our weekly sweep does not look. Zero stars, one week old, and solving the problem every upload-your-capture tool here ignores.",
+      "last_sign_note": "created 2026-11-18",
+      "last_edit": "2026-11-18",
+      "last_edit_note": "last activity on GitLab"
+    },
+    {
+      "name": "Frame Bench (Netomize)",
+      "url": "https://netomize.ca/",
+      "kind": "desktop",
+      "pitch": "Reads, edits and builds packet captures at the byte level. An AI assistant with tool calls is in development and, by the maker's own post, not yet released.",
+      "epitaph": "The model drafts, the app builds, and the app shows what it sends before sending it. Here as a visitor: the AI part cannot die before it is born.",
+      "last_sign_note": "AI assistant announced November 2026, not released",
+      "force_status": "alive"
+    },
+    {
+      "name": "CryptoPosture",
+      "url": "https://cryptoposture.duckdns.org/",
+      "kind": "hosted",
+      "repo": "epsilonstar-02/CryptoPosture",
+      "pitch": "AI-assisted forensics for email encryption: reads a capture, inspects STARTTLS and certificates, reports the weak spots.",
+      "epitaph": "Checks whether your mail is encrypted in transit. Hosted on a free dynamic DNS name, so we check on it weekly.",
+      "last_sign_note": "announced early November 2026"
     }
   ],
   "epitaphs": {
@@ -225,7 +262,11 @@
     "ProxymanApp/TCPViewer": "A native Mac app by people who ship native Mac apps for a living. Six hundred stars and a pulse. Came to visit, brought flowers.",
     "lyatanski/webshark": "Wireshark in a browser, in Kubernetes and on a phone, announced with 'I would appreciate feedback'. Twelve upvotes. We appreciate it too.",
     "roxlukas/ai_pcap_explain": "'Explain pcap using local LLM model.' One day, one star, no further explanation.",
-    "mostlygino/Kagami": "Kagami means mirror. A native macOS viewer on Wireshark's own dissectors, so at least the decoding is not a hallucination."
+    "mostlygino/Kagami": "Kagami means mirror. A native macOS viewer on Wireshark's own dissectors, so at least the decoding is not a hallucination.",
+    "FzRsLLaSheR/NetLens": "No AI anywhere, and does not pretend. Runs malware behind a fake Internet and shows its working. One of at least thirty repos called NetLens; this is the one that knows what a beacon is.",
+    "anvin483/NEXTGUARD-AI": "A 3D SOC platform with a knowledge graph, attack paths and a digital twin. One push, on the day it was created. The roadmap is longer than the commit log.",
+    "CyberHorizon-be/sleuthline": "Disk, memory and network in one investigation, with an agent that cites its records. Version 1.0 and still pushing. Came to identify the bodies, not to join them.",
+    "epsilonstar-02/CryptoPosture": "Grades the TLS of your mail server from a capture. Last pushed in September, demo on a free DuckDNS name. The certificate will tell us when it goes."
   },
   "reading": [
     {
