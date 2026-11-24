@@ -19,7 +19,7 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**563** repositories and **23** hosted or commercial tools, as of **2026-11-24**.
+**563** repositories and **24** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
@@ -44,6 +44,7 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 <!-- hosted:start -->
 | Tool | Kind | Status | Last sign of life | Epitaph |
 |---|---|---|---|---|
+| [Wireshark](https://www.wireshark.org/) | the original | 🫀 Alive | alive since 1998 | The one everybody here came to replace. Still standing, still free, and has not asked what a context window is. |
 | [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | page last edited 2026-11-17 (newest sitemap entry) | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
 | [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | page last edited 2026-11-19 (newest sitemap entry) | A log analysis company that noticed packets are also logs, if you squint. |
 | [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | page last edited 2026-11-23 (newest sitemap entry) | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |

@@ -468,7 +468,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   }
   const clip = (t, n) => t && t.length > n ? t.slice(0, n - 1).trimEnd() + '…' : t
   for (const h of G.hosted) $('hosted').append(tomb({ key: h.name, status: h.status, href: h.url, title: h.name, pitch: h.pitch, epitaph: h.epitaph, days: daysSince(h.died || h.edited),
-    dates: h.died ? `† ${h.died}` : h.edited ? `last edited ${h.edited}` : h.no_site ? h.last_sign_note : 'edit date not published',
+    dates: h.died ? `† ${h.died}` : h.edited ? `last edited ${h.edited}` : h.no_site || h.force_status ? h.last_sign_note : 'edit date not published',
     pills: [h.kind, ...(h.site_status ? ['HTTP ' + h.site_status] : []), ...(h.stars != null ? [h.stars + ' ★'] : [])] }))
   // a free plot at the end of the row
   const vacant = el('article', 'plot rise vacant'); const vt = el('div', 'tomb')

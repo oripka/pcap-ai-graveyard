@@ -1,6 +1,15 @@
 {
   "hosted": [
     {
+      "name": "Wireshark",
+      "url": "https://www.wireshark.org/",
+      "kind": "the original",
+      "pitch": "Free packet analyzer, started in 1998 as Ethereal. No AI. Runs on your machine and keeps your captures there.",
+      "epitaph": "The one everybody here came to replace. Still standing, still free, and has not asked what a context window is.",
+      "last_sign_note": "alive since 1998",
+      "force_status": "alive"
+    },
+    {
       "name": "PcapAI",
       "url": "https://pcapai.com",
       "kind": "hosted",
