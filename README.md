@@ -47,16 +47,16 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | 2026-11-24 · site up, upload form live | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
 | [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up | A log analysis company that noticed packets are also logs, if you squint. |
 | [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | 2026-11-24 · netnerve.vercel.app redirects to netnerve.online, site up | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
-| [PcapAnalyzer](https://pcap-analyzer-seven.vercel.app) | self-hosted | 🪦 Buried (HTTP 429) | 2026-11-24 · demo up | The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake. |
+| [PcapAnalyzer](https://pcap-analyzer-seven.vercel.app) | self-hosted | 🫀 Alive | 2026-11-24 · demo up | The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake. |
 | [Selector Packet Copilot](https://packetcopilot.selector.ai/) | hosted | 🤒 Coughing (HTTP 503) | 2026-11-24 · HTTP 503 on the day we checked | Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner. |
-| [A-Packets](https://apackets.com) | hosted | 🪦 Buried (HTTP 403) | 2026-11-24 · site up | Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper. |
+| [A-Packets](https://apackets.com) | hosted | 🫀 Alive | 2026-11-24 · site up | Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper. |
 | [PacketSnitch](https://packetsnitch.com) | desktop | 🫀 Alive | 2026-11-21 · date printed on the site | The page says 'Last updated: November 21, 2026'. A site that states its own date of last activity. We could retire. |
-| [PCAP Analyser (cloudssfdc)](https://www.producthunt.com/products/pcap-analyser) | hosted | 🪦 Buried (HTTP 403) | Product Hunt listing only | Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending. |
-| [AuraSniff](https://www.producthunt.com/posts/aurasniff) | cli | 🪦 Buried (HTTP 403) | Product Hunt listing only | aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here. |
+| [PCAP Analyser (cloudssfdc)](https://www.producthunt.com/products/pcap-analyser) | hosted | ❔ No site of its own | Product Hunt listing only | Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending. |
+| [AuraSniff](https://www.producthunt.com/posts/aurasniff) | cli | ❔ No site of its own | Product Hunt listing only | aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here. |
 | [VisualEther](https://www.visualether.com) | desktop | 🫀 Alive | 2026-11-24 · site up | An elder that learned MCP. Not vibe-coded, just adapting to the climate. |
 | [Cisco Meraki AI PCAP Analyzer](https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer) | vendor | 🫀 Alive | 2026-07-30 · documentation date | Will not die. Will be renamed. |
-| [GNS3 AI packet analysis](https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis) | vendor | 🪦 Buried (HTTP 403) | 2026-11-24 · documentation reachable | Every product gets an AI tab eventually. This is the lab simulator's. |
-| [PacketPilot AI](https://packetpilotai.com) | prompt pack | 🪦 Buried (HTTP 403) | 2026-11-24 · site up | Skipped building the tool and sells the prompts. Possibly the only one here that read the room. |
+| [GNS3 AI packet analysis](https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis) | vendor | 🫀 Alive | 2026-11-24 · documentation reachable | Every product gets an AI tab eventually. This is the lab simulator's. |
+| [PacketPilot AI](https://packetpilotai.com) | prompt pack | 🫀 Alive | 2026-11-24 · site up | Skipped building the tool and sells the prompts. Possibly the only one here that read the room. |
 | [Fraunhofer NetCapVis](https://netcapvis.igd.fraunhofer.de/) | hosted | 🫀 Alive | 2026-11-24 · site up | Publicly funded, therefore immortal. |
 | [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up | The undertaker's own plot. Reserved, not yet occupied. Judged by the same rules as everyone else; send a pull request the day it stops moving. |
 <!-- hosted:end -->
@@ -134,6 +134,7 @@ What the numbers cannot tell:
 - **"Vibe-coded" is a genre label, not an accusation.** Nobody can see from the outside how a repository was written, and this list does not claim to. Some entries are careful work that simply stopped. Some are finished and need no more commits.
 - **A last push is not the last activity.** Issues, releases from another repository or a private rewrite do not show up. A dependabot merge does.
 - **Keyword search misses things** and lets strangers in. The first is fixed in [`scripts/queries.txt`](scripts/queries.txt) and [`data/always.txt`](data/always.txt), the second in [`data/ignored.txt`](data/ignored.txt).
+- **A website check is a knock, not a visit.** A site that answers 403 or 429 to a robot counts as up. Only a 404, a 410 or no answer at all counts as gone, and a 5xx as coughing.
 - **Hosted tools have no public history.** For them the list says what was seen on the day of the check and nothing more.
 
 ## Run it yourself

@@ -100,7 +100,7 @@ tr:last-child td { border-bottom: 0; }
 .note h3 { font: 700 17px/1.2 var(--serif); margin: 0 0 6px; } .note p { margin: 0; color: var(--bone); font-size: 14px; }
 code { font: 13px var(--mono); background: rgba(255, 255, 255, .06); padding: 1px 5px; border-radius: 4px; }
 footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; }
-@media (max-width: 560px) { .moon { width: 60px; height: 60px; top: 22px; } header { padding-top: 56px; } .yard { grid-template-columns: 1fr 1fr; gap: 20px 10px; } .tomb { padding: 24px 10px 14px; min-height: 0; border-radius: 70px 70px 6px 6px / 50px 50px 6px 6px; } .tomb .pitch { display: none; } }
+@media (max-width: 560px) { .moon { width: 54px; height: 54px; top: 14px; } header { padding-top: 56px; } .yard { grid-template-columns: 1fr 1fr; gap: 20px 10px; } .tomb { padding: 24px 10px 14px; min-height: 0; border-radius: 70px 70px 6px 6px / 50px 50px 6px 6px; } .tomb .pitch { display: none; } }
 </style>
 </head>
 <body>
@@ -206,7 +206,7 @@ footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--lin
   const clip = (t, n) => t && t.length > n ? t.slice(0, n - 1).trimEnd() + '…' : t
   for (const h of G.hosted) $('hosted').append(tomb({ status: h.status, href: h.url, title: h.name, pitch: h.pitch, epitaph: h.epitaph,
     dates: h.last_sign ? `last sign ${h.last_sign}` : h.last_sign_note,
-    pills: [h.kind, ...(h.site_status && h.site_status !== 200 ? ['HTTP ' + h.site_status] : []), ...(h.stars != null ? [h.stars + ' ★'] : [])] }))
+    pills: [h.kind, ...(h.site_status ? ['HTTP ' + h.site_status] : []), ...(h.stars != null ? [h.stars + ' ★'] : [])] }))
   const repoTomb = (r) => tomb({ status: r.status, href: 'https://github.com/' + r.repo, title: r.repo.split('/')[1],
     dates: `${r.created} – ${r.last_push}`, pitch: clip(r.description, 120), epitaph: r.epitaph, pills: [r.stars + ' ★', 'pulse ' + r.pulse] })
   for (const r of G.repos.slice(0, 12)) $('warm').append(repoTomb(r))
@@ -231,7 +231,7 @@ footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--lin
     for (const r of rows.slice(0, limit)) {
       const tr = el('tr')
       const name = el('td'); name.append(link('https://github.com/' + r.repo, r.repo, 'repo'), el('span', 'desc', clip(r.description, 160) || ''))
-      if (r.homepage) { const d = el('span', 'desc'); d.append(link(r.homepage, r.homepage.replace(/^https?:\/\//, '').replace(/\/$/, ''))); name.append(d) }
+      if (r.homepage) { const d = el('span', 'desc'); d.append(link(r.homepage, r.homepage.replace(/^https?:\/\//, '').replace(/\/$/, ''))); if (r.site_status === 0 || r.site_status === 404 || r.site_status === 410) d.append(document.createTextNode(' · demo site gone')); name.append(d) }
       const st = el('td'); st.append(el('span', 'pill ' + r.status, LABEL[r.status]))
       const ep = el('td'); ep.append(el('span', 'epi', r.epitaph))
       tr.append(el('td', 'n', r.rank), name, st, el('td', 'n', r.pulse), el('td', 'n', r.stars), el('td', 'date', r.created), el('td', 'date', r.last_push), el('td', 'n', r.lifespan_days + ' d'), ep)

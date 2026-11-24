@@ -12,7 +12,7 @@ const repos = read('data/repos.json', [])
 const sites = read('data/sites.json', {})
 const today = new Date().toISOString().slice(0, 10)
 
-const urls = new Set([...curated.hosted.map((h) => h.url), ...repos.map((r) => r.homepage)]
+const urls = new Set([...curated.hosted.filter((h) => !h.no_site).map((h) => h.url), ...repos.map((r) => r.homepage)]
   .filter((u) => /^https?:\/\//.test(u || '') && !/127\.0\.0\.1|localhost/.test(u)))
 
 const check = async (url) => {
@@ -33,8 +33,9 @@ for (let i = 0; i < list.length; i += 8) {
     const r = await check(url)
     const was = sites[url]
     // Keep the date a site was last seen answering, so a dead one shows when it died.
-    const ok = r.status >= 200 && r.status < 400
-    sites[url] = { ...r, checked: today, last_up: ok ? today : (was && (was.last_up || (was.status < 400 && was.status > 0 ? was.checked : undefined))) }
+    // 401, 403 and 429 mean a server answered and turned a robot away: the site is up.
+    const ok = (r.status >= 200 && r.status < 400) || [401, 403, 429].includes(r.status)
+    sites[url] = { ...r, checked: today, last_up: ok ? today : (was && (was.last_up || undefined)) }
     console.log(`${String(r.status).padStart(3)} ${url}${r.error ? ' ' + r.error : ''}`)
   }))
 }

@@ -72,7 +72,8 @@
       "pitch": "Upload .pcap, .pcapng or .har and get a plain-English report with root cause and fix in under 60 seconds.",
       "epitaph": "Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending.",
       "last_sign": "",
-      "last_sign_note": "Product Hunt listing only"
+      "last_sign_note": "Product Hunt listing only",
+      "no_site": true
     },
     {
       "name": "AuraSniff",
@@ -81,7 +82,8 @@
       "pitch": "Terminal PCAP analyzer powered by Gemini and Claude. Six followers on Product Hunt.",
       "epitaph": "aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here.",
       "last_sign": "",
-      "last_sign_note": "Product Hunt listing only"
+      "last_sign_note": "Product Hunt listing only",
+      "no_site": true
     },
     {
       "name": "VisualEther",

@@ -81,8 +81,11 @@ const hosted = curated.hosted.map((h) => {
   const site = sites[h.url]
   const repo = h.repo && list.find((r) => r.repo.toLowerCase() === h.repo.toLowerCase())
   let status = 'unknown'
-  if (site) status = site.status >= 200 && site.status < 400 ? 'alive' : site.status >= 500 ? 'coughing' : 'buried'
-  return { ...h, status, site_status: site ? site.status : null, checked: site ? site.checked : null,
+  // 401, 403 and 429 mean a server answered and turned a robot away: the site is up.
+  const up = (c) => (c >= 200 && c < 400) || [401, 403, 429].includes(c)
+  if (h.no_site) status = 'unknown'
+  else if (site) status = up(site.status) ? 'alive' : site.status >= 500 ? 'coughing' : 'buried'
+  return { ...h, status, site_status: site && status !== 'alive' && status !== 'unknown' ? site.status : null, checked: site ? site.checked : null,
     stars: repo ? repo.stars : null, last_push: repo ? repo.last_push : null }
 })
 
@@ -116,7 +119,7 @@ const short = (s, n) => (s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s)
 const repoRow = (r) => `| ${r.rank} | [${cell(r.repo)}](https://github.com/${r.repo}) | ${icon(r.status).icon} ${icon(r.status).label} | ${r.pulse} | ${r.stars} | ${r.created} | ${r.last_push} | ${r.lifespan_days} d | ${cell(r.epitaph)} |`
 const repoHead = '| # | Repository | Status | Pulse | ★ | Born | Last push | Worked on | Epitaph |\n|--:|---|---|--:|--:|---|---|--:|---|'
 const hostedRow = (h) => {
-  const st = h.status === 'unknown' ? '❔ No site of its own' : `${icon(h.status).icon} ${icon(h.status).label}${h.site_status && h.site_status !== 200 ? ` (HTTP ${h.site_status})` : ''}`
+  const st = h.status === 'unknown' ? '❔ No site of its own' : `${icon(h.status).icon} ${icon(h.status).label}${h.site_status ? ` (HTTP ${h.site_status})` : ''}`
   const sign = h.last_sign ? `${h.last_sign} · ${h.last_sign_note}` : h.last_sign_note
   return `| [${cell(h.name)}](${h.url}) | ${h.kind} | ${st} | ${cell(sign)} | ${cell(h.epitaph)} |`
 }
