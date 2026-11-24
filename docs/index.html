@@ -257,6 +257,16 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(111, 191, 139, .7); } 100% { box-shadow: 0 0 0 7px rgba(111, 191, 139, 0); } }
 
 /* ---- register ---- */
+.charttitle { font: 600 15px/1.3 var(--sans); color: var(--ink); margin: 34px 0 8px; }
+.legendrow { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--dim); margin-bottom: 6px; }
+.legendrow i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
+.legendrow i.hatch { background: repeating-linear-gradient(135deg, #d66a4a 0 2px, transparent 2px 4px); }
+.chart { position: relative; } .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font: 11px var(--mono); fill: #9aa3b8; } .chart text.lab { font: 600 12px var(--sans); fill: #e6e9f2; }
+.chart .hit { fill: transparent; } .chart .hit:hover { fill: rgba(255, 255, 255, .05); }
+.tip { position: fixed; z-index: 60; pointer-events: none; background: #0b0f1e; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px; line-height: 1.45; box-shadow: 0 8px 22px rgba(0, 0, 0, .55); white-space: nowrap; }
+.tip b { display: block; font: 600 12px var(--mono); color: var(--dim); margin-bottom: 2px; } .tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+.tablewrap { margin-top: 26px; color: var(--dim); } .tablewrap summary { cursor: pointer; } .tablewrap table { margin-top: 10px; }
 .pagehead { padding: 44px 0 0; } .pagehead h2 { margin-top: 0; font-size: 38px; }
 .tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 0 0 14px; }
 .tools input { flex: 1 1 220px; min-width: 0; background: #0e1426; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; font: inherit; font-size: 14px; }
@@ -313,6 +323,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   <a class="brand" href="#yard"><span>🪦</span> <b>PCAP AI Graveyard</b></a>
   <a class="tab" href="#yard" data-tab="yard">The Yard</a>
   <a class="tab" href="#register" data-tab="register">The Register<small id="navcount"></small></a>
+  <a class="tab" href="#timeline" data-tab="timeline">Timeline</a>
   <a class="tab" href="#smallprint" data-tab="smallprint">Small Print</a>
 </div></nav>
 
@@ -388,6 +399,27 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 </main>
 </div>
 
+<!-- ============ TIMELINE ============ -->
+<div data-view="timeline" hidden>
+<main class="wrap">
+  <div class="pagehead"><div class="kicker">Timeline</div><h2 id="tl-head">Born and gone, month by month</h2>
+  <p class="sub" id="tl-sub"></p></div>
+  <div class="stats" id="tl-stats"></div>
+
+  <h3 class="charttitle">Repositories created and repositories that went silent, per month</h3>
+  <div class="legendrow"><span><i style="background:#2fa67e"></i>created that month</span><span><i style="background:#d66a4a"></i>last pushed that month, silent since</span><span><i class="hatch"></i>too recent to call</span></div>
+  <div class="chart" id="tl-bars"></div>
+
+  <h3 class="charttitle">How many exist, and how many anyone still works on</h3>
+  <div class="legendrow"><span><i style="background:#b9c0d0"></i>ever created</span><span><i style="background:#2fa67e"></i>pushed in that month or later</span></div>
+  <div class="chart" id="tl-lines"></div>
+
+  <details class="tablewrap"><summary>The same numbers as a table</summary><div class="scroll"><table id="tl-table"><thead><tr><th>Month</th><th class="n">Created</th><th class="n">Went silent</th><th class="n">Ever created</th><th class="n">Still worked on</th></tr></thead><tbody></tbody></table></div></details>
+  <p class="sub" id="tl-note" style="margin-top:18px"></p>
+</main>
+</div>
+<div class="tip" id="tip" hidden></div>
+
 <!-- ============ SMALL PRINT ============ -->
 <div data-view="smallprint" hidden>
 <main class="wrap">
@@ -426,12 +458,14 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   $('built').textContent = s.built; $('navcount').textContent = s.total; $('alln').textContent = s.total
 
   // ---- tabs ----
-  const VIEWS = ['yard', 'register', 'smallprint']
+  const VIEWS = ['yard', 'register', 'timeline', 'smallprint']
+  let drawTimeline = () => {}
   const show = () => {
     const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'yard'
     document.querySelectorAll('[data-view]').forEach((d) => { d.hidden = d.dataset.view !== v })
     document.querySelectorAll('.tab').forEach((t) => t.dataset.tab === v ? t.setAttribute('aria-current', 'page') : t.removeAttribute('aria-current'))
     scrollTo(0, 0)
+    if (v === 'timeline') drawTimeline()
   }
   addEventListener('hashchange', show)
 
@@ -589,6 +623,82 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     const st = el('td'); st.append(el('span', 'pill ' + h.status, LABEL[h.status]))
     tr.append(n, el('td', '', h.kind), st, el('td', 'desc', h.sign || '')); $('hrows').append(tr)
   }
+  // ---- timeline ----
+  {
+    const BORN = '#2fa67e', DIED = '#d66a4a', EVER = '#b9c0d0', NS = 'http://www.w3.org/2000/svg'
+    const sv = (tag, at, txt) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e }
+    const end = s.built.slice(0, 7), year = s.built.slice(0, 4), months = []
+    for (let y = +year - 1, m = 1; ;) { const k = y + '-' + String(m).padStart(2, '0'); months.push(k); if (k >= end) break; if (++m > 12) { m = 1; y++ } }
+    const T = months.map((k) => ({ k, born: 0, died: 0, total: 0, live: 0 })), at = Object.fromEntries(months.map((k, i) => [k, i]))
+    let early = 0, bornYear = 0, goneYear = 0
+    for (const r of G.repos) {
+      const b = r.created.slice(0, 7), d = r.last_push.slice(0, 7)
+      if (b in at) T[at[b]].born++; else early++
+      if (r.status !== 'alive' && d in at) T[at[d]].died++
+      for (const t of T) if (b <= t.k) { t.total++; if (d >= t.k) t.live++ }
+      if (r.created.startsWith(year)) { bornYear++; if (r.status !== 'alive') goneYear++ }
+    }
+    const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    const name = (k) => MON[+k.slice(5) - 1] + ' ' + k.slice(0, 4)
+    const peak = T.reduce((a, t) => t.born > a.born ? t : a, T[0])
+    $('tl-head').textContent = `${year}: ${bornYear} arrived, ${goneYear} already gone quiet`
+    $('tl-sub').textContent = `${Math.round(100 * bornYear / s.total)}% of everything in this yard was created this year. The busiest month was ${name(peak.k)}, with ${peak.born} new tools.`
+    const tile = (n, label) => { const d = el('div', 'stat'); d.append(el('b', '', n), el('span', '', label)); return d }
+    $('tl-stats').append(tile(bornYear, `created in ${year}`), tile(goneYear, `of those silent for 45+ days`), tile(Math.round(100 * goneYear / bornYear) + '%', `of the class of ${year}, gone`), tile(s.total - bornYear, `created before ${year}`))
+    $('tl-note').textContent = `"Went silent" means the last push was in that month and nothing has happened for more than 45 days. The last two months cannot be final: a repo pushed five weeks ago still counts as alive. ${early} repositories created before ${+year - 1} are counted in the totals but have no bar.`
+    for (const t of T) { const tr = el('tr'); tr.append(el('td', '', name(t.k)), el('td', 'n', t.born), el('td', 'n', t.died), el('td', 'n', t.total), el('td', 'n', t.live)); $('tl-table').tBodies[0].append(tr) }
+
+    const tip = $('tip')
+    const showTip = (e, html) => { tip.innerHTML = html; tip.hidden = false; const w = tip.offsetWidth, x = Math.min(innerWidth - w - 8, Math.max(8, e.clientX + 14)); tip.style.left = x + 'px'; tip.style.top = Math.max(8, e.clientY - tip.offsetHeight - 12) + 'px' }
+    const hideTip = () => { tip.hidden = true }
+    const nice = (max) => { const st = [5, 10, 20, 25, 50, 100, 200, 250, 500].find((x) => max / x <= 4) || 1000; const a = []; for (let v = st; v <= max; v += st) a.push(v); return a }
+    const frame = (host, H) => { const W = Math.max(300, host.clientWidth); host.textContent = ''; const g = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' }); host.append(g); return [g, W] }
+    const xlabels = (g, W, x, band, y) => { const every = band < 22 ? 3 : band < 34 ? 2 : 1
+      T.forEach((t, i) => { const m = +t.k.slice(5); if (m === 1) g.append(sv('text', { x: x(i) + band / 2, y: y + 30, 'text-anchor': 'middle', class: 'lab' }, t.k.slice(0, 4)))
+        if ((m - 1) % every === 0) g.append(sv('text', { x: x(i) + band / 2, y: y + 15, 'text-anchor': 'middle' }, MON[m - 1])) }) }
+
+    const bars = () => {
+      const [g, W] = frame($('tl-bars'), 380), L = 34, R = 8, top = 14, bot = 40
+      const mb = Math.max(...T.map((t) => t.born)), md = Math.max(...T.map((t) => t.died)), ph = 380 - top - bot
+      const y0 = top + ph * mb / (mb + md), k = ph / (mb + md), band = (W - L - R) / T.length, x = (i) => L + i * band, bw = Math.max(3, band - 2)
+      g.insertAdjacentHTML('afterbegin', `<defs><pattern id="hx" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="5" fill="${DIED}"/></pattern></defs>`)
+      for (const v of nice(mb)) { g.append(sv('line', { x1: L, x2: W - R, y1: y0 - v * k, y2: y0 - v * k, stroke: '#263049' }), sv('text', { x: L - 6, y: y0 - v * k + 4, 'text-anchor': 'end' }, v)) }
+      for (const v of nice(md)) { g.append(sv('line', { x1: L, x2: W - R, y1: y0 + v * k, y2: y0 + v * k, stroke: '#263049' }), sv('text', { x: L - 6, y: y0 + v * k + 4, 'text-anchor': 'end' }, v)) }
+      T.forEach((t, i) => {
+        const open = i >= T.length - 2, cx = x(i) + (band - bw) / 2
+        if (t.born) g.append(sv('rect', { x: cx, y: y0 - t.born * k, width: bw, height: Math.max(1, t.born * k - 1), rx: Math.min(4, bw / 2), fill: BORN }))
+        if (t.died) g.append(sv('rect', { x: cx, y: y0 + 1, width: bw, height: Math.max(1, t.died * k - 1), rx: Math.min(4, bw / 2), fill: open ? 'url(#hx)' : DIED }))
+        if (+t.k.slice(5) === 1 && i) g.append(sv('line', { x1: x(i), x2: x(i), y1: top, y2: 380 - bot + 32, stroke: '#3a4664', 'stroke-dasharray': '2 4' }))
+      })
+      g.append(sv('line', { x1: L, x2: W - R, y1: y0, y2: y0, stroke: '#6b7489' }))
+      g.append(sv('text', { x: L + 6, y: top + 12, class: 'lab' }, 'created'), sv('text', { x: L + 6, y: 380 - bot - 6, class: 'lab' }, 'went silent'))
+      const pi = at[peak.k]; g.append(sv('text', { x: x(pi) + band / 2, y: y0 - peak.born * k - 6, 'text-anchor': 'middle', class: 'lab' }, peak.born))
+      xlabels(g, W, x, band, 380 - bot)
+      T.forEach((t, i) => { const h = sv('rect', { x: x(i), y: top, width: band, height: ph, class: 'hit' })
+        h.addEventListener('mousemove', (e) => showTip(e, `<b>${name(t.k)}</b><i style="background:${BORN}"></i>${t.born} created<br><i style="background:${DIED}"></i>${t.died} went silent${i >= T.length - 2 ? ' (not final)' : ''}`)); h.addEventListener('mouseleave', hideTip); g.append(h) })
+    }
+    const lines = () => {
+      const [g, W] = frame($('tl-lines'), 320), L = 34, R = 118, top = 14, bot = 40, ph = 320 - top - bot
+      const max = Math.max(...T.map((t) => t.total)), band = (W - L - R) / T.length, x = (i) => L + i * band, cx = (i) => x(i) + band / 2, y = (v) => top + ph - v / max * ph
+      for (const v of nice(max)) g.append(sv('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: '#263049' }), sv('text', { x: L - 6, y: y(v) + 4, 'text-anchor': 'end' }, v))
+      g.append(sv('line', { x1: L, x2: W - R, y1: y(0), y2: y(0), stroke: '#6b7489' }))
+      const path = (f) => T.map((t, i) => (i ? 'L' : 'M') + cx(i).toFixed(1) + ' ' + y(f(t)).toFixed(1)).join(' ')
+      g.append(sv('path', { d: path((t) => t.total) + ' ' + T.map((t, i) => 'L' + cx(T.length - 1 - i).toFixed(1) + ' ' + y(T[T.length - 1 - i].live).toFixed(1)).join(' ') + ' Z', fill: DIED, opacity: .12 }))
+      g.append(sv('path', { d: path((t) => t.total), fill: 'none', stroke: EVER, 'stroke-width': 2, 'stroke-linejoin': 'round' }), sv('path', { d: path((t) => t.live), fill: 'none', stroke: BORN, 'stroke-width': 2, 'stroke-linejoin': 'round' }))
+      const last = T[T.length - 1], lx = cx(T.length - 1)
+      g.append(sv('circle', { cx: lx, cy: y(last.total), r: 4, fill: EVER, stroke: '#0f1424', 'stroke-width': 2 }), sv('circle', { cx: lx, cy: y(last.live), r: 4, fill: BORN, stroke: '#0f1424', 'stroke-width': 2 }))
+      g.append(sv('text', { x: lx + 9, y: y(last.total) + 4, class: 'lab' }, last.total + ' created'), sv('text', { x: lx + 9, y: y(last.live) + 4, class: 'lab' }, last.live + ' pushed in ' + MON[+last.k.slice(5) - 1]))
+      xlabels(g, W, x, band, 320 - bot)
+      const cross = sv('line', { y1: top, y2: y(0), stroke: '#6b7489', 'stroke-dasharray': '3 3', visibility: 'hidden' }); g.append(cross)
+      T.forEach((t, i) => { const h = sv('rect', { x: x(i), y: top, width: band, height: ph, class: 'hit' })
+        h.addEventListener('mousemove', (e) => { cross.setAttribute('x1', cx(i)); cross.setAttribute('x2', cx(i)); cross.setAttribute('visibility', 'visible'); showTip(e, `<b>${name(t.k)}</b><i style="background:${EVER}"></i>${t.total} ever created<br><i style="background:${BORN}"></i>${t.live} pushed then or later<br><i style="background:${DIED}"></i>${t.total - t.live} not pushed since`) })
+        h.addEventListener('mouseleave', () => { cross.setAttribute('visibility', 'hidden'); hideTip() }); g.append(h) })
+    }
+    drawTimeline = () => { bars(); lines() }
+    let rz = 0; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { if (!document.querySelector('[data-view="timeline"]').hidden) drawTimeline() }, 150) })
+    if (location.hash === '#timeline') drawTimeline()
+  }
+
   for (const r of G.reading || []) { const li = el('li'); li.append(link(r.url, r.title), el('span', '', `${r.by}. ${r.note}`)); $('reading').append(li) }
 
   show()
