@@ -112,7 +112,8 @@
       "epitaph": "Will not die. Will be renamed.",
       "last_sign_note": "documentation date",
       "last_edit": "2026-07-30",
-      "last_edit_note": "documentation date"
+      "last_edit_note": "documentation date",
+      "force_status": "alive"
     },
     {
       "name": "GNS3 AI packet analysis",
