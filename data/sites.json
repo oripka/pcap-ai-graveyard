@@ -350,8 +350,8 @@
  "https://www.cpacket.com": {
   "status": 200,
   "final": "https://www.cpacket.com/",
-  "modified": "2026-11-19",
-  "modified_source": "newest sitemap entry",
+  "modified": "2026-11-24",
+  "modified_source": "Last-Modified header",
   "checked": "2026-11-24",
   "last_up": "2026-11-24"
  },
@@ -373,6 +373,33 @@
   "status": 200,
   "modified": "2026-09-17",
   "modified_source": "declared by the page",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://redhand.io/analyzer": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://tcpviewer.proxyman.com/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://pcapanalyzer.com/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://dynamitelab.com/": {
+  "status": 200,
+  "modified": "2026-06-08",
+  "modified_source": "Last-Modified header",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://zerovectorlabs.github.io/capsight/": {
+  "status": 200,
   "checked": "2026-11-24",
   "last_up": "2026-11-24"
  }

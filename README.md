@@ -62,11 +62,11 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [ChatTCP](https://chattcp.com/en) | hosted | 🫀 Alive | page last edited 2026-11-22 (newest sitemap entry) | Turns a three-way handshake into a group chat. SYN left on read. |
 | [LLM-Shark](https://www.telecomhall.net/t/llm-shark-an-ai-tool-to-analyze-signaling-in-pcap-format/36312) | desktop | ❔ No site of its own | forum announcement, one post | Announced in one forum post, which is also the whole thread. The signalling was one-way. |
 | [PCAP-LM](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/) | research | 🫀 Alive | page last edited 2026-11-06 (declared by the page) | Research, so it cannot die. It can only stop being cited. |
-| [cPacket AI](https://www.cpacket.com) | vendor | 🫀 Alive | page last edited 2026-11-19 (newest sitemap entry) | Has hardware, customers and a price list. Wandered in by mistake and is asking the way out. |
+| [cPacket AI](https://www.cpacket.com) | vendor | 🫀 Alive | page last edited 2026-11-24 (Last-Modified header) | Has hardware, customers and a price list. Wandered in by mistake and is asking the way out. |
 | [Riverbed IQ (NPM 360)](https://www.riverbed.com/products/appresponse/) | vendor | 🤒 Coughing | page last edited 2026-09-17 (declared by the page) | Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum. |
 | [DynamiteLab (formerly PacketTotal)](https://dynamitelab.com/) | hosted | 🪦 Buried | shut down 2026-06-06, by its own announcement | 2017 – June 6, 2026. The only resident with a proper obituary on its own front page. Not vibe-coded, not a weekend project, and still gone. Rest well. |
-| [Red Hand Analytics](https://redhand.io/analyzer) | hosted | ❔ No site of its own | site up | Caught red-handed being useful. Under observation. |
-| [pcapanalyzer.com](https://pcapanalyzer.com/) | hosted | ❔ No site of its own | site up | Says 'PCAP' and 'analysis' more often per paragraph than any capture contains SYNs. The search engines have been notified. |
+| [Red Hand Analytics](https://redhand.io/analyzer) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Caught red-handed being useful. Under observation. |
+| [pcapanalyzer.com](https://pcapanalyzer.com/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Says 'PCAP' and 'analysis' more often per paragraph than any capture contains SYNs. The search engines have been notified. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse
