@@ -1,0 +1,153 @@
+{
+  "hosted": [
+    {
+      "name": "PcapAI",
+      "url": "https://pcapai.com",
+      "kind": "hosted",
+      "pitch": "Upload a capture, get a free summary in about two minutes and a client-ready PDF for $9. No account.",
+      "epitaph": "Alive, and charging nine dollars. That is more business model than most of this cemetery ever had.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up, upload form live"
+    },
+    {
+      "name": "logcat.ai PCAP Analyzer",
+      "url": "https://logcat.ai/pcap-analyzer/",
+      "kind": "hosted",
+      "pitch": "AI analysis of .pcap and .pcapng with 802.11 issues, retransmissions, scans and beaconing, each finding cited to a frame.",
+      "epitaph": "A log analysis company that noticed packets are also logs, if you squint.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "NetNerve",
+      "url": "https://netnerve.online",
+      "repo": "bhat-shubham/Traffic-Analyzer-NetNerve-",
+      "kind": "hosted",
+      "pitch": "Turns .pcap analysis 'from hours into seconds' with LLaMA 3 on Groq. Made headlines a day after launch, according to its author.",
+      "epitaph": "Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "netnerve.vercel.app redirects to netnerve.online, site up"
+    },
+    {
+      "name": "PcapAnalyzer",
+      "url": "https://pcap-analyzer-seven.vercel.app",
+      "repo": "sebaandrada-cell/PcapAnalyzer",
+      "kind": "self-hosted",
+      "pitch": "27 detectors with a severity and a next step, runs locally in Docker, optional AI with your own key. Apache 2.0, beta.",
+      "epitaph": "The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "demo up"
+    },
+    {
+      "name": "Selector Packet Copilot",
+      "url": "https://packetcopilot.selector.ai/",
+      "kind": "hosted",
+      "pitch": "Upload a capture of about 5 MB, it is converted to JSON and indexed into Gemini File Search for chat. Heir to Packet Buddy.",
+      "epitaph": "Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "HTTP 503 on the day we checked"
+    },
+    {
+      "name": "A-Packets",
+      "url": "https://apackets.com",
+      "kind": "hosted",
+      "pitch": "Online PCAP analyzer from before the gold rush, now with AI-assisted reports. Free tier reports are public.",
+      "epitaph": "Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "PacketSnitch",
+      "url": "https://packetsnitch.com",
+      "kind": "desktop",
+      "pitch": "Desktop PCAP analyzer with protocol decoding, credential and file extraction, GeoIP, threat intel and AI.",
+      "epitaph": "The page says 'Last updated: November 21, 2026'. A site that states its own date of last activity. We could retire.",
+      "last_sign": "2026-11-21",
+      "last_sign_note": "date printed on the site"
+    },
+    {
+      "name": "PCAP Analyser (cloudssfdc)",
+      "url": "https://www.producthunt.com/products/pcap-analyser",
+      "kind": "hosted",
+      "pitch": "Upload .pcap, .pcapng or .har and get a plain-English report with root cause and fix in under 60 seconds.",
+      "epitaph": "Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending.",
+      "last_sign": "",
+      "last_sign_note": "Product Hunt listing only"
+    },
+    {
+      "name": "AuraSniff",
+      "url": "https://www.producthunt.com/posts/aurasniff",
+      "kind": "cli",
+      "pitch": "Terminal PCAP analyzer powered by Gemini and Claude. Six followers on Product Hunt.",
+      "epitaph": "aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here.",
+      "last_sign": "",
+      "last_sign_note": "Product Hunt listing only"
+    },
+    {
+      "name": "VisualEther",
+      "url": "https://www.visualether.com",
+      "kind": "desktop",
+      "pitch": "Sequence diagrams from Wireshark captures since long before LLMs; now ships an MCP server so Claude Code can explain failures.",
+      "epitaph": "An elder that learned MCP. Not vibe-coded, just adapting to the climate.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "Cisco Meraki AI PCAP Analyzer",
+      "url": "https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer",
+      "kind": "vendor",
+      "pitch": "Turns Meraki wireless captures into plain-language diagnostics inside the Dashboard. Needs the right licence.",
+      "epitaph": "Will not die. Will be renamed.",
+      "last_sign": "2026-07-30",
+      "last_sign_note": "documentation date"
+    },
+    {
+      "name": "GNS3 AI packet analysis",
+      "url": "https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis",
+      "kind": "vendor",
+      "pitch": "AI packet analysis inside the GNS3 3.1 lab tool.",
+      "epitaph": "Every product gets an AI tab eventually. This is the lab simulator's.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "documentation reachable"
+    },
+    {
+      "name": "PacketPilot AI",
+      "url": "https://packetpilotai.com",
+      "kind": "prompt pack",
+      "pitch": "Not an analyzer: a guide, a prompt pack for network admins and a weekly pcap puzzle.",
+      "epitaph": "Skipped building the tool and sells the prompts. Possibly the only one here that read the room.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "Fraunhofer NetCapVis",
+      "url": "https://netcapvis.igd.fraunhofer.de/",
+      "kind": "hosted",
+      "pitch": "Research visualisation for captures, drag a file in. Now has an AI analysis page.",
+      "epitaph": "Publicly funded, therefore immortal.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "PacketSafari",
+      "url": "https://www.packetsafari.com/analyzer/",
+      "kind": "hosted",
+      "pitch": "AI-assisted investigation with exact packet evidence. Built by the person who keeps this list, so read this row with suspicion.",
+      "epitaph": "The undertaker's own plot. Reserved, not yet occupied. Judged by the same rules as everyone else; send a pull request the day it stops moving.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up",
+      "disclosure": true
+    }
+  ],
+  "epitaphs": {
+    "automateyournetwork/packet_buddy": "The ancestor. Showed in early 2024 that you can talk to a capture, and several hundred repositories took that personally.",
+    "0xKoda/WireMCP": "Most starred headstone in the yard. Six hundred people bookmarked it for later.",
+    "kspviswa/local-packet-whisperer": "'A fun project', says the description. Honest advertising deserves a proper stone.",
+    "a77lic7ion/IntelliPCAP.AI": "The demo greets every visitor with 'Your enterprise plan allows files up to 2GB. Credits: Unlimited.' One star. Generous to the end.",
+    "elkentaro/sharkbot": "One hundred stars in two days of commits. Efficient.",
+    "krantikumara/-kranti-sip-pcap-analyzer": "Created and last pushed on the same day, 133 stars. The leading dash in the name is original.",
+    "tuliperis/SharkMCP": "One of at least two SharkMCPs. This one lived for a day.",
+    "weirdmachine64/SharkMCP": "The other SharkMCP. Lived a day longer than its namesake.",
+    "bx33661/Wireshark-MCP": "'Production-grade', says PyPI. Still pushing, so no flowers yet."
+  }
+}

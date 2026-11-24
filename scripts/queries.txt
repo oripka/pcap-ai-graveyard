@@ -1,0 +1,35 @@
+# One GitHub repository search query per line. Lines starting with # are ignored.
+pcap ai analyzer
+pcap llm
+pcap gpt
+pcap chatgpt
+pcap claude
+pcap gemini
+pcap ollama
+pcap mcp
+pcap copilot
+pcap agent ai
+pcap langchain
+pcap rag
+pcapng ai
+wireshark mcp
+wireshark ai
+wireshark llm
+wireshark gpt
+wireshark copilot
+tshark mcp
+tshark llm
+tshark ai
+packet analysis llm
+packet analysis ai agent
+packet capture ai assistant
+network traffic llm pcap
+ai network forensics pcap
+ai packet analyzer
+pcap analyzer ai-powered
+pcap openai
+pcap anthropic
+pcap deepseek
+scapy llm
+zeek llm pcap
+suricata llm pcap

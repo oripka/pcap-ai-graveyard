@@ -1,0 +1,10 @@
+# Repositories to list even when the search queries or the keyword filter miss them.
+automateyournetwork/packet_buddy
+bhat-shubham/Traffic-Analyzer-NetNerve-
+Puneet00007/pcap-analyzer
+jph4cks/ai-packet-analyzer
+bryanjonas/mcpcap
+HACKFORLAB/HACKFORLAB_NBAD_PCAP_Analyzer
+towermac/github-copilot-wireshark-analysis
+dishastack/Packet_pilot-ai
+0xKoda/WireMCP

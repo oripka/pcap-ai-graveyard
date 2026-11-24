@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The PCAP AI Graveyard</title>
+<meta name="description" content="Every AI packet analysis tool we could find, ranked by how alive it still is. Most were going to replace Wireshark. Most lived for a day.">
+<meta property="og:title" content="The PCAP AI Graveyard">
+<meta property="og:description" content="Every AI packet analysis tool we could find, ranked by how alive it still is.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%A6%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --sky: #0b1020; --sky2: #141b33; --ground: #0d1512; --fog: rgba(190, 210, 230, .06);
+  --stone: #2a3142; --stone-hi: #3a4359; --stone-edge: #1a2030;
+  --ink: #e6e9f2; --dim: #9aa3b8; --faint: #6b7489; --line: #263049;
+  --moon: #f3ecd2; --moss: #6fbf8b; --amber: #e2b45c; --rust: #d9825b; --bone: #b9c0d0; --violet: #a99be0;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { background: var(--sky); }
+body { margin: 0; color: var(--ink); font: 16px/1.55 var(--sans); background:
+  radial-gradient(1200px 500px at 78% -80px, rgba(243, 236, 210, .13), transparent 60%),
+  linear-gradient(180deg, var(--sky) 0, var(--sky2) 520px, var(--ground) 1100px); background-repeat: no-repeat; background-color: var(--ground); }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+/* gate */
+header { position: relative; padding: 72px 0 40px; overflow: hidden; }
+.moon { position: absolute; right: max(16px, calc(50% - 560px)); top: 34px; width: 92px; height: 92px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fffbe8, var(--moon) 60%, #cfc7a4); box-shadow: 0 0 60px 18px rgba(243, 236, 210, .18); }
+.moon::after { content: ""; position: absolute; left: 54px; top: 22px; width: 14px; height: 14px; border-radius: 50%; background: rgba(0, 0, 0, .08); box-shadow: -26px 28px 0 4px rgba(0, 0, 0, .06), -6px 40px 0 -2px rgba(0, 0, 0, .07); }
+.kicker { font: 600 12px/1 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--dim); }
+h1 { font: 700 clamp(38px, 7vw, 72px)/1.02 var(--serif); margin: 14px 0 14px; letter-spacing: -.01em; max-width: 12ch; text-wrap: balance; }
+.lede { font: 400 clamp(17px, 2.2vw, 21px)/1.5 var(--serif); color: var(--bone); max-width: 62ch; margin: 0; }
+.lede em { color: var(--moon); font-style: italic; }
+.links { margin-top: 22px; display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { display: inline-block; padding: 9px 14px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; font-size: 14px; color: var(--ink); background: rgba(255, 255, 255, .03); }
+.btn:hover { border-color: var(--dim); }
+.btn.primary { background: var(--moon); color: #1b1a12; border-color: var(--moon); font-weight: 600; }
+
+/* numbers */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 34px 0 8px; }
+.stat { border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 12px; background: rgba(10, 14, 28, .55); }
+.stat b { display: block; font: 700 30px/1.1 var(--serif); font-variant-numeric: tabular-nums; }
+.stat span { color: var(--dim); font-size: 13px; }
+.bar { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 18px 0 8px; border: 1px solid var(--line); }
+.bar i { display: block; height: 100%; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--dim); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
+.s-alive { background: var(--moss); } .s-coughing { background: var(--amber); } .s-flatlined { background: var(--rust); }
+.s-buried { background: #59627a; } .s-embalmed { background: var(--violet); } .s-unknown { background: #3b4358; }
+
+h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
+.sub { color: var(--dim); margin: 0 0 22px; max-width: 70ch; }
+
+/* tombstones */
+.yard { display: grid; grid-template-columns: repeat(auto-fill, minmax(232px, 1fr)); gap: 26px 18px; align-items: end; padding-bottom: 6px; }
+.tomb { position: relative; background: linear-gradient(180deg, var(--stone-hi), var(--stone) 38%, #232a3a); border: 1px solid var(--stone-edge);
+  border-radius: 110px 110px 6px 6px / 78px 78px 6px 6px; padding: 30px 18px 18px; text-align: center; min-height: 290px;
+  display: flex; flex-direction: column; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .09), 0 14px 22px -12px rgba(0, 0, 0, .7); }
+.tomb::after { content: ""; position: absolute; left: -8px; right: -8px; bottom: -9px; height: 12px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(30, 60, 40, .9), transparent 70%); }
+.tomb.t-alive { border-color: #2f5a41; } .tomb.t-coughing { border-color: #6a5527; }
+.tomb .rip { font: 600 11px/1 var(--mono); letter-spacing: .2em; color: var(--faint); }
+.tomb h3 { font: 700 19px/1.2 var(--serif); margin: 10px 0 4px; overflow-wrap: anywhere; }
+.tomb h3 a { text-decoration: none; } .tomb h3 a:hover { text-decoration: underline; }
+.tomb .dates { font: 12px/1.3 var(--mono); color: var(--dim); }
+.tomb .pitch { font-size: 13px; color: var(--bone); margin: 10px 0 0; }
+.tomb .epi { font: italic 14px/1.4 var(--serif); color: var(--moon); margin: 12px 0 0; }
+.tomb .foot { margin-top: auto; padding-top: 14px; display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.pill { font: 600 11px/1 var(--mono); padding: 5px 8px; border-radius: 999px; background: rgba(0, 0, 0, .28); color: var(--bone); white-space: nowrap; }
+.pill::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; background: currentColor; }
+.pill.alive { color: var(--moss); } .pill.coughing { color: var(--amber); } .pill.flatlined { color: var(--rust); }
+.pill.buried { color: var(--bone); } .pill.embalmed { color: var(--violet); } .pill.unknown { color: var(--faint); } .pill.plain::before { display: none; }
+
+/* register */
+.tools { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 0 0 14px; }
+.tools input, .tools select { background: #0e1426; color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; font: inherit; font-size: 14px; }
+.tools input { flex: 1 1 220px; min-width: 0; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { cursor: pointer; border: 1px solid var(--line); background: transparent; color: var(--dim); border-radius: 999px; padding: 7px 11px; font: inherit; font-size: 13px; }
+.chip[aria-pressed="true"] { background: var(--ink); color: #10131f; border-color: var(--ink); }
+.count { color: var(--dim); font-size: 13px; margin: 0 0 8px; }
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: rgba(8, 12, 24, .6); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 860px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid #1b2338; vertical-align: top; }
+th { position: sticky; top: 0; background: #0e1426; font: 600 11px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); cursor: pointer; user-select: none; white-space: nowrap; }
+th[aria-sort]::after { content: " ▾"; } th[aria-sort="ascending"]::after { content: " ▴"; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .repo { font-weight: 600; text-decoration: none; overflow-wrap: anywhere; } td .repo:hover { text-decoration: underline; }
+td .desc { color: var(--dim); font-size: 13px; display: block; max-width: 52ch; }
+td .epi { font: italic 13px/1.35 var(--serif); color: var(--moon); display: block; max-width: 34ch; }
+td.date { font: 12px/1.6 var(--mono); color: var(--bone); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.more { margin: 14px 0 0; }
+
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.note { border: 1px solid var(--line); border-radius: 10px; padding: 16px; background: rgba(8, 12, 24, .5); }
+.note h3 { font: 700 17px/1.2 var(--serif); margin: 0 0 6px; } .note p { margin: 0; color: var(--bone); font-size: 14px; }
+code { font: 13px var(--mono); background: rgba(255, 255, 255, .06); padding: 1px 5px; border-radius: 4px; }
+footer { margin: 70px 0 0; padding: 26px 0 60px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; }
+@media (max-width: 560px) { .moon { width: 60px; height: 60px; top: 22px; } header { padding-top: 56px; } .yard { grid-template-columns: 1fr 1fr; gap: 20px 10px; } .tomb { padding: 24px 10px 14px; min-height: 0; border-radius: 70px 70px 6px 6px / 50px 50px 6px 6px; } .tomb .pitch { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="kicker">Est. 2026 · updated <span id="built">weekly</span></div>
+    <h1>The PCAP AI Graveyard</h1>
+    <p class="lede">Every AI packet analysis tool we could find, ranked by how alive it still is. Each one was going to <em>replace Wireshark</em>. Wireshark has not noticed.</p>
+    <div class="links">
+      <a class="btn primary" href="#register">Walk the rows</a>
+      <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard">GitHub</a>
+      <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard/issues/new">Report a resurrection</a>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="bar" id="bar" role="img" aria-label="Share of repositories per status"></div>
+    <div class="legend" id="legend"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Hosted and commercial plots</h2>
+  <p class="sub">Tools with a website instead of, or next to, a repository. No stars to count here, so status is whether the site still answers and the last sign of life we could find.</p>
+  <div class="yard" id="hosted"></div>
+
+  <h2>Still warm</h2>
+  <p class="sub">The twelve repositories with the highest pulse score. Being listed here is not an insult; it is a census.</p>
+  <div class="yard" id="warm"></div>
+
+  <h2>One-day wonders</h2>
+  <p class="sub">Created and last pushed on the same date, sorted by the stars they collected on the way down.</p>
+  <div class="yard" id="oneday"></div>
+
+  <h2 id="register">The register</h2>
+  <p class="sub">Every repository the sweep found. Click a column to sort.</p>
+  <div class="tools">
+    <input id="q" type="search" placeholder="Search name or description" aria-label="Search">
+    <div class="chips" id="chips"></div>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="scroll"><table>
+    <thead><tr>
+      <th class="n" data-k="rank">#</th><th data-k="repo">Repository</th><th data-k="status">Status</th>
+      <th class="n" data-k="pulse">Pulse</th><th class="n" data-k="stars">★</th><th data-k="created">Born</th>
+      <th data-k="last_push">Last push</th><th class="n" data-k="lifespan_days">Worked on</th><th>Epitaph</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+  <p class="more"><button class="btn" id="more" hidden>Dig deeper</button></p>
+
+  <h2>How this is measured</h2>
+  <p class="sub">Nothing here is an opinion about code quality. It is dates and counters.</p>
+  <div class="notes">
+    <div class="note"><h3>Status</h3><p>Days since the last push to any branch: up to 45 is <b>alive</b>, up to 180 <b>coughing</b>, up to 365 <b>flatlined</b>, more is <b>buried</b>. Archived by the owner is <b>embalmed</b>.</p></div>
+    <div class="note"><h3>Pulse score</h3><p>0 to 100. 40 points are recency of the last push, 40 points are stars on a log scale (1,000 stars is full marks), 20 points are how long the project was worked on, capped at a year.</p></div>
+    <div class="note"><h3>Who gets in</h3><p>Repositories created since 2023 whose name, description or topics mention captures (pcap, Wireshark, tshark) and AI (LLM, GPT, MCP, agent). Found by <code>scripts/sweep.mjs</code>, weekly.</p></div>
+    <div class="note"><h3>"Vibe-coded"</h3><p>A genre label, not an accusation. We cannot tell how a repository was written and do not claim to. Several entries are careful work that simply stopped.</p></div>
+    <div class="note"><h3>Wrongly buried?</h3><p>Push a commit and the next sweep moves you. For anything else, open an issue. Removal requests from authors are honoured without discussion.</p></div>
+    <div class="note"><h3>Disclosure</h3><p>This list is kept by the maker of PacketSafari, which is listed and judged by the same rules. Pull requests to bury it are accepted when the dates say so.</p></div>
+  </div>
+</main>
+
+<footer><div class="wrap">Data from the GitHub search API and plain HTTP checks. Epitaphs are generated from dates, or written by hand where a tool earned it. No tools were harmed; most were already like this when we found them.</div></footer>
+
+<script src="data.js"></script>
+<script>
+(() => {
+  const G = window.GRAVEYARD; if (!G) return
+  const $ = (id) => document.getElementById(id)
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e }
+  const link = (href, text, cls) => { const a = el('a', cls, text); a.href = href; a.rel = 'noopener'; return a }
+  const LABEL = { alive: 'Alive', coughing: 'Coughing', flatlined: 'Flatlined', buried: 'Buried', embalmed: 'Embalmed', unknown: 'No site' }
+  const s = G.stats, pct = (n) => Math.round(100 * n / s.total)
+  $('built').textContent = s.built
+
+  // gate numbers
+  const stat = (n, label) => { const d = el('div', 'stat'); d.append(el('b', '', n), el('span', '', label)); return d }
+  $('stats').append(
+    stat(s.total, 'repositories found'),
+    stat(pct(s.total - s.alive) + '%', 'silent for more than 45 days'),
+    stat(s.one_day, 'created and last pushed the same day'),
+    stat(s.median_lifespan + (s.median_lifespan === 1 ? ' day' : ' days'), 'median working life'),
+    stat(pct(s.zero_stars) + '%', 'have zero stars'),
+    stat(s.mcp, 'MCP servers'))
+  for (const k of ['alive', 'coughing', 'flatlined', 'buried', 'embalmed']) {
+    if (!s[k]) continue
+    const i = el('i', 's-' + k); i.style.width = (100 * s[k] / s.total) + '%'; i.title = `${LABEL[k]}: ${s[k]}`; $('bar').append(i)
+    const l = el('span'); l.append(el('i', 's-' + k), document.createTextNode(`${LABEL[k]} ${s[k]}`)); $('legend').append(l)
+  }
+
+  // tombstones
+  const tomb = (o) => {
+    const t = el('article', 'tomb t-' + o.status)
+    t.append(el('div', 'rip', o.status === 'alive' ? 'NOT YET' : o.status === 'unknown' ? 'MISSING' : 'R.I.P.'))
+    const h = el('h3'); h.append(link(o.href, o.title)); t.append(h)
+    if (o.dates) t.append(el('div', 'dates', o.dates))
+    if (o.pitch) t.append(el('p', 'pitch', o.pitch))
+    t.append(el('p', 'epi', o.epitaph))
+    const f = el('div', 'foot'); f.append(el('span', 'pill ' + o.status, LABEL[o.status]))
+    for (const p of o.pills || []) f.append(el('span', 'pill plain', p))
+    t.append(f); return t
+  }
+  const clip = (t, n) => t && t.length > n ? t.slice(0, n - 1).trimEnd() + '…' : t
+  for (const h of G.hosted) $('hosted').append(tomb({ status: h.status, href: h.url, title: h.name, pitch: h.pitch, epitaph: h.epitaph,
+    dates: h.last_sign ? `last sign ${h.last_sign}` : h.last_sign_note,
+    pills: [h.kind, ...(h.site_status && h.site_status !== 200 ? ['HTTP ' + h.site_status] : []), ...(h.stars != null ? [h.stars + ' ★'] : [])] }))
+  const repoTomb = (r) => tomb({ status: r.status, href: 'https://github.com/' + r.repo, title: r.repo.split('/')[1],
+    dates: `${r.created} – ${r.last_push}`, pitch: clip(r.description, 120), epitaph: r.epitaph, pills: [r.stars + ' ★', 'pulse ' + r.pulse] })
+  for (const r of G.repos.slice(0, 12)) $('warm').append(repoTomb(r))
+  for (const r of G.repos.filter((r) => r.one_day && r.status !== 'alive').sort((a, b) => b.stars - a.stars).slice(0, 12)) $('oneday').append(repoTomb(r))
+
+  // register
+  let filter = 'all', sort = { k: 'rank', dir: 1 }, limit = 100
+  const FILTERS = [['all', 'All'], ['alive', 'Alive'], ['coughing', 'Coughing'], ['flatlined', 'Flatlined'], ['buried', 'Buried'], ['one_day', 'One-day'], ['mcp', 'MCP'], ['site', 'Has a site']]
+  for (const [k, label] of FILTERS) {
+    const b = el('button', 'chip', label); b.type = 'button'; b.dataset.k = k; b.setAttribute('aria-pressed', k === filter)
+    b.onclick = () => { filter = k; limit = 100; document.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c.dataset.k === k)); draw() }
+    $('chips').append(b)
+  }
+  const match = (r) => filter === 'all' || (filter === 'one_day' ? r.one_day : filter === 'mcp' ? r.kind === 'mcp' : filter === 'site' ? !!r.homepage : r.status === filter)
+  const ORDER = { alive: 0, coughing: 1, flatlined: 2, buried: 3, embalmed: 4 }
+  const draw = () => {
+    const q = $('q').value.trim().toLowerCase()
+    const rows = G.repos.filter((r) => match(r) && (!q || (r.repo + ' ' + r.description).toLowerCase().includes(q)))
+    const val = (r) => sort.k === 'status' ? ORDER[r.status] : sort.k === 'repo' ? r.repo.toLowerCase() : r[sort.k]
+    rows.sort((a, b) => (val(a) < val(b) ? -1 : val(a) > val(b) ? 1 : a.rank - b.rank) * sort.dir)
+    const body = $('rows'); body.replaceChildren()
+    for (const r of rows.slice(0, limit)) {
+      const tr = el('tr')
+      const name = el('td'); name.append(link('https://github.com/' + r.repo, r.repo, 'repo'), el('span', 'desc', clip(r.description, 160) || ''))
+      if (r.homepage) { const d = el('span', 'desc'); d.append(link(r.homepage, r.homepage.replace(/^https?:\/\//, '').replace(/\/$/, ''))); name.append(d) }
+      const st = el('td'); st.append(el('span', 'pill ' + r.status, LABEL[r.status]))
+      const ep = el('td'); ep.append(el('span', 'epi', r.epitaph))
+      tr.append(el('td', 'n', r.rank), name, st, el('td', 'n', r.pulse), el('td', 'n', r.stars), el('td', 'date', r.created), el('td', 'date', r.last_push), el('td', 'n', r.lifespan_days + ' d'), ep)
+      body.append(tr)
+    }
+    $('count').textContent = `${rows.length} of ${G.repos.length} repositories` + (rows.length > limit ? `, showing the first ${limit}` : '')
+    $('more').hidden = rows.length <= limit
+    document.querySelectorAll('th[data-k]').forEach((th) => { if (th.dataset.k === sort.k) th.setAttribute('aria-sort', sort.dir > 0 ? 'ascending' : 'descending'); else th.removeAttribute('aria-sort') })
+  }
+  document.querySelectorAll('th[data-k]').forEach((th) => th.onclick = () => {
+    const k = th.dataset.k, desc = ['pulse', 'stars', 'last_push', 'created', 'lifespan_days'].includes(k)
+    sort = sort.k === k ? { k, dir: -sort.dir } : { k, dir: desc ? -1 : 1 }; draw()
+  })
+  $('q').oninput = () => { limit = 100; draw() }
+  $('more').onclick = () => { limit += 200; draw() }
+  draw()
+})()
+</script>
+</body>
+</html>

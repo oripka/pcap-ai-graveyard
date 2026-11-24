@@ -1,0 +1,13 @@
+{
+  "https://pcapai.com": { "status": 200, "checked": "2026-11-24" },
+  "https://logcat.ai/pcap-analyzer/": { "status": 200, "checked": "2026-11-24" },
+  "https://netnerve.online": { "status": 200, "checked": "2026-11-24" },
+  "https://pcap-analyzer-seven.vercel.app": { "status": 200, "checked": "2026-11-24" },
+  "https://packetcopilot.selector.ai/": { "status": 503, "checked": "2026-11-24" },
+  "https://apackets.com": { "status": 200, "checked": "2026-11-24" },
+  "https://packetsnitch.com": { "status": 200, "checked": "2026-11-24" },
+  "https://www.visualether.com": { "status": 200, "checked": "2026-11-24" },
+  "https://packetpilotai.com": { "status": 200, "checked": "2026-11-24" },
+  "https://netcapvis.igd.fraunhofer.de/": { "status": 200, "checked": "2026-11-24" },
+  "https://www.packetsafari.com/analyzer/": { "status": 200, "checked": "2026-11-24" }
+}
