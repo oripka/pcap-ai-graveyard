@@ -21,6 +21,8 @@ jobs:
         run: node scripts/check-sites.mjs
       - name: Carve the stones
         run: node scripts/build.mjs
+      - name: Redraw the share image
+        run: sh scripts/og.sh || true
       - name: Commit
         run: |
           rm -f sweep.log
