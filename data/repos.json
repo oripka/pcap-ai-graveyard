@@ -3520,18 +3520,6 @@
   "first_seen": "2026-11-24"
  },
  {
-  "repo": "AndrewSykes1/CrackShark",
-  "description": "Wireshark clone using custom trained AI models to detect malicious web packets involved in botnet attacks.",
-  "stars": 0,
-  "topics": [],
-  "language": "",
-  "homepage": "",
-  "created": "2025-08-25",
-  "last_push": "2025-08-25",
-  "archived": false,
-  "first_seen": "2026-11-24"
- },
- {
   "repo": "andsopwn/wireshark-mcp",
   "description": "Local Wireshark MCP: capture traffic, inspect pcaps, use sharkd, and summarize protocols with LLM-friendly tools.",
   "stars": 0,
@@ -6578,6 +6566,27 @@
   "homepage": "",
   "created": "2026-04-21",
   "last_push": "2026-04-22",
+  "archived": false,
+  "first_seen": "2026-11-24"
+ },
+ {
+  "repo": "oripka/pcap-ai-graveyard",
+  "description": "Every AI packet analysis tool we could find, ranked by how alive it still is. Most lived for a day.",
+  "stars": 0,
+  "topics": [
+   "ai",
+   "awesome-list",
+   "graveyard",
+   "llm",
+   "mcp",
+   "packet-analysis",
+   "pcap",
+   "wireshark"
+  ],
+  "language": "JavaScript",
+  "homepage": "https://oripka.github.io/pcap-ai-graveyard/",
+  "created": "2026-11-24",
+  "last_push": "2026-11-24",
   "archived": false,
   "first_seen": "2026-11-24"
  },

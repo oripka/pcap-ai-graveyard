@@ -1,13 +1,342 @@
 {
-  "https://pcapai.com": { "status": 200, "checked": "2026-11-24" },
-  "https://logcat.ai/pcap-analyzer/": { "status": 200, "checked": "2026-11-24" },
-  "https://netnerve.online": { "status": 200, "checked": "2026-11-24" },
-  "https://pcap-analyzer-seven.vercel.app": { "status": 200, "checked": "2026-11-24" },
-  "https://packetcopilot.selector.ai/": { "status": 503, "checked": "2026-11-24" },
-  "https://apackets.com": { "status": 200, "checked": "2026-11-24" },
-  "https://packetsnitch.com": { "status": 200, "checked": "2026-11-24" },
-  "https://www.visualether.com": { "status": 200, "checked": "2026-11-24" },
-  "https://packetpilotai.com": { "status": 200, "checked": "2026-11-24" },
-  "https://netcapvis.igd.fraunhofer.de/": { "status": 200, "checked": "2026-11-24" },
-  "https://www.packetsafari.com/analyzer/": { "status": 200, "checked": "2026-11-24" }
+ "https://pcapai.com": {
+  "status": 200,
+  "final": "https://pcapai.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://logcat.ai/pcap-analyzer/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://netnerve.online": {
+  "status": 200,
+  "final": "https://netnerve.online/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://pcap-analyzer-seven.vercel.app": {
+  "status": 429,
+  "final": "https://pcap-analyzer-seven.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://packetcopilot.selector.ai/": {
+  "status": 503,
+  "checked": "2026-11-24"
+ },
+ "https://apackets.com": {
+  "status": 403,
+  "final": "https://apackets.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://packetsnitch.com": {
+  "status": 200,
+  "final": "https://packetsnitch.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://www.visualether.com": {
+  "status": 200,
+  "final": "https://www.visualether.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://packetpilotai.com": {
+  "status": 403,
+  "final": "https://packetpilotai.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://netcapvis.igd.fraunhofer.de/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://www.packetsafari.com/analyzer/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://www.producthunt.com/products/pcap-analyser": {
+  "status": 403,
+  "checked": "2026-11-24"
+ },
+ "https://www.producthunt.com/posts/aurasniff": {
+  "status": 403,
+  "checked": "2026-11-24"
+ },
+ "https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis": {
+  "status": 403,
+  "checked": "2026-11-24"
+ },
+ "https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://notyusheng.github.io/TracePcap/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://sipnab.com": {
+  "status": 403,
+  "final": "https://sipnab.com/",
+  "checked": "2026-11-24"
+ },
+ "https://pypi.org/project/pktai/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://www.npmjs.com/package/wirebuddy": {
+  "status": 403,
+  "checked": "2026-11-24"
+ },
+ "https://mcpcap.ai/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://a-g-u-p-t-a.github.io/wireshark-mcp/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://agentic-pcap.aureille.org/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://cyberhorizon.be/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://packet-chef-e9d4aqbcf3ggf2hx.eastasia-01.azurewebsites.net/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://geezsecurity.com": {
+  "status": 403,
+  "final": "https://geezsecurity.com/",
+  "checked": "2026-11-24"
+ },
+ "https://pypi.org/project/atengk-mcp-server-traffic-inspector/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://guang84.github.io/projects/?id=network-analyzer-v2026": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://gokayybaz.github.io/bazntms/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://jperezduerto.github.io/ai-packet-analyzer/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://intelli-pcap-ai.vercel.app": {
+  "status": 200,
+  "final": "https://intelli-pcap-ai.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://ayinedjimi-consultants.fr": {
+  "status": 200,
+  "final": "https://ayinedjimi-consultants.fr/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://flagforge-sandy.vercel.app": {
+  "status": 200,
+  "final": "https://flagforge-sandy.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://pypi.org/project/mcp-server-malcolm/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://oguzhankynk.github.io/wireforge/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://raymondrizzo.com/projects/sonic": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://mostlygino.com": {
+  "status": 200,
+  "final": "https://mostlygino.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://ice-sniff.vercel.app": {
+  "status": 200,
+  "final": "https://ice-sniff.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://alisip-3.github.io/soc-log-analyzer/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://ntdap-six.vercel.app": {
+  "status": 404,
+  "final": "https://ntdap-six.vercel.app/",
+  "checked": "2026-11-24"
+ },
+ "https://protocol-toolkit.onrender.com": {
+  "status": 200,
+  "final": "https://protocol-toolkit.onrender.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://mcpcap.ai": {
+  "status": 200,
+  "final": "https://mcpcap.ai/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://frontend-lime-psi-11.vercel.app": {
+  "status": 200,
+  "final": "https://frontend-lime-psi-11.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://usmanshahid.is-a.dev/pc/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://argus-brown-eight.vercel.app/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://net-shield-ai-iota.vercel.app": {
+  "status": 200,
+  "final": "https://net-shield-ai-iota.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://amit0hx.tech": {
+  "status": 200,
+  "final": "https://www.amit0hx.tech/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://packet-look.streamlit.app/": {
+  "status": 0,
+  "error": "TypeError",
+  "checked": "2026-11-24"
+ },
+ "https://wireshark-mcp.vercel.app": {
+  "status": 200,
+  "final": "https://wireshark-mcp.vercel.app/auth/login",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://pypi.org/project/tshark-mcp-server/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://oripka.github.io/pcap-ai-graveyard/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://mohamed4699.github.io/network-monitoring-llm/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://sentinel-x-cipher.vercel.app": {
+  "status": 200,
+  "final": "https://sentinel-x-cipher.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://packetsage.vercel.app": {
+  "status": 200,
+  "final": "https://packetsage.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://orionpowers.com/#ax-work": {
+  "status": 200,
+  "final": "https://www.orionpowers.com/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://netguard-rose.vercel.app": {
+  "status": 200,
+  "final": "https://netguard-rose.vercel.app/dashboard",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://wiresharkpcapanomalydetection-eengnqkk6rzwzkdcg2okr5.streamlit.app/": {
+  "status": 0,
+  "error": "TypeError",
+  "checked": "2026-11-24"
+ },
+ "https://rootcastle.com/": {
+  "status": 403,
+  "checked": "2026-11-24"
+ },
+ "https://deep-packet-analyzer-with-ai.vercel.app": {
+  "status": 200,
+  "final": "https://deep-packet-analyzer-with-ai.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://weiguang-2099.github.io/DFilterForge/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://ai-pcap-trace-analyzer.vercel.app": {
+  "status": 200,
+  "final": "https://ai-pcap-trace-analyzer.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://semscope.vercel.app/": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://uims.eu/#anonymizer": {
+  "status": 200,
+  "final": "https://uims.eu/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://procurement-agent-ctti.vercel.app": {
+  "status": 200,
+  "final": "https://procurement-agent-ctti.vercel.app/",
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ },
+ "https://www.tertiarycourses.com.sg/ai-for-network-security.html": {
+  "status": 200,
+  "checked": "2026-11-24",
+  "last_up": "2026-11-24"
+ }
 }
