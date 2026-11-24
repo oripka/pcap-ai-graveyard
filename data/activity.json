@@ -171,12 +171,6 @@
       "commits": 123,
       "capped": false
     },
-    "aws-samples/sample-pcap-analyzer-mcp": {
-      "active_months": 8,
-      "working_months": 7,
-      "commits": 75,
-      "capped": false
-    },
     "hemanjali2130/dns-anomaly-detection": {
       "active_months": 2,
       "working_months": 0,

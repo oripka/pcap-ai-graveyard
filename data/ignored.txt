@@ -33,3 +33,4 @@ ganainy/captive-portal-analyzer-android
 Einic/pretool
 stepanhendrych/CiscoPacketTracer-AIgrader
 nlink-jp/cybersecurity-series
+aws-samples/sample-pcap-analyzer-mcp

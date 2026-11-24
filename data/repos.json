@@ -476,18 +476,6 @@
     "first_seen": "2026-11-24"
   },
   {
-    "repo": "aws-samples/sample-pcap-analyzer-mcp",
-    "description": "",
-    "stars": 14,
-    "topics": [],
-    "language": "Python",
-    "homepage": "",
-    "created": "2026-03-11",
-    "last_push": "2026-11-23",
-    "archived": false,
-    "first_seen": "2026-11-24"
-  },
-  {
     "repo": "mixelpixx/Wireshark-MCP",
     "description": "A Model Context Protocol (MCP) server that provides AI assistants with direct access to Wireshark network analysis capabilities. This tool enables AI-powered network troubleshooting, packet analysis, and network monitoring through a secure, standardized interface.",
     "stars": 14,
