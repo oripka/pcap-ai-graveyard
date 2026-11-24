@@ -179,7 +179,8 @@
       "kind": "vendor",
       "pitch": "Agentic AI wired into AppResponse and NetProfiler: correlates the evidence, recommends next steps, lets you drill down to the packets. Launched September 2026.",
       "epitaph": "Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum.",
-      "last_sign_note": "launched 2026-09-17"
+      "last_sign_note": "launched 2026-09-17",
+      "force_status": "alive"
     },
     {
       "name": "DynamiteLab (formerly PacketTotal)",
