@@ -17,6 +17,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: node scripts/sweep.mjs | tee sweep.log
+      - name: Count the months anyone worked
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/activity.mjs || true
       - name: Knock on the websites
         run: node scripts/check-sites.mjs
       - name: Carve the stones

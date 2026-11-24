@@ -1,0 +1,206 @@
+{
+  "checked": "2026-11-24",
+  "top": 40,
+  "repos": {
+    "hvaandres/PcapAnalyzer": {
+      "active_months": 5,
+      "commits": 15,
+      "capped": false
+    },
+    "Guang84/Network-Analyzer": {
+      "active_months": 8,
+      "commits": 66,
+      "capped": false
+    },
+    "MuthoniGathiithi/Network-Security-AI-agent": {
+      "active_months": 6,
+      "commits": 85,
+      "capped": false
+    },
+    "sergsrgsg/rock-star-skills": {
+      "active_months": 3,
+      "commits": 5,
+      "capped": false
+    },
+    "daniissac/framecite": {
+      "active_months": 5,
+      "commits": 16,
+      "capped": false
+    },
+    "kspviswa/local-packet-whisperer": {
+      "active_months": 10,
+      "commits": 47,
+      "capped": false
+    },
+    "Gurjas2112/Wireshark_PCAP_Anomaly_Detection": {
+      "active_months": 5,
+      "commits": 7,
+      "capped": false
+    },
+    "Anthrasaxx/pcap-alert-pipeline": {
+      "active_months": 3,
+      "commits": 13,
+      "capped": false
+    },
+    "A-G-U-P-T-A/wireshark-mcp": {
+      "active_months": 2,
+      "commits": 9,
+      "capped": false
+    },
+    "CarlosAlejandroPerezCeron/IoT-Security-Framework": {
+      "active_months": 2,
+      "commits": 7,
+      "capped": false
+    },
+    "Richierich69696/AI-Boosted-Intrusion-Sniffer": {
+      "active_months": 2,
+      "commits": 4,
+      "capped": false
+    },
+    "bhat-shubham/NetNerve_V0_Demo": {
+      "active_months": 8,
+      "commits": 125,
+      "capped": false
+    },
+    "mcpcap/mcpcap": {
+      "active_months": 7,
+      "commits": 131,
+      "capped": false
+    },
+    "burak1203/Cyber-Security-LLM": {
+      "active_months": 2,
+      "commits": 13,
+      "capped": false
+    },
+    "khuynh22/mcp-wireshark": {
+      "active_months": 7,
+      "commits": 32,
+      "capped": false
+    },
+    "MSVKManeesh/Projects": {
+      "active_months": 5,
+      "commits": 149,
+      "capped": false
+    },
+    "ninedter/pcap-hunter": {
+      "active_months": 9,
+      "commits": 184,
+      "capped": false
+    },
+    "greywolf8/PCAP-Analyzer": {
+      "active_months": 7,
+      "commits": 12,
+      "capped": false
+    },
+    "Veer-Parikh/fyp": {
+      "active_months": 6,
+      "commits": 22,
+      "capped": false
+    },
+    "Kaichera/sniff": {
+      "active_months": 4,
+      "commits": 83,
+      "capped": false
+    },
+    "P-Orion/LLM-Powered-Network-Analyzer": {
+      "active_months": 2,
+      "commits": 4,
+      "capped": false
+    },
+    "NotYuSheng/TracePcap": {
+      "active_months": 2,
+      "commits": 500,
+      "capped": true
+    },
+    "SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab": {
+      "active_months": 3,
+      "commits": 45,
+      "capped": false
+    },
+    "jayimu/Wireshark_mcp": {
+      "active_months": 2,
+      "commits": 5,
+      "capped": false
+    },
+    "aaronrusz/network-anomaly-monitor": {
+      "active_months": 4,
+      "commits": 14,
+      "capped": false
+    },
+    "bx33661/Wireshark-MCP": {
+      "active_months": 9,
+      "commits": 166,
+      "capped": false
+    },
+    "vanyasahi3227nova-arch/SharkLens": {
+      "active_months": 4,
+      "commits": 7,
+      "capped": false
+    },
+    "zombat/sonic": {
+      "active_months": 4,
+      "commits": 123,
+      "capped": false
+    },
+    "aws-samples/sample-pcap-analyzer-mcp": {
+      "active_months": 8,
+      "commits": 75,
+      "capped": false
+    },
+    "hemanjali2130/dns-anomaly-detection": {
+      "active_months": 2,
+      "commits": 4,
+      "capped": false
+    },
+    "niusulong/TShark2MCP": {
+      "active_months": 2,
+      "commits": 14,
+      "capped": false
+    },
+    "RainbowCloudLabs/omcipcap": {
+      "active_months": 9,
+      "commits": 127,
+      "capped": false
+    },
+    "RomainRicord/WireMCP-rs": {
+      "active_months": 5,
+      "commits": 28,
+      "capped": false
+    },
+    "nlink-jp/cybersecurity-series": {
+      "active_months": 9,
+      "commits": 154,
+      "capped": false
+    },
+    "Gammell53/packet-pilot": {
+      "active_months": 6,
+      "commits": 62,
+      "capped": false
+    },
+    "ClementG91/MCP-FlowSentinel": {
+      "active_months": 5,
+      "commits": 68,
+      "capped": false
+    },
+    "MustafaAbdulazizHamza/Scapyfy": {
+      "active_months": 3,
+      "commits": 15,
+      "capped": false
+    },
+    "zeitgeist-c/NetSonar": {
+      "active_months": 6,
+      "commits": 67,
+      "capped": false
+    },
+    "mixelpixx/Wireshark-MCP": {
+      "active_months": 2,
+      "commits": 6,
+      "capped": false
+    },
+    "Srishtiaideveloper/Network-Intrusion-Detection-System": {
+      "active_months": 2,
+      "commits": 6,
+      "capped": false
+    }
+  }
+}
