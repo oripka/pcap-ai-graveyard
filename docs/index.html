@@ -382,7 +382,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   <div class="pagehead"><div class="kicker">The Register</div><h2>Every grave, in rows</h2>
   <p class="sub">Click a column to sort.</p></div>
   <div class="tools">
-    <input id="q" type="search" placeholder="Search name or description" aria-label="Search">
+    <input id="q" type="search" placeholder="Search repositories and hosted tools" aria-label="Search">
     <div class="chips" id="chips"></div>
   </div>
   <p class="count" id="count"></p>
@@ -458,7 +458,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 <footer><div class="wrap">Data from the GitHub search API and plain HTTP checks. No tools were harmed in the making of this list; most were already like this when we found them. Flowers may be left with the <kbd>F</kbd> key.</div></footer>
 <button class="respect" id="respect" type="button"><kbd>F</kbd>pay respects · <span id="rcount">0</span></button>
 
-<script src="data.js?v=2026-11-24"></script>
+<script src="data.js?v=2026-11-24-mwuzfpop"></script>
 <script>
 (() => {
   const G = window.GRAVEYARD; if (!G) return
@@ -606,8 +606,19 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   }
   const match = (r) => filter === 'all' || (filter === 'one_day' ? r.one_day : filter === 'lonely' ? r.one_day && r.stars === 0 : filter === 'mcp' ? r.kind === 'mcp' : filter === 'site' ? !!r.homepage : r.status === filter)
   const ORDER = { alive: 0, coughing: 1, flatlined: 2, buried: 3, embalmed: 4 }
+  const drawHosted = (q) => {
+    const hs = G.hosted.filter((h) => !q || [h.name, h.pitch, h.kind, h.url, h.epitaph].join(' ').toLowerCase().includes(q))
+    $('hrows').replaceChildren()
+    for (const h of hs) {
+      const tr = el('tr'); const n = el('td'); n.append(link(h.url, h.name, 'repo'), el('span', 'desc', h.pitch))
+      const st = el('td'); st.append(el('span', 'pill ' + h.status, LABEL[h.status]))
+      tr.append(n, el('td', '', h.kind), st, el('td', 'desc', h.sign || '')); $('hrows').append(tr)
+    }
+    return hs.length
+  }
   const draw = () => {
     const q = $('q').value.trim().toLowerCase()
+    const nh = drawHosted(q)
     const rows = G.repos.filter((r) => match(r) && (!q || (r.repo + ' ' + r.description).toLowerCase().includes(q)))
     const val = (r) => sort.k === 'status' ? ORDER[r.status] : sort.k === 'repo' ? r.repo.toLowerCase() : r[sort.k]
     rows.sort((a, b) => (val(a) < val(b) ? -1 : val(a) > val(b) ? 1 : a.rank - b.rank) * sort.dir)
@@ -621,7 +632,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
       tr.append(el('td', 'n', r.rank), name, st, el('td', 'n', r.pulse), el('td', 'n', r.stars), el('td', 'date', r.created), el('td', 'date', r.last_push), el('td', 'n', r.lifespan_days + ' d'), ep)
       body.append(tr)
     }
-    $('count').textContent = `${rows.length} of ${G.repos.length} repositories` + (rows.length > limit ? `, showing the first ${limit}` : '')
+    $('count').textContent = `${rows.length} of ${G.repos.length} repositories` + (rows.length > limit ? `, showing the first ${limit}` : '') + (q ? ` · ${nh} hosted or commercial tool${nh === 1 ? '' : 's'} in the table below` : '')
     $('more').hidden = rows.length <= limit
     document.querySelectorAll('th[data-k]').forEach((th) => { if (th.dataset.k === sort.k) th.setAttribute('aria-sort', sort.dir > 0 ? 'ascending' : 'descending'); else th.removeAttribute('aria-sort') })
   }
@@ -632,11 +643,6 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   $('q').oninput = () => { limit = 100; draw() }
   $('more').onclick = () => { limit += 200; draw() }
   draw()
-  for (const h of G.hosted) {
-    const tr = el('tr'); const n = el('td'); n.append(link(h.url, h.name, 'repo'), el('span', 'desc', h.pitch))
-    const st = el('td'); st.append(el('span', 'pill ' + h.status, LABEL[h.status]))
-    tr.append(n, el('td', '', h.kind), st, el('td', 'desc', h.sign || '')); $('hrows').append(tr)
-  }
   // ---- timeline ----
   {
     const BORN = '#2fa67e', DIED = '#d66a4a', EVER = '#b9c0d0', NS = 'http://www.w3.org/2000/svg'
