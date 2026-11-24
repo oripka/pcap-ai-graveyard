@@ -45,8 +45,8 @@ nav .brand span { display: inline-block; animation: wobble 5s ease-in-out infini
 .tab small { font: 600 11px var(--mono); opacity: .7; margin-left: 4px; }
 
 /* ---- gate ---- */
-header { position: relative; padding: 64px 0 40px; overflow: hidden; }
-.moon { position: absolute; right: max(16px, calc(50% - 560px)); top: 30px; width: 92px; height: 92px; border-radius: 50%; cursor: pointer; z-index: 2;
+header { position: relative; padding: 26px 0 6px; overflow: hidden; }
+.moon { position: absolute; right: max(16px, calc(50% - 560px)); top: 16px; width: 64px; height: 64px; border-radius: 50%; cursor: pointer; z-index: 2;
   background: radial-gradient(circle at 35% 35%, #fffbe8, var(--moon) 60%, #cfc7a4); box-shadow: 0 0 60px 18px rgba(243, 236, 210, .18);
   animation: glow 6s ease-in-out infinite; transition: transform .4s cubic-bezier(.2, .9, .3, 1.4); }
 .moon::after { content: ""; position: absolute; left: 54px; top: 22px; width: 14px; height: 14px; border-radius: 50%; background: rgba(0, 0, 0, .08); box-shadow: -26px 28px 0 4px rgba(0, 0, 0, .06), -6px 40px 0 -2px rgba(0, 0, 0, .07); }
@@ -66,10 +66,10 @@ header { position: relative; padding: 64px 0 40px; overflow: hidden; }
 .fog.f2 { bottom: 40px; opacity: .6; animation-duration: 52s; animation-direction: alternate-reverse; }
 @keyframes drift { from { transform: translateX(-14%); } to { transform: translateX(14%); } }
 .kicker { font: 600 12px/1.4 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
-h1 { font: 700 clamp(38px, 7vw, 72px)/1.02 var(--serif); margin: 14px 0 14px; letter-spacing: -.01em; max-width: 12ch; }
+h1 { font: 700 clamp(28px, 4.4vw, 44px)/1.05 var(--serif); margin: 6px 0 8px; letter-spacing: -.01em; }
 h1 .w { display: inline-block; opacity: 0; transform: translateY(26px) rotate(3deg); animation: rise .8s cubic-bezier(.2, .9, .3, 1.2) forwards; }
 @keyframes rise { to { opacity: 1; transform: none; } }
-.lede { font: 400 clamp(17px, 2.2vw, 21px)/1.5 var(--serif); color: var(--bone); max-width: 62ch; margin: 0; }
+.lede { font: 400 clamp(15px, 1.8vw, 17px)/1.5 var(--serif); color: var(--bone); max-width: 62ch; margin: 0; }
 .lede em { color: var(--moon); }
 .sign { display: inline-block; margin-top: 18px; padding: 8px 12px; border: 2px solid #5a4a2c; border-radius: 4px; background: #2a2114; color: #e8d7a8; font: 600 12px/1.5 var(--mono); letter-spacing: .06em; transform: rotate(-1.2deg); box-shadow: 0 6px 14px rgba(0, 0, 0, .5); }
 .links { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
@@ -96,12 +96,6 @@ h1 .w { display: inline-block; opacity: 0; transform: translateY(26px) rotate(3d
 .s-alive { background: var(--moss); } .s-coughing { background: var(--amber); } .s-flatlined { background: var(--rust); }
 .s-buried { background: #59627a; } .s-embalmed { background: var(--violet); }
 
-.reel { overflow: hidden; border-block: 1px solid var(--line); background: rgba(6, 9, 18, .7); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.reel-track { display: flex; gap: 44px; width: max-content; padding: 11px 0; animation: reel 150s linear infinite; }
-.reel:hover .reel-track { animation-play-state: paused; }
-.reel-track span { font: 13px var(--mono); color: var(--dim); white-space: nowrap; }
-.reel-track b { color: var(--ink); font-weight: 600; } .reel-track em { color: var(--moon); font: italic 14px var(--serif); }
-@keyframes reel { to { transform: translateX(-50%); } }
 
 h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .sub { color: var(--dim); margin: 0 0 30px; max-width: 70ch; }
@@ -241,7 +235,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 
 @media (max-width: 620px) {
   nav .brand b { display: none; } .tab { padding: 8px 9px; font-size: 13px; } .tab small { display: none; }
-  .moon { width: 54px; height: 54px; top: 14px; } header { padding-top: 50px; } .bat.b2, .bat.b3 { display: none; } .ecg small { display: none; }
+  .moon { width: 54px; height: 54px; top: 14px; } header { padding-top: 22px; } .bat.b2, .bat.b3 { display: none; } .ecg small { display: none; }
   .yard { grid-template-columns: 1fr 1fr; gap: 50px 14px; } .tomb { padding: 30px 9px 12px; min-height: 0; border-radius: 74px 74px 5px 5px / 54px 54px 5px 5px; }
   .tomb h3 { font-size: 15.5px; } .tomb .pitch { display: none; } .tomb .epi { font-size: 12.5px; } .tomb .cause { font-size: 9.5px; } .deco { font-size: 17px !important; }
   .pagehead h2 { font-size: 30px; }
@@ -272,22 +266,8 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     <div class="kicker">Est. 2026 · last dug <span id="built">recently</span></div>
     <h1 aria-label="The PCAP AI Graveyard"><span class="w" style="animation-delay:.05s">The</span> <span class="w" style="animation-delay:.2s">PCAP</span> <span class="w" style="animation-delay:.35s">AI</span> <span class="w" style="animation-delay:.55s">Graveyard</span></h1>
     <p class="lede">Every AI packet analysis tool we could find, ranked by how alive it still is. Each one was going to <em>replace Wireshark</em>. Wireshark has not noticed.</p>
-    <div class="sign">VISITING HOURS: WHENEVER THE BUILD IS RUNNING<br>PLEASE DO NOT FEED THE LLMS RAW PCAPS</div>
-    <div class="links">
-      <a class="btn primary" href="#register">Open the register</a>
-      <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard">GitHub</a>
-      <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard/issues/new">Report a resurrection</a>
-    </div>
-    <div class="ecg" aria-hidden="true">
-      <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path pathLength="1" d="M0 30 H70 l8 -6 l8 6 h14 l8 -26 l12 50 l9 -24 H240 l8 -6 l8 6 h14 l8 -26 l12 50 l9 -24 H410 l8 -5 l8 5 h14 l7 -18 l10 34 l8 -16 H580 l6 -3 l6 3 h12 l5 -9 l8 16 l5 -7 H720 l4 -3 l4 3 H1200"/></svg>
-      <small>WEEKEND PROJECT · <b>NO PULSE</b></small>
-    </div>
-    <div class="stats" id="stats"></div>
-    <div class="bar" id="bar" role="img" aria-label="Share of repositories per status"></div>
-    <div class="legend" id="legend"></div>
   </div>
 </header>
-<div class="reel" aria-hidden="true"><div class="reel-track" id="reel"></div></div>
 
 <main class="wrap">
   <h2>Hosted and commercial plots</h2>
@@ -305,7 +285,17 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   <h2>Recently departed</h2>
   <p class="sub">Went quiet between six and twelve months ago, after more than a weekend of real work. These ones hurt a little.</p>
   <div class="yard" id="departed"></div>
-  <p class="more"><a class="btn primary" href="#register">All <span id="alln"></span> graves are in the register →</a></p>
+  <h2>The census</h2>
+  <p class="sub">The whole yard in six numbers.</p>
+    <div class="sign">VISITING HOURS: WHENEVER THE BUILD IS RUNNING<br>PLEASE DO NOT FEED THE LLMS RAW PCAPS</div>
+    <div class="links">
+      <a class="btn primary" href="#register">All <span id="alln"></span> graves are in the register →</a>
+      <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard">GitHub</a>
+      <a class="btn" href="https://github.com/oripka/pcap-ai-graveyard/issues/new">Report a resurrection</a>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="bar" id="bar" role="img" aria-label="Share of repositories per status"></div>
+    <div class="legend" id="legend"></div>
 </main>
 </div>
 
@@ -526,9 +516,6 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     const tick = (now) => { const p = Math.min(1, (now - t0) / 1400), v = Math.round(end * (1 - Math.pow(1 - p, 3))); b.textContent = v + m[2]; if (p < 1) requestAnimationFrame(tick) }
     b.textContent = '0' + m[2]; requestAnimationFrame(tick)
   })
-  const gone = G.repos.filter((r) => r.status !== 'alive' && r.lifespan_days <= 7).sort(() => Math.random() - .5).slice(0, 40)
-  const strip = () => gone.map((r) => { const sp = el('span'); sp.append('🪦 ', el('b', '', r.repo.split('/')[1]), ` ${r.created} – ${r.last_push} · `, el('em', '', r.epitaph)); return sp })
-  $('reel').append(...strip(), ...strip())
 
   const HOWLS = ['awoooo', 'still no pulse', 'have you tried tshark?', 'it worked on my pcap', 'v2 coming soon™', 'awooo (production-grade)', 'as an AI, I cannot open pcapng', 'you are absolutely right, that is not a SYN', '🐺']
   let howls = 0
