@@ -45,7 +45,7 @@ nav .brand span { display: inline-block; animation: wobble 5s ease-in-out infini
 .tab small { font: 600 11px var(--mono); opacity: .7; margin-left: 4px; }
 
 /* ---- gate ---- */
-header { position: relative; padding: 26px 0 6px; overflow: hidden; }
+header { position: relative; padding: 26px 0 6px; }
 .moon { position: absolute; right: max(16px, calc(50% - 560px)); top: 16px; width: 64px; height: 64px; border-radius: 50%; cursor: pointer; z-index: 2;
   background: radial-gradient(circle at 35% 35%, #fffbe8, var(--moon) 60%, #cfc7a4); box-shadow: 0 0 60px 18px rgba(243, 236, 210, .18);
   animation: glow 6s ease-in-out infinite; transition: transform .4s cubic-bezier(.2, .9, .3, 1.4); }
@@ -101,11 +101,12 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .sub { color: var(--dim); margin: 0 0 30px; max-width: 70ch; }
 
 /* ---- gravestones ---- */
-.yard { display: grid; grid-template-columns: repeat(auto-fill, minmax(236px, 1fr)); gap: 58px 22px; align-items: end; padding: 26px 4px 18px; }
+.yard { display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 66px 16px; align-items: end; padding: 26px 4px 18px; }
 .plot { position: relative; display: flex; flex-direction: column; align-items: center; }
 .plot.rise { opacity: 0; transform: translateY(70px) scale(.92); }
 .plot.in { opacity: 1; transform: none; transition: opacity .6s, transform .9s cubic-bezier(.2, .9, .3, 1.25); }
-.tomb { position: relative; width: 100%; min-height: 318px; padding: 40px 18px 16px; text-align: center; color: var(--carve);
+.slot { position: relative; width: 100%; height: 148px; }
+.tomb { position: absolute; left: 0; right: 0; bottom: 0; min-height: 100%; padding: 30px 10px 10px; text-align: center; color: var(--carve);
   display: flex; flex-direction: column; transform: translateY(calc(var(--n, 0) * 14px)) rotate(var(--lean, 0deg)); transform-origin: 50% 100%;
   transition: transform .45s cubic-bezier(.2, .9, .3, 1.5), filter .3s;
   filter: brightness(calc(1 - var(--n, 0) * .3)) saturate(calc(1 - var(--n, 0) * .35));
@@ -114,12 +115,19 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
     linear-gradient(168deg, #aab1c0 0%, #8e96a8 30%, #6f778a 68%, #555d70 100%);
   border-radius: 118px 118px 5px 5px / 86px 86px 5px 5px;
   box-shadow: inset 3px 3px 0 rgba(255, 255, 255, .22), inset -5px -3px 0 rgba(0, 0, 0, .22), inset 0 0 0 7px rgba(255, 255, 255, .04), 10px 16px 24px -10px rgba(0, 0, 0, .8); }
-.plot.shape-1 .tomb { border-radius: 30px 30px 5px 5px; padding-top: 30px; }
-.plot.shape-2 .tomb { border-radius: 50% 50% 5px 5px / 30% 30% 5px 5px; padding-top: 48px; }
-.plot.shape-3 .tomb { border-radius: 14px 14px 5px 5px; padding-top: 28px; margin-top: 44px; }
+.plot.shape-1 .tomb { border-radius: 30px 30px 5px 5px; padding-top: 20px; }
+.plot.shape-2 .tomb { border-radius: 50% 50% 5px 5px / 46px 46px 5px 5px; padding-top: 30px; }
+.plot.shape-3 .tomb { border-radius: 14px 14px 5px 5px; padding-top: 18px; }
 .plot.shape-3 .tomb::before { content: ""; position: absolute; left: 50%; top: -44px; width: 20px; height: 46px; transform: translateX(-50%); background: linear-gradient(168deg, #aab1c0, #6f778a); border-radius: 3px 3px 0 0; box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .22); }
 .plot.shape-3 .tomb::after { content: ""; position: absolute; left: 50%; top: -32px; width: 52px; height: 16px; transform: translateX(-50%); background: linear-gradient(168deg, #aab1c0, #7b8396); border-radius: 3px; box-shadow: inset 2px 2px 0 rgba(255, 255, 255, .22); }
-.plot:hover .tomb { transform: rotate(0deg) translateY(-4px); filter: brightness(1.07); }
+.plot:hover, .plot:focus-within, .plot.open { z-index: 20; }
+.plot:hover .tomb, .plot:focus-within .tomb, .plot.open .tomb { left: -38px; right: -38px; padding-left: 16px; padding-right: 16px; transform: translateX(var(--dx, 0px)) rotate(0deg) translateY(-4px); filter: brightness(1.07); }
+.more, .pill.x { display: none; }
+.plot:not(:hover):not(:focus-within):not(.open) .tomb h3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.plot:hover .more, .plot:focus-within .more, .plot.open .more { display: block; animation: unfold .35s ease-out; }
+.plot:hover .pill.x, .plot:focus-within .pill.x, .plot.open .pill.x { display: inline-block; }
+@keyframes unfold { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.plot { cursor: default; }
 /* neglect: --n runs from 0 (tended) to 1 (nobody has been here for years) */
 .grime { position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: var(--n, 0);
   background:
@@ -137,7 +145,7 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .deco.web2 { left: 8px; top: 40%; right: auto; font-size: 18px; opacity: .55; z-index: 1; transform: scaleX(-1); }
 .deco.m { left: 42%; bottom: 16px; font-size: 18px; }
 /* the living get no stone: a timber notice board on two posts */
-.plot.living .tomb { min-height: 250px; padding: 22px 18px 14px; border-radius: 8px; filter: none; color: #2a1a0c;
+.plot.living .tomb { padding: 22px 10px 10px; border-radius: 8px; filter: none; color: #2a1a0c;
   background:
     repeating-linear-gradient(180deg, transparent 0 82px, rgba(40, 22, 8, .16) 82px 83px),
     repeating-linear-gradient(92deg, rgba(255, 255, 255, .03) 0 3px, rgba(0, 0, 0, .04) 3px 7px),
@@ -169,17 +177,17 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .deco.candle { animation: flicker 1.3s steps(3) infinite; }
 @keyframes flicker { 50% { filter: brightness(1.5) drop-shadow(0 0 6px #f7c66b); } }
 .crack { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; opacity: .45; }
-.tomb .rip { font: 700 12px/1 var(--serif); letter-spacing: .34em; color: rgba(23, 27, 38, .62); text-shadow: 0 1px 0 rgba(255, 255, 255, .28); }
-.tomb h3 { font: 700 20px/1.15 var(--serif); margin: 9px 0 3px; overflow-wrap: anywhere; text-shadow: 0 1px 0 rgba(255, 255, 255, .3), 0 -1px 0 rgba(0, 0, 0, .25); }
+.tomb .rip { font: 700 9.5px/1 var(--serif); letter-spacing: .26em; color: rgba(23, 27, 38, .62); text-shadow: 0 1px 0 rgba(255, 255, 255, .28); }
+.tomb h3 { font: 700 15.5px/1.15 var(--serif); margin: 7px 0 3px; overflow-wrap: anywhere; text-shadow: 0 1px 0 rgba(255, 255, 255, .3), 0 -1px 0 rgba(0, 0, 0, .25); }
 .tomb h3 a { text-decoration: none; } .tomb h3 a:hover { text-decoration: underline; }
-.tomb .dates { font: 600 11.5px/1.3 var(--mono); color: rgba(23, 27, 38, .75); }
+.tomb .dates { font: 600 9.5px/1.3 var(--mono); color: rgba(23, 27, 38, .75); }
 .tomb .rule { width: 46px; height: 2px; margin: 9px auto 0; background: rgba(23, 27, 38, .35); box-shadow: 0 1px 0 rgba(255, 255, 255, .25); border-radius: 2px; }
 .tomb .pitch { font-size: 12.5px; line-height: 1.4; color: rgba(23, 27, 38, .82); margin: 9px 0 0; }
 .tomb .epi { font: italic 600 14.5px/1.36 var(--serif); color: #10131c; margin: 10px 0 0; text-shadow: 0 1px 0 rgba(255, 255, 255, .25); }
 .tomb .cause { font: 600 10.5px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: rgba(23, 27, 38, .7); margin: 9px 0 0; }
-.tomb .foot { margin-top: auto; padding-top: 12px; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; position: relative; z-index: 3; }
+.tomb .foot { margin-top: auto; padding-top: 8px; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; position: relative; z-index: 3; }
 .ghost { position: absolute; left: 50%; top: 6px; font-size: 36px; opacity: 0; transform: translate(-50%, 14px) scale(.6); transition: opacity .35s, transform .9s cubic-bezier(.2, .9, .3, 1.3); pointer-events: none; z-index: 4; }
-.plot:hover .ghost { opacity: 1; transform: translate(-50%, -50px) scale(1); animation: bob 1.6s ease-in-out .9s infinite alternate; }
+.plot:hover .ghost, .plot.open .ghost { opacity: 1; transform: translate(-50%, -50px) scale(1); animation: bob 1.6s ease-in-out .9s infinite alternate; }
 @keyframes bob { from { margin-top: 0; margin-left: -5px; } to { margin-top: -9px; margin-left: 5px; } }
 .plot.t-alive:hover .ghost { animation: beat 1s ease-in-out infinite; }
 @keyframes beat { 0%, 100% { scale: 1; } 15% { scale: 1.25; } 30% { scale: 1; } 45% { scale: 1.18; } }
@@ -236,8 +244,8 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 @media (max-width: 620px) {
   nav .brand b { display: none; } .tab { padding: 8px 9px; font-size: 13px; } .tab small { display: none; }
   .moon { width: 54px; height: 54px; top: 14px; } header { padding-top: 22px; } .bat.b2, .bat.b3 { display: none; } .ecg small { display: none; }
-  .yard { grid-template-columns: 1fr 1fr; gap: 50px 14px; } .tomb { padding: 30px 9px 12px; min-height: 0; border-radius: 74px 74px 5px 5px / 54px 54px 5px 5px; }
-  .tomb h3 { font-size: 15.5px; } .tomb .pitch { display: none; } .tomb .epi { font-size: 12.5px; } .tomb .cause { font-size: 9.5px; } .deco { font-size: 17px !important; }
+  .yard { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 60px 12px; } .deco { font-size: 17px !important; }
+  .plot:hover .tomb, .plot:focus-within .tomb, .plot.open .tomb { left: -8px; right: -8px; } .tomb .epi { font-size: 13px; }
   .pagehead h2 { font-size: 30px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -261,32 +269,34 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 <header>
   <div class="moon" id="moon" title="Do not click the moon"></div>
   <div class="bat" aria-hidden="true"><span>🦇</span></div><div class="bat b2" aria-hidden="true"><span>🦇</span></div><div class="bat b3" aria-hidden="true"><span>🦇</span></div>
-  <div class="fog" aria-hidden="true"></div><div class="fog f2" aria-hidden="true"></div>
   <div class="wrap">
     <div class="kicker">Est. 2026 · last dug <span id="built">recently</span></div>
     <h1 aria-label="The PCAP AI Graveyard"><span class="w" style="animation-delay:.05s">The</span> <span class="w" style="animation-delay:.2s">PCAP</span> <span class="w" style="animation-delay:.35s">AI</span> <span class="w" style="animation-delay:.55s">Graveyard</span></h1>
-    <p class="lede">Every AI packet analysis tool we could find, ranked by how alive it still is. Each one was going to <em>replace Wireshark</em>. Wireshark has not noticed.</p>
+    <p class="lede">Each one was going to <em>replace Wireshark</em>. Wireshark has not noticed.</p>
   </div>
 </header>
 
 <main class="wrap">
   <h2>Hosted and commercial plots</h2>
-  <p class="sub">Tools with a website. No stars to count here, so a site that answers is judged by the day its page was last edited, and a site that does not answer is buried. The living get a notice board, not a stone. Stones are tended less the longer nobody has touched the project.</p>
+  <p class="sub">Tools with a website, judged by the page's last edit. Hover or tap a plot.</p>
   <div class="yardwrap"><div class="wanderer" aria-hidden="true">👻</div><div class="yard" id="hosted"></div></div>
 
   <h2>Still warm</h2>
-  <p class="sub">The twelve repositories with the strongest pulse. Being listed here is not an insult. It is a census, and some of these are simply good.</p>
+  <p class="sub">The strongest pulses on GitHub.</p>
   <div class="yard" id="warm"></div>
 
   <h2>One-day wonders</h2>
-  <p class="sub">Created and last pushed on the same date, sorted by the stars they collected on the way down. Causes of death are invented; the dates are not.</p>
+  <p class="sub">Created and last pushed on the same day, yet somebody starred them.</p>
   <div class="yard" id="oneday"></div>
 
+  <h2>One day, no visitors</h2>
+  <p class="sub"><span id="lonelyn"></span> repositories lived one day and collected zero stars. The longest forgotten first.</p>
+  <div class="yard" id="lonely"></div>
+
   <h2>Recently departed</h2>
-  <p class="sub">Went quiet between six and twelve months ago, after more than a weekend of real work. These ones hurt a little.</p>
+  <p class="sub">Quiet for six to twelve months, after real work.</p>
   <div class="yard" id="departed"></div>
   <h2>The census</h2>
-  <p class="sub">The whole yard in six numbers.</p>
     <div class="sign">VISITING HOURS: WHENEVER THE BUILD IS RUNNING<br>PLEASE DO NOT FEED THE LLMS RAW PCAPS</div>
     <div class="links">
       <a class="btn primary" href="#register">All <span id="alln"></span> graves are in the register →</a>
@@ -303,7 +313,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
 <div data-view="register" hidden>
 <main class="wrap">
   <div class="pagehead"><div class="kicker">The Register</div><h2>Every grave, in rows</h2>
-  <p class="sub">Every repository the weekly sweep found. Click a column to sort, or filter to see only the ones that still move.</p></div>
+  <p class="sub">Click a column to sort.</p></div>
   <div class="tools">
     <input id="q" type="search" placeholder="Search name or description" aria-label="Search">
     <div class="chips" id="chips"></div>
@@ -422,11 +432,13 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     if (o.dates) t.append(el('div', 'dates', o.dates))
     if (living) t.insertAdjacentHTML('beforeend', '<svg class="pulse" viewBox="0 0 78 16" aria-hidden="true"><path d="M0 9 h22 l4 -7 l5 13 l5 -11 l3 5 h39"/></svg>')
     else t.append(el('div', 'rule'))
-    if (o.pitch) t.append(el('p', 'pitch', o.pitch))
-    t.append(el('p', 'epi', o.epitaph))
-    if (o.cause) t.append(el('p', 'cause', o.cause))
+    const more = el('div', 'more')
+    if (o.pitch) more.append(el('p', 'pitch', o.pitch))
+    more.append(el('p', 'epi', o.epitaph))
+    if (o.cause) more.append(el('p', 'cause', o.cause))
+    t.append(more)
     const f = el('div', 'foot'); f.append(el('span', 'pill ' + o.status, LABEL[o.status]))
-    for (const p of o.pills || []) f.append(el('span', 'pill plain', p))
+    for (const p of o.pills || []) f.append(el('span', 'pill plain x', p))
     t.append(f)
     const mound = el('div', 'mound')
     const deco = (cls, ch) => { const d = el('span', 'deco ' + cls, ch); d.setAttribute('aria-hidden', 'true'); mound.append(d) }
@@ -436,7 +448,12 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     else if (lvl === 2) { deco('l', '🥀'); if (h % 2) deco('r', '🍂') }
     else if (lvl === 3) { deco('l', '🌿'); deco('r', h % 2 ? '🍄' : '🍂') }
     else { deco('l', '🌿'); deco('m', '🌾'); deco('r', h % 2 ? '🐀' : '🍄') }
-    plot.append(g, t, el('div', 'plinth'), mound)
+    const slot = el('div', 'slot'); t.prepend(g); slot.append(t)
+    const fit = () => { const r = slot.getBoundingClientRect(), w = document.documentElement.clientWidth, pad = innerWidth < 700 ? 8 : 38
+      plot.style.setProperty('--dx', Math.round(Math.max(0, 8 - (r.left - pad)) - Math.max(0, r.right + pad - (w - 8))) + 'px') }
+    plot.addEventListener('mouseenter', fit); plot.addEventListener('focusin', fit); plot.addEventListener('click', fit)
+    plot.addEventListener('click', (e) => { if (!e.target.closest('a')) plot.classList.toggle('open') })
+    plot.append(slot, el('div', 'plinth'), mound)
     return plot
   }
   const clip = (t, n) => t && t.length > n ? t.slice(0, n - 1).trimEnd() + '…' : t
@@ -446,26 +463,29 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   // a free plot at the end of the row
   const vacant = el('article', 'plot rise vacant'); const vt = el('div', 'tomb')
   const vh = el('h3'); vh.append(link('https://github.com/oripka/pcap-ai-graveyard#resurrections-corrections-removals', 'Vacant plot'))
-  vt.append(el('div', 'rip', 'RESERVED'), vh, el('p', 'epi', 'For your tool. Quiet neighbours, good view of the moon.'), el('p', 'pitch', 'Bring your own API key. Pull requests accepted.'))
-  vacant.append(vt); $('hosted').append(vacant)
+  vt.append(el('div', 'rip', 'RESERVED'), vh, (() => { const m = el('div', 'more'); m.append(el('p', 'epi', 'For your tool. Quiet neighbours, good view of the moon.'), el('p', 'pitch', 'Bring your own API key. Pull requests accepted.')); return m })())
+  const vs = el('div', 'slot'); vs.append(vt); vacant.append(vs); $('hosted').append(vacant)
 
   const repoTomb = (r) => tomb({ key: r.repo, status: r.status, href: 'https://github.com/' + r.repo, title: r.repo.split('/')[1],
     dates: `${r.created} – ${r.last_push}`, pitch: clip(r.description, 110), epitaph: r.epitaph, days: r.silent_days,
     cause: r.status === 'alive' ? 'Prognosis: ' + PROGNOSIS[hash(r.repo) % PROGNOSIS.length] : 'Cause: ' + CAUSES[hash(r.repo) % CAUSES.length],
     pills: [r.stars + ' ★', 'pulse ' + r.pulse] })
-  for (const r of G.repos.slice(0, 12)) $('warm').append(repoTomb(r))
-  for (const r of G.repos.filter((r) => r.one_day && r.status !== 'alive').sort((a, b) => b.stars - a.stars).slice(0, 12)) $('oneday').append(repoTomb(r))
-  for (const r of G.repos.filter((r) => r.status === 'flatlined' && r.lifespan_days > 14).sort((a, b) => b.stars - a.stars).slice(0, 8)) $('departed').append(repoTomb(r))
+  for (const r of G.repos.slice(0, 18)) $('warm').append(repoTomb(r))
+  for (const r of G.repos.filter((r) => r.one_day && r.status !== 'alive').sort((a, b) => b.stars - a.stars).filter((r) => r.stars > 0).slice(0, 24)) $('oneday').append(repoTomb(r))
+  for (const r of G.repos.filter((r) => r.status === 'flatlined' && r.lifespan_days > 14).sort((a, b) => b.stars - a.stars).slice(0, 18)) $('departed').append(repoTomb(r))
 
   // ---- register ----
   let filter = 'all', sort = { k: 'rank', dir: 1 }, limit = 100
-  const FILTERS = [['all', 'All'], ['alive', 'Alive'], ['coughing', 'Coughing'], ['flatlined', 'Flatlined'], ['buried', 'Buried'], ['one_day', 'One-day'], ['mcp', 'MCP'], ['site', 'Has a site']]
+  const lonely = G.repos.filter((r) => r.one_day && r.stars === 0 && r.status !== 'alive').sort((a, b) => b.silent_days - a.silent_days)
+  $('lonelyn').textContent = lonely.length
+  for (const r of lonely.slice(0, 30)) $('lonely').append(repoTomb(r))
+  const FILTERS = [['all', 'All'], ['alive', 'Alive'], ['coughing', 'Coughing'], ['flatlined', 'Flatlined'], ['buried', 'Buried'], ['one_day', 'One-day'], ['lonely', 'One day, 0 ★'], ['mcp', 'MCP'], ['site', 'Has a site']]
   for (const [k, label] of FILTERS) {
     const b = el('button', 'chip', label); b.type = 'button'; b.dataset.k = k; b.setAttribute('aria-pressed', k === filter)
     b.onclick = () => { filter = k; limit = 100; document.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', c.dataset.k === k)); draw() }
     $('chips').append(b)
   }
-  const match = (r) => filter === 'all' || (filter === 'one_day' ? r.one_day : filter === 'mcp' ? r.kind === 'mcp' : filter === 'site' ? !!r.homepage : r.status === filter)
+  const match = (r) => filter === 'all' || (filter === 'one_day' ? r.one_day : filter === 'lonely' ? r.one_day && r.stars === 0 : filter === 'mcp' ? r.kind === 'mcp' : filter === 'site' ? !!r.homepage : r.status === filter)
   const ORDER = { alive: 0, coughing: 1, flatlined: 2, buried: 3, embalmed: 4 }
   const draw = () => {
     const q = $('q').value.trim().toLowerCase()
