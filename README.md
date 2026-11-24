@@ -44,10 +44,10 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 <!-- hosted:start -->
 | Tool | Kind | Status | Last sign of life | Epitaph |
 |---|---|---|---|---|
-| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
-| [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
-| [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | A log analysis company that noticed packets are also logs, if you squint. |
-| [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
+| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | page last edited 2026-11-20 (newest sitemap entry) | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
+| [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | page last edited 2026-11-17 (newest sitemap entry) | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
+| [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | page last edited 2026-11-19 (newest sitemap entry) | A log analysis company that noticed packets are also logs, if you squint. |
+| [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | page last edited 2026-11-23 (newest sitemap entry) | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
 | [PcapAnalyzer](https://pcap-analyzer-seven.vercel.app) | self-hosted | 🫀 Alive | page last edited 2026-11-21 (last push to its repository) | The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake. |
 | [Selector Packet Copilot](https://packetcopilot.selector.ai/) | hosted | 🤒 Coughing (HTTP 503) | site answered on 2026-11-24, edit date not published | Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner. |
 | [A-Packets](https://apackets.com) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper. |
@@ -55,15 +55,15 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [PCAP Analyser (cloudssfdc)](https://www.producthunt.com/products/pcap-analyser) | hosted | ❔ No site of its own | Product Hunt listing only | Four followers and one review on Product Hunt, three stars. Root cause in sixty seconds, audience still pending. |
 | [AuraSniff](https://www.producthunt.com/posts/aurasniff) | cli | ❔ No site of its own | Product Hunt listing only | aurasniff.com is a shop for perfume and body spray. We assume it is unrelated. It is still the best-smelling entry here. |
 | [VisualEther](https://www.visualether.com) | desktop | 🫀 Alive | site answered on 2026-11-24, edit date not published | An elder that learned MCP. Not vibe-coded, just adapting to the climate. |
-| [Cisco Meraki AI PCAP Analyzer](https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer) | vendor | 🤒 Coughing | page last edited 2026-07-30 (documentation date) | Will not die. Will be renamed. |
+| [Cisco Meraki AI PCAP Analyzer](https://documentation.meraki.com/Platform_Management/Dashboard_Administration/Troubleshooting_and_Support/Troubleshooting/AI_PCAP_Analyzer) | vendor | 🤒 Coughing | page last edited 2026-09-16 (declared by the page) | Will not die. Will be renamed. |
 | [GNS3 AI packet analysis](https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis) | vendor | 🫀 Alive | site answered on 2026-11-24, edit date not published | Every product gets an AI tab eventually. This is the lab simulator's. |
 | [PacketPilot AI](https://packetpilotai.com) | prompt pack | 🫀 Alive | site answered on 2026-11-24, edit date not published | Skipped building the tool and sells the prompts. Possibly the only one here that read the room. |
 | [Fraunhofer NetCapVis](https://netcapvis.igd.fraunhofer.de/) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Publicly funded, therefore immortal. |
-| [ChatTCP](https://chattcp.com/en) | hosted | ❔ No site of its own | site up | Turns a three-way handshake into a group chat. SYN left on read. |
+| [ChatTCP](https://chattcp.com/en) | hosted | 🫀 Alive | page last edited 2026-11-22 (newest sitemap entry) | Turns a three-way handshake into a group chat. SYN left on read. |
 | [LLM-Shark](https://www.telecomhall.net/t/llm-shark-an-ai-tool-to-analyze-signaling-in-pcap-format/36312) | desktop | ❔ No site of its own | forum announcement, one post | Announced in one forum post, which is also the whole thread. The signalling was one-way. |
-| [PCAP-LM](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/) | research | 🫀 Alive | page last edited 2026-11-06 (publication date) | Research, so it cannot die. It can only stop being cited. |
-| [cPacket AI](https://www.cpacket.com) | vendor | ❔ No site of its own | announced October 2025 | Has hardware, customers and a price list. Wandered in by mistake and is asking the way out. |
-| [Riverbed IQ (NPM 360)](https://www.riverbed.com/products/appresponse/) | vendor | ❔ No site of its own | launched 2026-09-17 | Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum. |
+| [PCAP-LM](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/) | research | 🫀 Alive | page last edited 2026-11-06 (declared by the page) | Research, so it cannot die. It can only stop being cited. |
+| [cPacket AI](https://www.cpacket.com) | vendor | 🫀 Alive | page last edited 2026-11-19 (newest sitemap entry) | Has hardware, customers and a price list. Wandered in by mistake and is asking the way out. |
+| [Riverbed IQ (NPM 360)](https://www.riverbed.com/products/appresponse/) | vendor | 🤒 Coughing | page last edited 2026-09-17 (declared by the page) | Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse
