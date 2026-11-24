@@ -11,3 +11,8 @@ dishastack/Packet_pilot-ai
 netwho/PacketCircle
 kiskander/pt-mcp-server
 Deenxnation1/ColdAlpha_NetworkSniffer
+roxlukas/ai_pcap_explain
+ZeroVectorLabs/capsight
+ProxymanApp/TCPViewer
+lyatanski/webshark
+mostlygino/Kagami

@@ -171,6 +171,32 @@
       "pitch": "Agentic AI wired into AppResponse and NetProfiler: correlates the evidence, recommends next steps, lets you drill down to the packets. Launched September 2026.",
       "epitaph": "Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum.",
       "last_sign_note": "launched 2026-09-17"
+    },
+    {
+      "name": "DynamiteLab (formerly PacketTotal)",
+      "url": "https://dynamitelab.com/",
+      "kind": "hosted",
+      "pitch": "PacketTotal launched in 2017 and became DynamiteLab in 2023: a public PCAP analysis platform used by a large community for almost a decade.",
+      "epitaph": "2017 – June 6, 2026. The only resident with a proper obituary on its own front page. Not vibe-coded, not a weekend project, and still gone. Rest well.",
+      "force_status": "buried",
+      "died": "2026-06-06",
+      "last_sign_note": "shut down, says its own front page"
+    },
+    {
+      "name": "Red Hand Analytics",
+      "url": "https://redhand.io/analyzer",
+      "kind": "hosted",
+      "pitch": "Free online PCAP analyzer: upload .pcap, .pcapng or .etl and get a connected investigation of activities, endpoints, DNS and data movement. 100 MB without an account.",
+      "epitaph": "Caught red-handed being useful. Under observation.",
+      "last_sign_note": "site up"
+    },
+    {
+      "name": "pcapanalyzer.com",
+      "url": "https://pcapanalyzer.com/",
+      "kind": "hosted",
+      "pitch": "'Advanced PCAP Analyzer for Network Professionals', 'the ultimate PCAP analysis tool', with AI-powered PCAP analysis.",
+      "epitaph": "Says 'PCAP' and 'analysis' more often per paragraph than any capture contains SYNs. The search engines have been notified.",
+      "last_sign_note": "site up"
     }
   ],
   "epitaphs": {
@@ -184,6 +210,54 @@
     "weirdmachine64/SharkMCP": "The other SharkMCP. Lived a day longer than its namesake.",
     "bx33661/Wireshark-MCP": "'Production-grade', says PyPI. Still pushing, so no flowers yet.",
     "netwho/PacketCircle": "A Wireshark plugin that draws traffic as a circle. No AI in the description, which makes it the most honest entry in the yard.",
-    "kiskander/pt-mcp-server": "Not packets, Packet Tracer: an MCP server that builds CCNA labs for you and refuses to reveal the graded answers. Admitted on the undertaker's personal invitation."
-  }
+    "kiskander/pt-mcp-server": "Not packets, Packet Tracer: an MCP server that builds CCNA labs for you and refuses to reveal the graded answers. Admitted on the undertaker's personal invitation.",
+    "ProxymanApp/TCPViewer": "A native Mac app by people who ship native Mac apps for a living. Six hundred stars and a pulse. Came to visit, brought flowers.",
+    "lyatanski/webshark": "Wireshark in a browser, in Kubernetes and on a phone, announced with 'I would appreciate feedback'. Twelve upvotes. We appreciate it too.",
+    "roxlukas/ai_pcap_explain": "'Explain pcap using local LLM model.' One day, one star, no further explanation.",
+    "mostlygino/Kagami": "Kagami means mirror. A native macOS viewer on Wireshark's own dissectors, so at least the decoding is not a hallucination."
+  },
+  "reading": [
+    {
+      "title": "Worth Exploring: PCAP Analysis with Generative AI (Packet Buddy)",
+      "by": "ipSpace.net",
+      "url": "https://blog.ipspace.net/2024/03/worth-reading-chatgpt-packet-buddy/",
+      "note": "March 2024. Where most of this started."
+    },
+    {
+      "title": "How I Built an AI-Powered Packet Analyzer, and Why It Wasn't Easy",
+      "by": "Shubham Bhat (NetNerve)",
+      "url": "https://medium.com/@bhatsupshubham/how-i-built-an-ai-powered-packet-analyzer-and-why-it-wasnt-easy-1d2140dc2739",
+      "note": "A resident explains the hard parts himself."
+    },
+    {
+      "title": "Automated Network Packet Analysis with Gemini AI and Scapy",
+      "by": "The Last, on Medium",
+      "url": "https://medium.com/the-last/automated-network-packet-analysis-with-gemini-ai-and-scapy-d049763d40b3",
+      "note": "The recipe, written down."
+    },
+    {
+      "title": "PCAP-LM: Helping AI assistants read network traffic",
+      "by": "APNIC Blog",
+      "url": "https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/",
+      "note": "November 2026. A few megabytes of traffic become nearly 20 million tokens."
+    },
+    {
+      "title": "The tool said it wrote 48 packets. Only 44 were there",
+      "by": "Robin Hayer",
+      "url": "https://robinhayer.dev/pcapsplitter-file-collision-tcp-session-reuse",
+      "note": "Not AI at all: an honest bug hunt in a PCAP splitter, with a merged fix. Included as a reminder of what finished work looks like."
+    },
+    {
+      "title": "AI-Powered Cisco Packet Tracer with MCP",
+      "by": "Y. Rooseleer",
+      "url": "https://docs.google.com/document/d/e/2PACX-1vR7AoY15txmtDNbr-Mj1GlSVsFMls85LEyIV0ySw7bfMY3pMo6Ad0aFinnyCMGPQwZipozI6k4XlEG7/pub",
+      "note": "November 2026. A write-up of pt-mcp-server."
+    },
+    {
+      "title": "Can AI Analyze Pcaps? The Results Surprised Me!",
+      "by": "Chris Greer",
+      "url": "https://www.youtube.com/@ChrisGreer",
+      "note": "October 2025, on his channel."
+    }
+  ]
 }

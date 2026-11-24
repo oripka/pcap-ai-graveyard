@@ -19,12 +19,12 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**560** repositories and **20** hosted or commercial tools, as of **2026-11-24**.
+**563** repositories and **23** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
-| 🫀 Alive | 141 | 25% |
-| 🤒 Coughing | 223 | 40% |
+| 🫀 Alive | 143 | 25% |
+| 🤒 Coughing | 224 | 40% |
 | 📉 Flatlined | 135 | 24% |
 | 🪦 Buried | 60 | 11% |
 | 🏺 Embalmed | 1 | 0% |
@@ -34,12 +34,12 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 - Median time between creation and last push: **1 day**.
 - **377** (67%) have no stars at all. The author did not star it either.
 - **112** (20%) are MCP servers.
-- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 458.
+- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 461.
 <!-- stats:end -->
 
 ## Hosted and commercial plots
 
-Tools with a website instead of, or next to, a repository. There are no stars to count, so the status is whether the site still answers, plus the last sign of life we could find.
+Tools with a website instead of, or next to, a repository. There are no stars to count, so a site that answers is judged like a repository: by the day its page was last edited (a date the page declares or prints, its `Last-Modified` header, or the newest entry in its sitemap). A site that does not answer is buried.
 
 <!-- hosted:start -->
 | Tool | Kind | Status | Last sign of life | Epitaph |
@@ -64,6 +64,9 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [PCAP-LM](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/) | research | 🫀 Alive | page last edited 2026-11-06 (declared by the page) | Research, so it cannot die. It can only stop being cited. |
 | [cPacket AI](https://www.cpacket.com) | vendor | 🫀 Alive | page last edited 2026-11-19 (newest sitemap entry) | Has hardware, customers and a price list. Wandered in by mistake and is asking the way out. |
 | [Riverbed IQ (NPM 360)](https://www.riverbed.com/products/appresponse/) | vendor | 🤒 Coughing | page last edited 2026-09-17 (declared by the page) | Causal, predictive, generative and agentic, all in one press release. Too large for a plot; has been offered the mausoleum. |
+| [DynamiteLab (formerly PacketTotal)](https://dynamitelab.com/) | hosted | 🪦 Buried | shut down 2026-06-06, by its own announcement | 2017 – June 6, 2026. The only resident with a proper obituary on its own front page. Not vibe-coded, not a weekend project, and still gone. Rest well. |
+| [Red Hand Analytics](https://redhand.io/analyzer) | hosted | ❔ No site of its own | site up | Caught red-handed being useful. Under observation. |
+| [pcapanalyzer.com](https://pcapanalyzer.com/) | hosted | ❔ No site of its own | site up | Says 'PCAP' and 'analysis' more often per paragraph than any capture contains SYNs. The search engines have been notified. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse
@@ -74,35 +77,35 @@ Sorted by [pulse score](#how-this-is-measured). The complete register is in [GRA
 | # | Repository | Status | Pulse | ★ | Born | Last push | Worked on | Epitaph |
 |--:|---|---|--:|--:|---|---|--:|---|
 | 1 | [ninedter/pcap-hunter](https://github.com/ninedter/pcap-hunter) | 🫀 Alive | 89 | 176 | 2025-11-22 | 2026-11-15 | 358 d | Pulse present. No flowers yet. |
-| 2 | [bx33661/Wireshark-MCP](https://github.com/bx33661/Wireshark-MCP) | 🫀 Alive | 87 | 410 | 2026-02-07 | 2026-11-01 | 267 d | 'Production-grade', says PyPI. Still pushing, so no flowers yet. |
-| 3 | [khuynh22/mcp-wireshark](https://github.com/khuynh22/mcp-wireshark) | 🫀 Alive | 84 | 70 | 2025-11-04 | 2026-11-16 | 377 d | More than a year of commits. Does not belong here and knows it. |
-| 4 | [NotYuSheng/TracePcap](https://github.com/NotYuSheng/TracePcap) | 🫀 Alive | 80 | 57 | 2026-01-31 | 2026-11-24 | 297 d | Pulse present. No flowers yet. |
-| 5 | [mcpcap/mcpcap](https://github.com/mcpcap/mcpcap) | 🤒 Coughing | 78 | 54 | 2025-09-09 | 2026-10-06 | 392 d | Last seen pushing in October 2026. Faint pulse. |
-| 6 | [sebaandrada-cell/PcapAnalyzer](https://github.com/sebaandrada-cell/PcapAnalyzer) | 🫀 Alive | 73 | 233 | 2026-10-21 | 2026-11-21 | 31 d | Still breathing. We check again next week. |
-| 7 | [NormB/sipnab](https://github.com/NormB/sipnab) | 🫀 Alive | 70 | 36 | 2026-06-13 | 2026-11-24 | 164 d | Pulse present. No flowers yet. |
-| 8 | [aws-samples/sample-pcap-analyzer-mcp](https://github.com/aws-samples/sample-pcap-analyzer-mcp) | 🫀 Alive | 70 | 14 | 2026-03-11 | 2026-11-23 | 257 d | Alive at the time of writing, which is all anyone can say. |
-| 9 | [hvaandres/PcapAnalyzer](https://github.com/hvaandres/PcapAnalyzer) | 🤒 Coughing | 70 | 13 | 2023-12-10 | 2026-10-05 | 1030 d | Last seen pushing in October 2026. Faint pulse. |
-| 10 | [A-G-U-P-T-A/wireshark-mcp](https://github.com/A-G-U-P-T-A/wireshark-mcp) | 🤒 Coughing | 66 | 25 | 2025-03-31 | 2026-07-29 | 485 d | Last seen pushing in July 2026. Faint pulse. |
-| 11 | [MuthoniGathiithi/Network-Security-AI-agent](https://github.com/MuthoniGathiithi/Network-Security-AI-agent) | 🤒 Coughing | 66 | 6 | 2025-01-16 | 2026-10-07 | 629 d | Quiet since October 2026. Could still be a long holiday. |
-| 12 | [RainbowCloudLabs/omcipcap](https://github.com/RainbowCloudLabs/omcipcap) | 🫀 Alive | 63 | 10 | 2026-02-24 | 2026-10-17 | 235 d | Still breathing. We check again next week. |
-| 13 | [MoShouSecurity/Easy_Analyzer](https://github.com/MoShouSecurity/Easy_Analyzer) | 🫀 Alive | 60 | 31 | 2026-09-30 | 2026-11-04 | 35 d | Pulse present. No flowers yet. |
-| 14 | [Guang84/Network-Analyzer](https://github.com/Guang84/Network-Analyzer) | 🤒 Coughing | 59 | 2 | 2024-05-02 | 2026-09-16 | 867 d | Quiet since September 2026. Could still be a long holiday. |
-| 15 | [Anthrasaxx/pcap-alert-pipeline](https://github.com/Anthrasaxx/pcap-alert-pipeline) | 🫀 Alive | 59 | 0 | 2025-06-25 | 2026-11-18 | 511 d | More than a year of commits. Does not belong here and knows it. |
-| 16 | [RomainRicord/WireMCP-rs](https://github.com/RomainRicord/WireMCP-rs) | 🫀 Alive | 58 | 3 | 2026-03-05 | 2026-10-26 | 235 d | Alive at the time of writing, which is all anyone can say. |
-| 17 | [zombat/sonic](https://github.com/zombat/sonic) | 🫀 Alive | 58 | 1 | 2026-03-04 | 2026-11-19 | 260 d | Pulse present. No flowers yet. |
-| 18 | [CyberHorizon-be/sleuthline](https://github.com/CyberHorizon-be/sleuthline) | 🫀 Alive | 57 | 15 | 2026-10-18 | 2026-11-18 | 31 d | Still breathing. We check again next week. |
-| 19 | [Gurjas2112/Wireshark_PCAP_Anomaly_Detection](https://github.com/Gurjas2112/Wireshark_PCAP_Anomaly_Detection) | 🫀 Alive | 57 | 0 | 2025-05-29 | 2026-10-31 | 520 d | Still maintained after a year. Visiting, not residing. |
-| 20 | [netwho/PacketCircle](https://github.com/netwho/PacketCircle) | 🤒 Coughing | 56 | 30 | 2026-02-13 | 2026-07-28 | 165 d | A Wireshark plugin that draws traffic as a circle. No AI in the description, which makes it the most honest entry in the yard. |
-| 21 | [ClementG91/MCP-FlowSentinel](https://github.com/ClementG91/MCP-FlowSentinel) | 🫀 Alive | 56 | 1 | 2026-04-11 | 2026-11-23 | 226 d | Still breathing. We check again next week. |
-| 22 | [SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab](https://github.com/SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab) | 🫀 Alive | 56 | 1 | 2025-12-29 | 2026-10-19 | 294 d | Pulse present. No flowers yet. |
-| 23 | [sergsrgsg/rock-star-skills](https://github.com/sergsrgsg/rock-star-skills) | 🫀 Alive | 55 | 0 | 2025-02-20 | 2026-10-13 | 600 d | More than a year of commits. Does not belong here and knows it. |
-| 24 | [bhat-shubham/NetNerve_V0_Demo](https://github.com/bhat-shubham/NetNerve_V0_Demo) | 🤒 Coughing | 53 | 6 | 2025-05-15 | 2026-06-14 | 395 d | Last seen pushing in June 2026. Faint pulse. |
-| 25 | [daniissac/framecite](https://github.com/daniissac/framecite) | 🤒 Coughing | 52 | 0 | 2025-02-28 | 2026-09-10 | 559 d | Quiet since September 2026. Could still be a long holiday. |
-| 26 | [Kaichera/sniff](https://github.com/Kaichera/sniff) | 🫀 Alive | 52 | 0 | 2025-12-09 | 2026-10-14 | 309 d | Alive at the time of writing, which is all anyone can say. |
-| 27 | [nlink-jp/cybersecurity-series](https://github.com/nlink-jp/cybersecurity-series) | 🫀 Alive | 52 | 0 | 2026-03-27 | 2026-11-14 | 232 d | Pulse present. No flowers yet. |
-| 28 | [Veer-Parikh/fyp](https://github.com/Veer-Parikh/fyp) | 🤒 Coughing | 52 | 0 | 2025-11-30 | 2026-10-09 | 313 d | Quiet since October 2026. Could still be a long holiday. |
-| 29 | [dngames/wirebuddy](https://github.com/dngames/wirebuddy) | 🫀 Alive | 51 | 5 | 2026-10-26 | 2026-11-17 | 22 d | Alive at the time of writing, which is all anyone can say. |
-| 30 | [Garasimba/WireMCP-rs](https://github.com/Garasimba/WireMCP-rs) | 🫀 Alive | 51 | 1 | 2026-03-17 | 2026-10-13 | 210 d | Pulse present. No flowers yet. |
+| 2 | [ProxymanApp/TCPViewer](https://github.com/ProxymanApp/TCPViewer) | 🫀 Alive | 87 | 602 | 2026-04-23 | 2026-11-15 | 206 d | A native Mac app by people who ship native Mac apps for a living. Six hundred stars and a pulse. Came to visit, brought flowers. |
+| 3 | [bx33661/Wireshark-MCP](https://github.com/bx33661/Wireshark-MCP) | 🫀 Alive | 87 | 410 | 2026-02-07 | 2026-11-01 | 267 d | 'Production-grade', says PyPI. Still pushing, so no flowers yet. |
+| 4 | [khuynh22/mcp-wireshark](https://github.com/khuynh22/mcp-wireshark) | 🫀 Alive | 84 | 70 | 2025-11-04 | 2026-11-16 | 377 d | More than a year of commits. Does not belong here and knows it. |
+| 5 | [NotYuSheng/TracePcap](https://github.com/NotYuSheng/TracePcap) | 🫀 Alive | 80 | 57 | 2026-01-31 | 2026-11-24 | 297 d | Pulse present. No flowers yet. |
+| 6 | [mcpcap/mcpcap](https://github.com/mcpcap/mcpcap) | 🤒 Coughing | 78 | 54 | 2025-09-09 | 2026-10-06 | 392 d | Last seen pushing in October 2026. Faint pulse. |
+| 7 | [sebaandrada-cell/PcapAnalyzer](https://github.com/sebaandrada-cell/PcapAnalyzer) | 🫀 Alive | 73 | 233 | 2026-10-21 | 2026-11-21 | 31 d | Still breathing. We check again next week. |
+| 8 | [NormB/sipnab](https://github.com/NormB/sipnab) | 🫀 Alive | 70 | 36 | 2026-06-13 | 2026-11-24 | 164 d | Pulse present. No flowers yet. |
+| 9 | [aws-samples/sample-pcap-analyzer-mcp](https://github.com/aws-samples/sample-pcap-analyzer-mcp) | 🫀 Alive | 70 | 14 | 2026-03-11 | 2026-11-23 | 257 d | Alive at the time of writing, which is all anyone can say. |
+| 10 | [hvaandres/PcapAnalyzer](https://github.com/hvaandres/PcapAnalyzer) | 🤒 Coughing | 70 | 13 | 2023-12-10 | 2026-10-05 | 1030 d | Last seen pushing in October 2026. Faint pulse. |
+| 11 | [A-G-U-P-T-A/wireshark-mcp](https://github.com/A-G-U-P-T-A/wireshark-mcp) | 🤒 Coughing | 66 | 25 | 2025-03-31 | 2026-07-29 | 485 d | Last seen pushing in July 2026. Faint pulse. |
+| 12 | [MuthoniGathiithi/Network-Security-AI-agent](https://github.com/MuthoniGathiithi/Network-Security-AI-agent) | 🤒 Coughing | 66 | 6 | 2025-01-16 | 2026-10-07 | 629 d | Quiet since October 2026. Could still be a long holiday. |
+| 13 | [RainbowCloudLabs/omcipcap](https://github.com/RainbowCloudLabs/omcipcap) | 🫀 Alive | 63 | 10 | 2026-02-24 | 2026-10-17 | 235 d | Still breathing. We check again next week. |
+| 14 | [MoShouSecurity/Easy_Analyzer](https://github.com/MoShouSecurity/Easy_Analyzer) | 🫀 Alive | 60 | 31 | 2026-09-30 | 2026-11-04 | 35 d | Pulse present. No flowers yet. |
+| 15 | [Guang84/Network-Analyzer](https://github.com/Guang84/Network-Analyzer) | 🤒 Coughing | 59 | 2 | 2024-05-02 | 2026-09-16 | 867 d | Quiet since September 2026. Could still be a long holiday. |
+| 16 | [Anthrasaxx/pcap-alert-pipeline](https://github.com/Anthrasaxx/pcap-alert-pipeline) | 🫀 Alive | 59 | 0 | 2025-06-25 | 2026-11-18 | 511 d | More than a year of commits. Does not belong here and knows it. |
+| 17 | [RomainRicord/WireMCP-rs](https://github.com/RomainRicord/WireMCP-rs) | 🫀 Alive | 58 | 3 | 2026-03-05 | 2026-10-26 | 235 d | Alive at the time of writing, which is all anyone can say. |
+| 18 | [zombat/sonic](https://github.com/zombat/sonic) | 🫀 Alive | 58 | 1 | 2026-03-04 | 2026-11-19 | 260 d | Pulse present. No flowers yet. |
+| 19 | [CyberHorizon-be/sleuthline](https://github.com/CyberHorizon-be/sleuthline) | 🫀 Alive | 57 | 15 | 2026-10-18 | 2026-11-18 | 31 d | Still breathing. We check again next week. |
+| 20 | [Gurjas2112/Wireshark_PCAP_Anomaly_Detection](https://github.com/Gurjas2112/Wireshark_PCAP_Anomaly_Detection) | 🫀 Alive | 57 | 0 | 2025-05-29 | 2026-10-31 | 520 d | Still maintained after a year. Visiting, not residing. |
+| 21 | [netwho/PacketCircle](https://github.com/netwho/PacketCircle) | 🤒 Coughing | 56 | 30 | 2026-02-13 | 2026-07-28 | 165 d | A Wireshark plugin that draws traffic as a circle. No AI in the description, which makes it the most honest entry in the yard. |
+| 22 | [ClementG91/MCP-FlowSentinel](https://github.com/ClementG91/MCP-FlowSentinel) | 🫀 Alive | 56 | 1 | 2026-04-11 | 2026-11-23 | 226 d | Still breathing. We check again next week. |
+| 23 | [SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab](https://github.com/SyntheticSovereign/Azure-SOC-AI-Enhanced-Homelab) | 🫀 Alive | 56 | 1 | 2025-12-29 | 2026-10-19 | 294 d | Pulse present. No flowers yet. |
+| 24 | [sergsrgsg/rock-star-skills](https://github.com/sergsrgsg/rock-star-skills) | 🫀 Alive | 55 | 0 | 2025-02-20 | 2026-10-13 | 600 d | More than a year of commits. Does not belong here and knows it. |
+| 25 | [bhat-shubham/NetNerve_V0_Demo](https://github.com/bhat-shubham/NetNerve_V0_Demo) | 🤒 Coughing | 53 | 6 | 2025-05-15 | 2026-06-14 | 395 d | Last seen pushing in June 2026. Faint pulse. |
+| 26 | [daniissac/framecite](https://github.com/daniissac/framecite) | 🤒 Coughing | 52 | 0 | 2025-02-28 | 2026-09-10 | 559 d | Quiet since September 2026. Could still be a long holiday. |
+| 27 | [Kaichera/sniff](https://github.com/Kaichera/sniff) | 🫀 Alive | 52 | 0 | 2025-12-09 | 2026-10-14 | 309 d | Alive at the time of writing, which is all anyone can say. |
+| 28 | [nlink-jp/cybersecurity-series](https://github.com/nlink-jp/cybersecurity-series) | 🫀 Alive | 52 | 0 | 2026-03-27 | 2026-11-14 | 232 d | Pulse present. No flowers yet. |
+| 29 | [Veer-Parikh/fyp](https://github.com/Veer-Parikh/fyp) | 🤒 Coughing | 52 | 0 | 2025-11-30 | 2026-10-09 | 313 d | Quiet since October 2026. Could still be a long holiday. |
+| 30 | [dngames/wirebuddy](https://github.com/dngames/wirebuddy) | 🫀 Alive | 51 | 5 | 2026-10-26 | 2026-11-17 | 22 d | Alive at the time of writing, which is all anyone can say. |
 <!-- top:end -->
 
 ## One-day wonders
@@ -175,11 +178,17 @@ A [workflow](.github/workflows/sweep.yml) does the same every Monday and commits
 
 This list is kept by the maker of [PacketSafari](https://www.packetsafari.com/), which sells AI packet analysis and is therefore a future resident. It is listed above and judged by the same rules. Pull requests to bury it are accepted the day the dates say so.
 
-## Further viewing
+## Further reading
 
-- Chris Greer, [Can AI Analyze Pcaps? The Results Surprised Me!](https://www.youtube.com/@ChrisGreer) (October 2025)
-- John Capobianco's [Packet Buddy](https://github.com/automateyournetwork/packet_buddy), where most of this started
-- APNIC blog, [PCAP-LM: Helping AI assistants read network traffic](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/) (November 2026)
+<!-- reading:start -->
+- ipSpace.net, [Worth Exploring: PCAP Analysis with Generative AI (Packet Buddy)](https://blog.ipspace.net/2024/03/worth-reading-chatgpt-packet-buddy/). March 2024. Where most of this started.
+- Shubham Bhat (NetNerve), [How I Built an AI-Powered Packet Analyzer, and Why It Wasn't Easy](https://medium.com/@bhatsupshubham/how-i-built-an-ai-powered-packet-analyzer-and-why-it-wasnt-easy-1d2140dc2739). A resident explains the hard parts himself.
+- The Last, on Medium, [Automated Network Packet Analysis with Gemini AI and Scapy](https://medium.com/the-last/automated-network-packet-analysis-with-gemini-ai-and-scapy-d049763d40b3). The recipe, written down.
+- APNIC Blog, [PCAP-LM: Helping AI assistants read network traffic](https://blog.apnic.net/2026/11/06/pcap-lm-helping-ai-assistants-read-network-traffic/). November 2026. A few megabytes of traffic become nearly 20 million tokens.
+- Robin Hayer, [The tool said it wrote 48 packets. Only 44 were there](https://robinhayer.dev/pcapsplitter-file-collision-tcp-session-reuse). Not AI at all: an honest bug hunt in a PCAP splitter, with a merged fix. Included as a reminder of what finished work looks like.
+- Y. Rooseleer, [AI-Powered Cisco Packet Tracer with MCP](https://docs.google.com/document/d/e/2PACX-1vR7AoY15txmtDNbr-Mj1GlSVsFMls85LEyIV0ySw7bfMY3pMo6Ad0aFinnyCMGPQwZipozI6k4XlEG7/pub). November 2026. A write-up of pt-mcp-server.
+- Chris Greer, [Can AI Analyze Pcaps? The Results Surprised Me!](https://www.youtube.com/@ChrisGreer). October 2025, on his channel.
+<!-- reading:end -->
 
 ## License
 
