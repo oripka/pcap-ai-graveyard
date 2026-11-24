@@ -44,11 +44,11 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 <!-- hosted:start -->
 | Tool | Kind | Status | Last sign of life | Epitaph |
 |---|---|---|---|---|
-| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | page last edited 2026-11-20 (newest sitemap entry) | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
 | [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | page last edited 2026-11-17 (newest sitemap entry) | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
 | [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | page last edited 2026-11-19 (newest sitemap entry) | A log analysis company that noticed packets are also logs, if you squint. |
 | [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | page last edited 2026-11-23 (newest sitemap entry) | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
 | [PcapAnalyzer](https://pcap-analyzer-seven.vercel.app) | self-hosted | 🫀 Alive | page last edited 2026-11-21 (last push to its repository) | The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake. |
+| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | page last edited 2026-11-20 (newest sitemap entry) | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
 | [Selector Packet Copilot](https://packetcopilot.selector.ai/) | hosted | 🤒 Coughing (HTTP 503) | site answered on 2026-11-24, edit date not published | Answered our visit with HTTP 503 and the words 'unconditional drop overload'. Network people will appreciate the root cause being in the banner. |
 | [A-Packets](https://apackets.com) | hosted | 🫀 Alive | site answered on 2026-11-24, edit date not published | Was here before the AI tools arrived and will be here after. Listed as the cemetery's groundskeeper. |
 | [PacketSnitch](https://packetsnitch.com/ai-pcap-analysis/) | desktop | 🫀 Alive | page last edited 2026-11-21 (printed on the page) | The page says 'Last updated: November 21, 2026'. A site that states its own date of last activity. We could retire. |

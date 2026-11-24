@@ -1,15 +1,6 @@
 {
   "hosted": [
     {
-      "name": "PacketSafari",
-      "url": "https://www.packetsafari.com/analyzer/",
-      "kind": "hosted",
-      "pitch": "AI-assisted packet investigation with exact packet evidence: ranks the important signals, shows the flows and frames, and lets you verify every conclusion. In daily development.",
-      "epitaph": "Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else.",
-      "last_sign_note": "site up, shipping daily",
-      "disclosure": true
-    },
-    {
       "name": "PcapAI",
       "url": "https://pcapai.com",
       "kind": "hosted",
@@ -42,6 +33,15 @@
       "pitch": "27 detectors with a severity and a next step, runs locally in Docker, optional AI with your own key. Apache 2.0, beta.",
       "epitaph": "The newborn. Honest about being a beta, honest about only seeing sample captures. We will be back in six months with flowers or a cake.",
       "last_sign_note": "demo up"
+    },
+    {
+      "name": "PacketSafari",
+      "url": "https://www.packetsafari.com/analyzer/",
+      "kind": "hosted",
+      "pitch": "AI-assisted packet investigation with exact packet evidence: ranks the important signals, shows the flows and frames, and lets you verify every conclusion. In daily development.",
+      "epitaph": "Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else.",
+      "last_sign_note": "site up, shipping daily",
+      "disclosure": true
     },
     {
       "name": "Selector Packet Copilot",
