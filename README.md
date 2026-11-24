@@ -19,11 +19,11 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 ## The numbers
 
 <!-- stats:start -->
-**565** repositories and **28** hosted or commercial tools, as of **2026-11-24**.
+**564** repositories and **28** hosted or commercial tools, as of **2026-11-24**.
 
 | | Count | Share |
 |---|--:|--:|
-| 🫀 Alive | 145 | 26% |
+| 🫀 Alive | 144 | 26% |
 | 🤒 Coughing | 225 | 40% |
 | 📉 Flatlined | 134 | 24% |
 | 🪦 Buried | 60 | 11% |
@@ -32,9 +32,9 @@ This repository keeps the census. A script sweeps GitHub every week, a second on
 - **256** (45%) were created and last pushed on the same date.
 - **355** (63%) were worked on for a week or less.
 - Median time between creation and last push: **1 day**.
-- **379** (67%) have no stars at all. The author did not star it either.
-- **112** (20%) are MCP servers.
-- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 463.
+- **378** (67%) have no stars at all. The author did not star it either.
+- **111** (20%) are MCP servers.
+- Born per year: 2023: 3, 2024: 9, 2025: 90, 2026: 462.
 <!-- stats:end -->
 
 ## Hosted and commercial plots
@@ -108,9 +108,9 @@ Sorted by [pulse score](#how-this-is-measured). The complete register is in [GRA
 | 25 | [bhat-shubham/NetNerve_V0_Demo](https://github.com/bhat-shubham/NetNerve_V0_Demo) | 🤒 Coughing | 53 | 6 | 2025-05-15 | 2026-06-14 | 395 d | Last seen pushing in June 2026. Faint pulse. |
 | 26 | [daniissac/framecite](https://github.com/daniissac/framecite) | 🤒 Coughing | 52 | 0 | 2025-02-28 | 2026-09-10 | 559 d | Quiet since September 2026. Could still be a long holiday. |
 | 27 | [Kaichera/sniff](https://github.com/Kaichera/sniff) | 🫀 Alive | 52 | 0 | 2025-12-09 | 2026-10-14 | 309 d | Alive at the time of writing, which is all anyone can say. |
-| 28 | [nlink-jp/cybersecurity-series](https://github.com/nlink-jp/cybersecurity-series) | 🫀 Alive | 52 | 0 | 2026-03-27 | 2026-11-14 | 232 d | Pulse present. No flowers yet. |
-| 29 | [Veer-Parikh/fyp](https://github.com/Veer-Parikh/fyp) | 🤒 Coughing | 52 | 0 | 2025-11-30 | 2026-10-09 | 313 d | Quiet since October 2026. Could still be a long holiday. |
-| 30 | [dngames/wirebuddy](https://github.com/dngames/wirebuddy) | 🫀 Alive | 51 | 5 | 2026-10-26 | 2026-11-17 | 22 d | Alive at the time of writing, which is all anyone can say. |
+| 28 | [Veer-Parikh/fyp](https://github.com/Veer-Parikh/fyp) | 🤒 Coughing | 52 | 0 | 2025-11-30 | 2026-10-09 | 313 d | Quiet since October 2026. Could still be a long holiday. |
+| 29 | [dngames/wirebuddy](https://github.com/dngames/wirebuddy) | 🫀 Alive | 51 | 5 | 2026-10-26 | 2026-11-17 | 22 d | Alive at the time of writing, which is all anyone can say. |
+| 30 | [Garasimba/WireMCP-rs](https://github.com/Garasimba/WireMCP-rs) | 🫀 Alive | 51 | 1 | 2026-03-17 | 2026-10-13 | 210 d | Pulse present. No flowers yet. |
 <!-- top:end -->
 
 ## One-day wonders

@@ -32,3 +32,4 @@ CyberRoute/phantom
 ganainy/captive-portal-analyzer-android
 Einic/pretool
 stepanhendrych/CiscoPacketTracer-AIgrader
+nlink-jp/cybersecurity-series
