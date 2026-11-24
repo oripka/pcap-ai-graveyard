@@ -162,19 +162,21 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
     radial-gradient(30px 24px at 70% 14%, rgba(20, 24, 30, .4), transparent 70%),
     repeating-linear-gradient(90deg, transparent 0 13px, rgba(18, 22, 28, .3) 13px 15px, transparent 15px 31px, rgba(18, 22, 28, .2) 31px 32px, transparent 32px 53px);
   -webkit-mask-image: linear-gradient(180deg, #000 0, rgba(0, 0, 0, .75) 45%, rgba(0, 0, 0, .25) 100%); mask-image: linear-gradient(180deg, #000 0, rgba(0, 0, 0, .75) 45%, rgba(0, 0, 0, .25) 100%); }
-.plot:hover, .plot:focus-within, .plot.open { z-index: 20; }
-.plot:hover .tomb, .plot:focus-within .tomb, .plot.open .tomb { left: calc(-38px + var(--dx, 0px)); right: calc(-38px - var(--dx, 0px)); padding-left: 16px; padding-right: 16px; transform: rotate(0deg) translateY(-4px); filter: brightness(1.07); }
-.plot.down .tomb { bottom: auto; top: 0; } .plot.down .plinth, .plot.down .mound { visibility: hidden; }
+.plot.open { z-index: 20; }
+.plot.open .tomb { left: calc(-38px + var(--dx, 0px)); right: calc(-38px - var(--dx, 0px)); padding-left: 16px; padding-right: 16px; transform: rotate(0deg) translateY(-4px); filter: brightness(1.07); }
+/* an opened plot keeps its top edge where it was and grows downward, so the name stays under the pointer */
+.plot.open .tomb { bottom: auto; top: var(--top, 0px); } .plot.open .slot { z-index: 5; }
+.plot:not(.open):hover .tomb { filter: brightness(1.08); } .plot { cursor: pointer; } .plot.open { cursor: default; }
 .more { display: grid; grid-template-rows: 0fr; } .more-in { overflow: hidden; min-height: 0; } .pill.x { display: none; }
-.plot:not(:hover):not(:focus-within):not(.open) .tomb h3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.plot:hover .more, .plot:focus-within .more, .plot.open .more { grid-template-rows: 1fr; animation: unfold .42s cubic-bezier(.2, .8, .25, 1); }
-.plot:hover .more-in > *, .plot:focus-within .more-in > *, .plot.open .more-in > * { animation: ink .5s ease-out backwards; }
+.plot:not(.open) .tomb h3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.plot.open .more { grid-template-rows: 1fr; animation: unfold .42s cubic-bezier(.2, .8, .25, 1); }
+.plot.open .more-in > * { animation: ink .5s ease-out backwards; }
 .more-in > :nth-child(2) { animation-delay: .08s !important; } .more-in > :nth-child(3) { animation-delay: .16s !important; }
-.plot:hover .tomb, .plot:focus-within .tomb, .plot.open .tomb { animation: widen .34s cubic-bezier(.2, .9, .3, 1.15); box-shadow: inset 3px 3px 0 rgba(255, 255, 255, .22), inset -5px -3px 0 rgba(0, 0, 0, .22), 0 0 0 1px rgba(243, 236, 210, .18), 0 0 38px -4px rgba(243, 236, 210, .35), 14px 26px 34px -12px rgba(0, 0, 0, .9); }
+.plot.open .tomb { animation: widen .34s cubic-bezier(.2, .9, .3, 1.15); box-shadow: inset 3px 3px 0 rgba(255, 255, 255, .22), inset -5px -3px 0 rgba(0, 0, 0, .22), 0 0 0 1px rgba(243, 236, 210, .18), 0 0 38px -4px rgba(243, 236, 210, .35), 14px 26px 34px -12px rgba(0, 0, 0, .9); }
 .plot.measure .tomb, .plot.measure .more { animation: none !important; }
 @keyframes widen { from { left: 0; right: 0; padding-left: 10px; padding-right: 10px; } }
 @keyframes ink { from { opacity: 0; transform: translateY(7px); } }
-.plot:hover .pill.x, .plot:focus-within .pill.x, .plot.open .pill.x { display: inline-block; }
+.plot.open .pill.x { display: inline-block; }
 @keyframes unfold { from { grid-template-rows: 0fr; } }
 .plot { cursor: default; }
 /* neglect: --n runs from 0 (tended) to 1 (nobody has been here for years) */
@@ -236,10 +238,11 @@ h2 { font: 700 30px/1.15 var(--serif); margin: 64px 0 6px; }
 .tomb .cause { font: 600 10.5px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: rgba(23, 27, 38, .7); margin: 9px 0 0; }
 .tomb .foot { margin-top: auto; padding-top: 8px; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap; position: relative; z-index: 3; }
 .ghost { position: absolute; left: 50%; top: 6px; font-size: 36px; opacity: 0; transform: translate(-50%, 14px) scale(.6); transition: opacity .35s, transform .9s cubic-bezier(.2, .9, .3, 1.3); pointer-events: none; z-index: 4; }
-.plot:hover .ghost, .plot.open .ghost { opacity: 1; transform: translate(-50%, -50px) scale(1); animation: bob 1.6s ease-in-out .9s infinite alternate; }
+.plot.open .ghost { opacity: 1; transform: translate(-50%, -50px) scale(1); animation: bob 1.6s ease-in-out .9s infinite alternate; }
 @keyframes bob { from { margin-top: 0; margin-left: -5px; } to { margin-top: -9px; margin-left: 5px; } }
 .plot.t-alive:hover .ghost { animation: beat 1s ease-in-out infinite; }
 @keyframes beat { 0%, 100% { scale: 1; } 15% { scale: 1.25; } 30% { scale: 1; } 45% { scale: 1.18; } }
+.plot.vacant .more { grid-template-rows: 1fr; } .plot.vacant { cursor: default; }
 .plot.vacant .tomb { background: none; border: 3px dashed #4a556f; box-shadow: none; color: var(--bone); justify-content: center; }
 .plot.vacant .tomb .epi, .plot.vacant .tomb h3 { color: var(--ink); text-shadow: none; } .plot.vacant .tomb .pitch, .plot.vacant .tomb .rip { color: var(--dim); text-shadow: none; }
 .wanderer { position: absolute; left: -60px; top: 40%; font-size: 34px; pointer-events: none; z-index: 5; animation: wander 46s linear infinite 6s; opacity: .8; }
@@ -294,7 +297,7 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
   nav .brand b { display: none; } .tab { padding: 8px 9px; font-size: 13px; } .tab small { display: none; }
   .moon { width: 54px; height: 54px; top: 14px; } header { padding-top: 22px; } .bat.b2, .bat.b3 { display: none; } .ecg small { display: none; }
   .yard { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 60px 12px; } .deco { font-size: 17px !important; }
-  .plot:hover .tomb, .plot:focus-within .tomb, .plot.open .tomb { left: calc(-8px + var(--dx, 0px)); right: calc(-8px - var(--dx, 0px)); } .tomb .epi { font-size: 13px; }
+  .plot.open .tomb { left: calc(-8px + var(--dx, 0px)); right: calc(-8px - var(--dx, 0px)); } .tomb .epi { font-size: 13px; }
   .pagehead h2 { font-size: 30px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -500,21 +503,27 @@ footer { margin: 80px 0 0; padding: 26px 0 80px; border-top: 1px solid var(--lin
     else if (lvl === 3) { deco('l', '🌿'); deco('r', h % 2 ? '🍄' : '🍂') }
     else { deco('l', '🌿'); deco('m', '🌾'); deco('r', h % 2 ? '🐀' : '🍄') }
     const slot = el('div', 'slot'); t.prepend(g); slot.append(t)
-    // keep an opened plot on screen: shift it sideways, and let it grow downward when the nav is in the way
-    const place = () => {
-      plot.classList.remove('down'); plot.style.setProperty('--dx', '0px'); plot.classList.add('measure')
-      const r = slot.getBoundingClientRect(), w = document.documentElement.clientWidth, grow = -parseFloat(getComputedStyle(t).left) || 0
+    // Opening is done by class, not by :hover, so a plot does not close while the pointer travels to its link.
+    let timer = 0, pinned = false
+    const open = () => {
+      clearTimeout(timer); if (plot.classList.contains('open')) return
+      for (const o of document.querySelectorAll('.plot.open')) if (o !== plot && !o.dataset.pin) o.classList.remove('open')
+      const r = slot.getBoundingClientRect(), w = document.documentElement.clientWidth
+      plot.style.setProperty('--top', (slot.offsetHeight - t.offsetHeight) + 'px')
+      const grow = innerWidth <= 620 ? 8 : 38
       plot.style.setProperty('--dx', Math.round(Math.max(0, 10 - (r.left - grow)) - Math.max(0, r.right + grow - (w - 10))) + 'px')
-      const nav = document.querySelector('nav')
-      if (r.bottom - t.offsetHeight < (nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0) + 8) plot.classList.add('down')
-      plot.classList.remove('measure')
+      plot.classList.add('open')
     }
-    // a second look once the page has settled (stones may still be rising when first touched)
-    const settle = () => setTimeout(() => { if (plot.matches(':hover, :focus-within, .open') && !plot.classList.contains('down')) { const nav = document.querySelector('nav'); if (t.getBoundingClientRect().top < (nav ? Math.max(0, nav.getBoundingClientRect().bottom) : 0)) plot.classList.add('down') } }, 950)
-    for (const ev of ['mouseenter', 'focusin', 'click']) plot.addEventListener(ev, settle)
-    for (const ev of ['mouseenter', 'focusin']) plot.addEventListener(ev, place)
-    plot.addEventListener('mouseleave', () => { if (!plot.classList.contains('open')) plot.classList.remove('down') })
-    plot.addEventListener('click', (e) => { if (!e.target.closest('a')) plot.classList.toggle('open'); place() })
+    const close = (wait) => { clearTimeout(timer); timer = setTimeout(() => { if (!pinned) plot.classList.remove('open') }, wait) }
+    plot.addEventListener('mouseenter', () => { clearTimeout(timer); timer = setTimeout(open, 90) })
+    plot.addEventListener('mouseleave', () => close(260))
+    plot.addEventListener('focusin', open)
+    plot.addEventListener('focusout', () => close(260))
+    plot.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return
+      if (plot.classList.contains('open') && pinned) { pinned = false; delete plot.dataset.pin; plot.classList.remove('open') }
+      else { pinned = true; plot.dataset.pin = '1'; open() }
+    })
     plot.append(slot, el('div', 'plinth'), mound)
     return plot
   }
