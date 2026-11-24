@@ -44,6 +44,7 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 <!-- hosted:start -->
 | Tool | Kind | Status | Last sign of life | Epitaph |
 |---|---|---|---|---|
+| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up, shipping daily | Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else. |
 | [PcapAI](https://pcapai.com) | hosted | 🫀 Alive | 2026-11-24 · site up, upload form live | Alive, and charging nine dollars. That is more business model than most of this cemetery ever had. |
 | [logcat.ai PCAP Analyzer](https://logcat.ai/pcap-analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up | A log analysis company that noticed packets are also logs, if you squint. |
 | [NetNerve](https://netnerve.online) | hosted | 🫀 Alive | 2026-11-24 · netnerve.vercel.app redirects to netnerve.online, site up | Outgrew its vercel.app address and moved to a real domain. In this neighbourhood that counts as a dynasty. |
@@ -58,7 +59,6 @@ Tools with a website instead of, or next to, a repository. There are no stars to
 | [GNS3 AI packet analysis](https://docs.gns3.com/docs-3.1-en/ai-tools/use-ai-packet-analysis) | vendor | 🫀 Alive | 2026-11-24 · documentation reachable | Every product gets an AI tab eventually. This is the lab simulator's. |
 | [PacketPilot AI](https://packetpilotai.com) | prompt pack | 🫀 Alive | 2026-11-24 · site up | Skipped building the tool and sells the prompts. Possibly the only one here that read the room. |
 | [Fraunhofer NetCapVis](https://netcapvis.igd.fraunhofer.de/) | hosted | 🫀 Alive | 2026-11-24 · site up | Publicly funded, therefore immortal. |
-| [PacketSafari](https://www.packetsafari.com/analyzer/) | hosted | 🫀 Alive | 2026-11-24 · site up | The undertaker's own plot. Reserved, not yet occupied. Judged by the same rules as everyone else; send a pull request the day it stops moving. |
 <!-- hosted:end -->
 
 ## The thirty with the strongest pulse

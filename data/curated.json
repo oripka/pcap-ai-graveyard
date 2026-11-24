@@ -1,6 +1,16 @@
 {
   "hosted": [
     {
+      "name": "PacketSafari",
+      "url": "https://www.packetsafari.com/analyzer/",
+      "kind": "hosted",
+      "pitch": "AI-assisted packet investigation with exact packet evidence: ranks the important signals, shows the flows and frames, and lets you verify every conclusion. In daily development.",
+      "epitaph": "Alive, and the one keeping this register. No stone, only a spade. Judged by the same dates as everyone else.",
+      "last_sign": "2026-11-24",
+      "last_sign_note": "site up, shipping daily",
+      "disclosure": true
+    },
+    {
       "name": "PcapAI",
       "url": "https://pcapai.com",
       "kind": "hosted",
@@ -129,16 +139,6 @@
       "epitaph": "Publicly funded, therefore immortal.",
       "last_sign": "2026-11-24",
       "last_sign_note": "site up"
-    },
-    {
-      "name": "PacketSafari",
-      "url": "https://www.packetsafari.com/analyzer/",
-      "kind": "hosted",
-      "pitch": "AI-assisted investigation with exact packet evidence. Built by the person who keeps this list, so read this row with suspicion.",
-      "epitaph": "The undertaker's own plot. Reserved, not yet occupied. Judged by the same rules as everyone else; send a pull request the day it stops moving.",
-      "last_sign": "2026-11-24",
-      "last_sign_note": "site up",
-      "disclosure": true
     }
   ],
   "epitaphs": {
